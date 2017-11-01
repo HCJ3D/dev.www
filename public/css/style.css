@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: #eee;
     margin: 0;
 }
 footer {
@@ -8,12 +8,25 @@ footer {
     bottom: 0;
     width: 100%;
 }
+    footer div {
+        padding: 10px;
+        background-color: #fff;
+        display: inline-block;
+        border-radius: 0 10px 0 0;
+    }
 header {
     display: block;
     position: fixed;
     top: 0;
     width: 100%;
 }
+    header h1 {
+        margin: 0;
+        padding: 10px;
+        background-color: #fff;
+        display: inline-block;
+        border-radius: 0 0 10px 0;
+    }
 html {
     font-family: sans-serif;
 }
