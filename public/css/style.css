@@ -1,5 +1,18 @@
 body {
     background-color: #fff;
+    margin: 0;
+}
+footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+header {
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 html {
     font-family: sans-serif;
