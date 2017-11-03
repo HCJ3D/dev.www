@@ -7,6 +7,18 @@
         <meta name="property" content="HTML, CSS, and JavaScript in 3D">
         <link rel="stylesheet" type="text/css" href="/css/style.css?v=2017110201">
         <link rel="stylesheet" type="text/css" href="/css/hcj3d.css?v=2017110201">
+
+        <?php if ($_SERVER['HTTP_HOST'] == 'www.hcj3d.com'): ?>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42535259-27"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-42535259-27');
+            </script>
+        <?php endif ?>
     </head>
     <body>
         <header>
