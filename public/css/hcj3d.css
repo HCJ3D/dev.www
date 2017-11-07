@@ -18,4 +18,6 @@ hcj3d-ground {
     background-color: #060;
     top: 130px;
     left: 130px;
+    background-image: url("/images/grass.jpg");
+    background-size: 100px 100px;
 }
