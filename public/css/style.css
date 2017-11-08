@@ -1,19 +1,30 @@
+a {
+    color: #00f;
+}
 body {
     background-color: #eee;
     margin: 0;
 }
 footer {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 1;
 }
-    footer div {
+    footer div:first-child {
         padding: 10px;
         background-color: #fff;
         display: inline-block;
         border-radius: 0 10px 0 0;
+    }
+    footer div:last-child {
+        padding: 10px;
+        background-color: #fff;
+        display: inline-block;
+        border-radius: 10px 0 0 0;
     }
 header {
     display: flex;
