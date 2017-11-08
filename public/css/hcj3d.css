@@ -44,22 +44,22 @@ hcj3d-cube hcj3d-cube-side {
     left: 0;
 }
 hcj3d-cube hcj3d-cube-side[side=bottom] {
-    background-color: #f00;
+    background-color: #ff0;
 }
 hcj3d-cube hcj3d-cube-side[side=top] {
-    background-color: #0f0;
+    background-color: #f00;
     transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(100px);
 }
 hcj3d-cube hcj3d-cube-side[side=left] {
-    background-color: #00f;
+    background-color: #0ff;
     transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-50px) translateY(0px) translateZ(-50px);
 }
 hcj3d-cube hcj3d-cube-side[side=right] {
-    background-color: #0ff;
+    background-color: #00f;
     transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-50px) translateY(0px) translateZ(50px);
 }
 hcj3d-cube hcj3d-cube-side[side=front] {
-    background-color: #ff0;
+    background-color: #0f0;
     transform: rotateX(90deg) rotateY(0deg) rotateZ(0) translateX(0px) translateY(50px) translateZ(-50px);
 }
 hcj3d-cube hcj3d-cube-side[side=back] {
