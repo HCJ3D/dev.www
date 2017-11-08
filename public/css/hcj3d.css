@@ -3,6 +3,7 @@ hcj3d-world {
     height: 100%;
     display: block;
     position: absolute;
+    transform-style: preserve-3d;
 }
 hcj3d-view {
     width: 100%;
@@ -30,7 +31,7 @@ hcj3d-ground {
 hcj3d-cube {
     display: block;
     position: absolute;
-    transform: rotateX(0) rotateY(0) rotateZ(0) translateX(400px) translateY(700px) translateZ(0px);
+    transform: rotateX(0) rotateY(0) rotateZ(0) translateX(600px) translateY(700px) translateZ(0px);
     width: 100px;
     height: 100px;
     transform-style: preserve-3d;
