@@ -13,11 +13,12 @@ hcj3d-world {
 hcj3d-ground {
     display: block;
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 1000px;
+    height: 1000px;
     background-color: #060;
-    top: 130px;
+    top: -50px;
     left: 130px;
     background-image: url("/images/grass.jpg");
     background-size: 100px 100px;
+    transform: rotateX(70deg) rotateY(0deg) rotateZ(8deg);
 }
