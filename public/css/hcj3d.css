@@ -10,7 +10,7 @@ hcj3d-view {
     display: block;
     position: absolute;
     perspective: 1000px;
-    perspective-origin: 50% 50%;
+    perspective-origin: 50% 20%;
 }
 hcj3d-ground {
     display: block;
@@ -22,7 +22,7 @@ hcj3d-ground {
     left: 130px;
     background-image: url("/images/grass.jpg");
     background-size: 100px 100px;
-    transform: rotateX(70deg) rotateY(0deg) rotateZ(8deg) translateX(0px) translateY(0px) translateZ(0px);
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(8deg) translateX(0px) translateY(0px) translateZ(0px);
     transform-style: preserve-3d;
 }
 hcj3d-cube {
