@@ -1,14 +1,16 @@
-hcj3d-view {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: fixed;
-}
 hcj3d-world {
     width: 100%;
     height: 100%;
     display: block;
-    position: fixed;
+    position: absolute;
+}
+hcj3d-view {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
 }
 hcj3d-ground {
     display: block;
@@ -20,5 +22,45 @@ hcj3d-ground {
     left: 130px;
     background-image: url("/images/grass.jpg");
     background-size: 100px 100px;
-    transform: rotateX(70deg) rotateY(0deg) rotateZ(8deg);
+    transform: rotateX(70deg) rotateY(0deg) rotateZ(8deg) translateX(0px) translateY(0px) translateZ(0px);
+    transform-style: preserve-3d;
+}
+hcj3d-cube {
+    display: block;
+    position: absolute;
+    transform: rotateX(0) rotateY(0) rotateZ(0) translateX(400px) translateY(700px) translateZ(0px);
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+}
+hcj3d-cube hcj3d-cube-side {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+}
+hcj3d-cube hcj3d-cube-side[side=bottom] {
+    background-color: #f00;
+}
+hcj3d-cube hcj3d-cube-side[side=top] {
+    background-color: #0f0;
+    transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(100px);
+}
+hcj3d-cube hcj3d-cube-side[side=left] {
+    background-color: #00f;
+    transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-50px) translateY(0px) translateZ(-50px);
+}
+hcj3d-cube hcj3d-cube-side[side=right] {
+    background-color: #0ff;
+    transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-50px) translateY(0px) translateZ(50px);
+}
+hcj3d-cube hcj3d-cube-side[side=front] {
+    background-color: #ff0;
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(0) translateX(0px) translateY(50px) translateZ(-50px);
+}
+hcj3d-cube hcj3d-cube-side[side=back] {
+    background-color: #f0f;
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(0) translateX(0px) translateY(50px) translateZ(50px);
 }
