@@ -18,7 +18,7 @@ hcj3d-view {
 hcj3d-ground {
     display: block;
     position: absolute;
-    width: 2000px;
+    width: 1000px;
     height: 1000px;
     background-color: #060;
     top: -50px;
