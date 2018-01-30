@@ -27,6 +27,15 @@ hcj3d-ground {
     background-image: url("/images/grass.jpg");
     background-size: 100px 100px;
     transform-style: preserve-3d;
+    animation: rotating 45s linear infinite;
+}
+@keyframes rotating {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }
 hcj3d-cube {
     display: block;
