@@ -27,6 +27,7 @@ hcj3d-ground {
     background-image: url("/images/grass.jpg");
     background-size: 100px 100px;
     transform-style: preserve-3d;
+    transform: rotateZ(180deg);
     animation: rotating 45s linear infinite;
 }
 @keyframes rotating {
@@ -69,9 +70,9 @@ hcj3d-cube hcj3d-cube-side[side=right] {
 }
 hcj3d-cube hcj3d-cube-side[side=front] {
     background-color: #0f0;
-    transform: rotateX(90deg) rotateY(0deg) rotateZ(0) translateX(0px) translateY(50px) translateZ(-50px);
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0) translateX(0px) translateY(-50px) translateZ(50px);
 }
 hcj3d-cube hcj3d-cube-side[side=back] {
     background-color: #f0f;
-    transform: rotateX(90deg) rotateY(0deg) rotateZ(0) translateX(0px) translateY(50px) translateZ(50px);
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(180deg) translateX(0px) translateY(-50px) translateZ(50px);
 }
