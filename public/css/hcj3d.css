@@ -24,7 +24,7 @@ hcj3d-ground {
     width: 1000px;
     height: 1000px;
     background-color: #060;
-    background-image: url("/images/grass.jpg");
+    background-image: url("/images/grass.webp");
     background-size: 100px 100px;
     transform-style: preserve-3d;
     transform: rotateZ(180deg);
