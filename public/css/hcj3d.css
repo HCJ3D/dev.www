@@ -259,7 +259,7 @@ hcj3d-cube hcj3d-cube-side[side=top] {
 }
 hcj3d-cube hcj3d-cube-side[side=left] {
     background-color: #0ff;
-    transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-50px) translateY(0px) translateZ(-50px);
+    transform: rotateX(-90deg) rotateY(-90deg) rotateZ(0deg) translateX(0px) translateY(-50px) translateZ(50px);
 }
 hcj3d-cube hcj3d-cube-side[side=right] {
     background-color: #00f;
