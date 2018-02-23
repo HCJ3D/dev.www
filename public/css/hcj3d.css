@@ -27,7 +27,6 @@ hcj3d-ground {
     background-image: url("/images/grass.webp");
     background-size: 100px 100px;
     transform-style: preserve-3d;
-    transform: rotateZ(180deg);
     /* animation: rotating 30s linear infinite; */
 }
 @keyframes rotating {
@@ -44,8 +43,8 @@ hcj3d-mannequin {
     width: 100px;
     height: 100px;
     transform-style: preserve-3d;
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(180deg) translateX(430px) translateY(410px) translateZ(1px);
-    transform-origin: 480px 460px 0px;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(470px) translateY(560px) translateZ(1px);
+    transform-origin: 520px 610px 0px;
 }
     hcj3d-mannequin-head {
         display: block;
