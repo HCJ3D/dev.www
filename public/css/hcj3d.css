@@ -28,7 +28,7 @@ hcj3d-ground {
     background-size: 100px 100px;
     transform-style: preserve-3d;
     transform: rotateZ(180deg);
-    animation: rotating 45s linear infinite;
+    animation: rotating 30s linear infinite;
 }
 @keyframes rotating {
   from {
@@ -45,8 +45,123 @@ hcj3d-mannequin {
     height: 100px;
     transform-style: preserve-3d;
     transform: rotateX(0) rotateY(0) rotateZ(0) translateX(430px) translateY(410px) translateZ(1px);
-    background-color: peachpuff;
 }
+    hcj3d-mannequin-head {
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        transform-style: preserve-3d;
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(40px) translateY(10px) translateZ(50px);
+    }
+        hcj3d-mannequin-head-bottom {
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(0px);
+        }
+        hcj3d-mannequin-head-top {
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(10px);
+        }
+        hcj3d-mannequin-head-left {
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
+        }
+        hcj3d-mannequin-head-right {
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(5px) translateZ(-5px);
+        }
+        hcj3d-mannequin-head-front {
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(-5px);
+        }
+        hcj3d-mannequin-head-back {
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
+        }
+    hcj3d-mannequin-body {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 10px;
+        transform-style: preserve-3d;
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(30px) translateY(10px) translateZ(15px);
+        background-color: tan;
+    }
+        hcj3d-mannequin-body-bottom {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(30px);
+        }
+        hcj3d-mannequin-body-left {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-15px) translateY(0px) translateZ(15px);
+        }
+        hcj3d-mannequin-body-right {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-15px) translateY(0px) translateZ(-15px);
+        }
+        hcj3d-mannequin-body-front {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(15px) translateZ(5px);
+        }
+        hcj3d-mannequin-body-back {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(15px) translateZ(15px);
+        }
     hcj3d-mannequin-leg {
         display: block;
         position: absolute;
@@ -65,7 +180,7 @@ hcj3d-mannequin {
             position: absolute;
             width: 10px;
             height: 10px;
-            background-color: red;
+            background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(0px);
         }
