@@ -27,12 +27,12 @@ footer {
         display: inline-block;
         border-radius: 10px 0 0 0;
     }
-    footer div.bottom-left ol {
+    footer div ol {
         list-style-type: none;
         margin: 0;
         padding: 0;
     }
-        footer div.bottom-left ol li {
+        footer div ol li {
             display: inline-block;
             width: 30px;
             text-align: center;
