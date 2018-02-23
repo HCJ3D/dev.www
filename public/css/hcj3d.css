@@ -9,13 +9,13 @@ hcj3d-view {
     height: 100%;
     display: block;
     position: absolute;
-    perspective: 4000px;
+    perspective: 800px;
     perspective-origin: 100% 15%;
 }
 hcj3d-perspective {
     display: block;
     position: absolute;
-    transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg) translateX(500px) translateY(600px) translateZ(-200px);
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg) translateX(650px) translateY(50px) translateZ(-200px);
     transform-style: preserve-3d;
 }
 hcj3d-ground {
@@ -50,69 +50,69 @@ hcj3d-mannequin {
     hcj3d-mannequin-leg {
         display: block;
         position: absolute;
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         transform-style: preserve-3d;
     }
     hcj3d-mannequin-leg.left {
-        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(20px) translateY(20px) translateZ(1px);
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(30px) translateY(10px) translateZ(1px);
     }
     hcj3d-mannequin-leg.right {
-        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(50px) translateY(20px) translateZ(1px);
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(50px) translateY(10px) translateZ(1px);
     }
         hcj3d-mannequin-leg-bottom {
             display: block;
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: tan;
+            width: 10px;
+            height: 10px;
+            background-color: red;
             transform-style: preserve-3d;
             transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(0px);
         }
         hcj3d-mannequin-leg-top {
             display: block;
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 10px;
+            height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
-            transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(15px);
+            transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(10px);
         }
         hcj3d-mannequin-leg-left {
             display: block;
             position: absolute;
-            width: 20px;
-            height: 15px;
+            width: 10px;
+            height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
-            transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(7px) translateZ(7px);
+            transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
         }
         hcj3d-mannequin-leg-right {
             display: block;
             position: absolute;
-            width: 20px;
-            height: 15px;
+            width: 10px;
+            height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
-            transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(7px) translateZ(-12px);
+            transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(5px) translateZ(-5px);
         }
         hcj3d-mannequin-leg-front {
             display: block;
             position: absolute;
-            width: 20px;
-            height: 15px;
+            width: 10px;
+            height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
-            transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(7px) translateZ(-11px);
+            transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(-5px);
         }
         hcj3d-mannequin-leg-back {
             display: block;
             position: absolute;
-            width: 20px;
-            height: 15px;
+            width: 10px;
+            height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
-            transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(7px) translateZ(9px);
+            transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
         }
 hcj3d-cube {
     display: block;
