@@ -15,7 +15,7 @@ hcj3d-view {
 hcj3d-perspective {
     display: block;
     position: absolute;
-    transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg) translateX(150px) translateY(50px) translateZ(-200px);
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg) translateX(350px) translateY(50px) translateZ(-200px);
     transform-style: preserve-3d;
 }
 hcj3d-ground {
