@@ -50,26 +50,26 @@ $(document).ready(function() {
 
         if (pressedKeys[87]) {
             // w key
-            $('#keys li[name=W]').css('font-weight', 'bold');
-            moveForward();
+            $('#w').css('font-weight', 'bold');
+            //moveForward();
         }
 
         if (pressedKeys[83]) {
             // s key
-            $('#keys li[name=S]').css('font-weight', 'bold');
-            moveBackward();
+            $('#s').css('font-weight', 'bold');
+            //moveBackward();
         }
 
         if (pressedKeys[65]) {
             // a key
-            $('#keys li[name=A]').css('font-weight', 'bold');
-            moveLeft();
+            $('#a').css('font-weight', 'bold');
+            //moveLeft();
         }
 
         if (pressedKeys[68]) {
             // d key
-            $('#keys li[name=D]').css('font-weight', 'bold');
-            moveRight();
+            $('#d').css('font-weight', 'bold');
+            //moveRight();
         }
 
         if (cubesService.shouldRelevantCubesBeUpdated(me, positionWhenRelevantCubesWereDrawn)) {
@@ -128,8 +128,24 @@ $(document).ready(function() {
         e = e || window.event;
         pressedKeys[e.keyCode || e.which] = false;
 
-        $('#keys li').css('font-weight', 'normal');
+        if (!pressedKeys[87]) {
+            // w key
+            $('#w').css('font-weight', 'normal');
+        }
+        if (!pressedKeys[83]) {
+            // s key
+            $('#s').css('font-weight', 'normal');
+        }
+        if (!pressedKeys[65]) {
+            // a key
+            $('#a').css('font-weight', 'normal');
+        }
+        if (!pressedKeys[68]) {
+            // d key
+            $('#d').css('font-weight', 'normal');
+        }
 
+        /**
         var transform = me.css.transform;
         ajaxService.setMe(
             transform.translateX,
@@ -139,6 +155,7 @@ $(document).ready(function() {
             transform.rotateY,
             transform.rotateZ
         );
+        */
     }
 
     function getEveryoneElse() {
