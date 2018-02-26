@@ -11,7 +11,8 @@ $(document).ready(function() {
     var positionWhenVisibleCubesWereDrawn;
     var pressedKeys = [];
     var selectedTool = 'hex-ff0000';
-    var perspective;
+
+    var perspective = initPerspective();
 
     var me;
 
@@ -21,7 +22,6 @@ $(document).ready(function() {
     ajaxService.getMe().done(function (data) {
         me = data;
         updateMe();
-        initPerspective();
     });
     */
 
@@ -51,7 +51,7 @@ $(document).ready(function() {
         if (pressedKeys[87]) {
             // w key
             $('#w').css('font-weight', 'bold');
-            //moveForward();
+            moveForward();
         }
 
         if (pressedKeys[83]) {
@@ -177,24 +177,26 @@ $(document).ready(function() {
     }
 
     function initPerspective() {
-        perspective = {
-            'css': {
+        var perspective = $('hcj3d-perspective');
+        perspective.data(
+            'css',
+            {
                 'transform': {
-                    'translateX': -me.css.transform.translateX + 210,
-                    'translateY': 310,
-                    'translateZ': -me.css.transform.translateZ + 380,
-                    'rotateX': -10,
-                    'rotateY': -me.css.transform.rotateY,
+                    'rotateX': 80,
+                    'rotateY': 0,
                     'rotateZ': 0,
+                    'translateX': 350,
+                    'translateY': 50,
+                    'translateZ': -200,
                 },
                 'transform-origin': {
                     'x': 0,
                     'y': 0,
                     'z': 0,
                 },
-            },
-        };
-        updatePerspective();
+            }
+        );
+        return perspective;
     }
 
     function lookDown() {
@@ -238,19 +240,20 @@ $(document).ready(function() {
     }
 
     function moveForward() {
+        /**
         var transform = me.css.transform;
-        var sin = Math.sin(transform.rotateY * Math.PI / 180);
-        var cos = Math.cos(transform.rotateY * Math.PI / 180);
+
+        var sin = Math.sin(0 * Math.PI / 180);
+        var cos = Math.cos(0 * Math.PI / 180);
         var translateX = 10 * sin;
         var translateZ = 10 * cos;
 
         transform.translateX -= translateX;
         transform.translateZ -= translateZ;
         updateMe();
+        */
 
-        var transform = perspective.css.transform;
-        transform.translateX += translateX;
-        transform.translateZ += translateZ;
+        perspective.data('css').transform.translateY += 10;
         updatePerspective();
     }
 
@@ -311,11 +314,11 @@ $(document).ready(function() {
     }
 
     function updatePerspective() {
-        var transformOrigin = getTransformOrigin();
-        $('#perspective').css('transform-origin', transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px');
+        //var transformOrigin = getTransformOrigin();
+        //$('#perspective').css('transform-origin', transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px');
 
-        var transform = perspective.css.transform;
-        $('#perspective').css('transform', 'translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px) rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg)');
+        var transform = perspective.data('css').transform;
+        perspective.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
     }
 
     $('#universe').on({
