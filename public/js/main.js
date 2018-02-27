@@ -63,13 +63,13 @@ $(document).ready(function() {
         if (pressedKeys[65]) {
             // a key
             $('#a').css('font-weight', 'bold');
-            //moveLeft();
+            moveLeft();
         }
 
         if (pressedKeys[68]) {
             // d key
             $('#d').css('font-weight', 'bold');
-            //moveRight();
+            moveRight();
         }
 
         if (cubesService.shouldRelevantCubesBeUpdated(me, positionWhenRelevantCubesWereDrawn)) {
@@ -280,6 +280,7 @@ $(document).ready(function() {
     }
 
     function moveLeft() {
+      /*
         var transform = me.css.transform;
         var sin = Math.sin(transform.rotateY * Math.PI / 180);
         var cos = Math.cos(transform.rotateY * Math.PI / 180);
@@ -294,23 +295,32 @@ $(document).ready(function() {
         transform.translateX += translateX;
         transform.translateZ -= translateZ;
         updatePerspective();
+      */
+
+      perspective.data('css').transform.translateX += 10;
+      updatePerspective();
     }
 
     function moveRight() {
-        var transform = me.css.transform;
-        var sin = Math.sin(transform.rotateY * Math.PI / 180);
-        var cos = Math.cos(transform.rotateY * Math.PI / 180);
-        var translateX = 10 * cos;
-        var translateZ = 10 * sin;
+      /*
+      var transform = me.css.transform;
+      var sin = Math.sin(transform.rotateY * Math.PI / 180);
+      var cos = Math.cos(transform.rotateY * Math.PI / 180);
+      var translateX = 10 * cos;
+      var translateZ = 10 * sin;
 
-        transform.translateX += translateX;
-        transform.translateZ -= translateZ;
-        updateMe();
+      transform.translateX += translateX;
+      transform.translateZ -= translateZ;
+      updateMe();
 
-        var transform = perspective.css.transform;
-        transform.translateX -= translateX;
-        transform.translateZ += translateZ;
-        updatePerspective();
+      var transform = perspective.css.transform;
+      transform.translateX -= translateX;
+      transform.translateZ += translateZ;
+      updatePerspective();
+      */
+
+      perspective.data('css').transform.translateX -= 10;
+      updatePerspective();
     }
 
     function updateMe() {
