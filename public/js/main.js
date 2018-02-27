@@ -57,7 +57,7 @@ $(document).ready(function() {
         if (pressedKeys[83]) {
             // s key
             $('#s').css('font-weight', 'bold');
-            //moveBackward();
+            moveBackward();
         }
 
         if (pressedKeys[65]) {
@@ -258,20 +258,25 @@ $(document).ready(function() {
     }
 
     function moveBackward() {
-        var transform = me.css.transform;
-        var sin = Math.sin(transform.rotateY * Math.PI / 180);
-        var cos = Math.cos(transform.rotateY * Math.PI / 180);
-        var translateX = 10 * sin;
-        var translateZ = 10 * cos;
+      /**
+      var transform = me.css.transform;
+      var sin = Math.sin(transform.rotateY * Math.PI / 180);
+      var cos = Math.cos(transform.rotateY * Math.PI / 180);
+      var translateX = 10 * sin;
+      var translateZ = 10 * cos;
 
-        transform.translateX += translateX;
-        transform.translateZ += translateZ;
-        updateMe();
+      transform.translateX += translateX;
+      transform.translateZ += translateZ;
+      updateMe();
 
-        var transform = perspective.css.transform;
-        transform.translateX -= translateX;
-        transform.translateZ -= translateZ;
-        updatePerspective();
+      var transform = perspective.css.transform;
+      transform.translateX -= translateX;
+      transform.translateZ -= translateZ;
+      updatePerspective();
+      */
+
+      perspective.data('css').transform.translateY -= 10;
+      updatePerspective();
     }
 
     function moveLeft() {
