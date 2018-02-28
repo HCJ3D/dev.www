@@ -188,8 +188,8 @@ $(document).ready(function() {
                     'rotateX': 0,
                     'rotateY': 0,
                     'rotateZ': 0,
-                    'translateX': 470,
-                    'translateY': 560,
+                    'translateX': 900,
+                    'translateY': 900,
                     'translateZ': 0,
                 },
                 'transform-origin': {
@@ -203,6 +203,17 @@ $(document).ready(function() {
     }
 
     function initPerspective() {
+
+        //console.log($(window).width());
+
+        // 1440, -210 (difference = 1650)
+        // 1380, -250 (difference = 1630)
+        // 1120, -370 (difference = 1490)
+        // 500, -690 (difference = 1190)
+        //
+        // y = mx + b
+        // y = .5x + -940
+
         var perspective = $('hcj3d-perspective');
         perspective.data(
             'css',
@@ -211,8 +222,8 @@ $(document).ready(function() {
                     'rotateX': 80,
                     'rotateY': 0,
                     'rotateZ': 0,
-                    'translateX': 300,
-                    'translateY': 50,
+                    'translateX': $(window).width() * 0.5 - 950,
+                    'translateY': -350,
                     'translateZ': -200,
                 },
                 'transform-origin': {
