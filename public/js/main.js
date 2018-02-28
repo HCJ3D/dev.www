@@ -15,7 +15,8 @@ $(document).ready(function() {
     var perspective = initPerspective();
     updatePerspective();
 
-    var mannequin   = initMannequin();
+    var mannequin = initMannequin();
+    updateMannequin();
 
     var relevantCubes;
 
