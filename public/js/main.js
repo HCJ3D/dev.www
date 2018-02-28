@@ -204,27 +204,27 @@ $(document).ready(function() {
 
     function initPerspective() {
 
-        //console.log($(window).width());
+        //console.log($(window).height());
 
-        // 1440, -210 (difference = 1650)
-        // 1380, -250 (difference = 1630)
-        // 1120, -370 (difference = 1490)
-        // 500, -690 (difference = 1190)
+        // 445, -150
+        // 633, -170
+        // 751, -180
+        // 953, -200
         //
         // y = mx + b
-        // y = .5x + -940
+        // translateZ = -0.1x + -110
 
         var perspective = $('hcj3d-perspective');
         perspective.data(
             'css',
             {
                 'transform': {
-                    'rotateX': 80,
+                    'rotateX': 100,
                     'rotateY': 0,
                     'rotateZ': 0,
                     'translateX': $(window).width() * 0.5 - 950,
-                    'translateY': -350,
-                    'translateZ': -200,
+                    'translateY': -450,
+                    'translateZ': $(window).height() * -0.075 - 160,
                 },
                 'transform-origin': {
                     'x': 0,

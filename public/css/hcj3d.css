@@ -9,8 +9,8 @@ hcj3d-view {
     height: 100%;
     display: block;
     position: absolute;
-    perspective: 800px;
-    perspective-origin: 50% 20%;
+    perspective: 650px;
+    perspective-origin: 50% 0%;
 }
 hcj3d-perspective {
     display: block;
