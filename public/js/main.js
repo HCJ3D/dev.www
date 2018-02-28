@@ -13,8 +13,7 @@ $(document).ready(function() {
     var selectedTool = 'hex-ff0000';
 
     var perspective = initPerspective();
-
-    var me;
+    var mannequin   = initMannequin();
 
     var relevantCubes;
 
@@ -72,6 +71,7 @@ $(document).ready(function() {
             moveRight();
         }
 
+        /*
         if (cubesService.shouldRelevantCubesBeUpdated(me, positionWhenRelevantCubesWereDrawn)) {
             positionWhenRelevantCubesWereDrawn = {
                 translateX: me.css.transform.translateX,
@@ -106,6 +106,7 @@ $(document).ready(function() {
                 newlyVisibleCubes
             );
         }
+        */
     }
     setInterval(oneCentisecondLoop, 10);
 
@@ -174,6 +175,29 @@ $(document).ready(function() {
             'z': me.css.transform.translateZ,
         };
         return transformOrigin;
+    }
+
+    function initMannequin() {
+        var mannequin = $('hcj3d-mannequin');
+        mannequin.data(
+            'css',
+            {
+                'transform': {
+                    'rotateX': 0,
+                    'rotateY': 0,
+                    'rotateZ': 0,
+                    'translateX': 470,
+                    'translateY': 560,
+                    'translateZ': 0,
+                },
+                'transform-origin': {
+                    'x': 0,
+                    'y': 0,
+                    'z': 0,
+                },
+            }
+        );
+        return mannequin;
     }
 
     function initPerspective() {
@@ -253,6 +277,9 @@ $(document).ready(function() {
         updateMe();
         */
 
+        mannequin.data('css').transform.translateY -= 10;
+        updateMannequin();
+
         perspective.data('css').transform.translateY += 10;
         updatePerspective();
     }
@@ -274,6 +301,9 @@ $(document).ready(function() {
       transform.translateZ -= translateZ;
       updatePerspective();
       */
+
+      mannequin.data('css').transform.translateY += 10;
+      updateMannequin();
 
       perspective.data('css').transform.translateY -= 10;
       updatePerspective();
@@ -297,6 +327,9 @@ $(document).ready(function() {
         updatePerspective();
       */
 
+      mannequin.data('css').transform.translateX -= 10;
+      updateMannequin();
+
       perspective.data('css').transform.translateX += 10;
       updatePerspective();
     }
@@ -319,13 +352,16 @@ $(document).ready(function() {
       updatePerspective();
       */
 
+      mannequin.data('css').transform.translateX += 10;
+      updateMannequin();
+
       perspective.data('css').transform.translateX -= 10;
       updatePerspective();
     }
 
-    function updateMe() {
-        var transform = me.css.transform;
-        $('#me').css('transform', 'translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px) rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg)');
+    function updateMannequin() {
+        var transform = mannequin.data('css').transform;
+        mannequin.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
     }
 
     function updatePerspective() {
