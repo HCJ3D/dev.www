@@ -13,6 +13,8 @@ $(document).ready(function() {
     var selectedTool = 'hex-ff0000';
 
     var perspective = initPerspective();
+    updatePerspective();
+
     var mannequin   = initMannequin();
 
     var relevantCubes;
@@ -209,7 +211,7 @@ $(document).ready(function() {
                     'rotateX': 80,
                     'rotateY': 0,
                     'rotateZ': 0,
-                    'translateX': 350,
+                    'translateX': 300,
                     'translateY': 50,
                     'translateZ': -200,
                 },
