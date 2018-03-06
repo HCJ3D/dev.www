@@ -30,24 +30,24 @@ $(document).ready(function() {
     function oneCentisecondLoop() {
         if (pressedKeys[38]) {
             // up arrow
-            lookDown();
+            // lookDown();
         }
 
         if (pressedKeys[40]) {
             // down arrow
-            lookUp();
+            // lookUp();
         }
 
         if (pressedKeys[37]) {
             // left arrow
-            $('#keys li[name=L]').css('font-weight', 'bold');
-            lookLeft();
+            $('#l').css('font-weight', 'bold');
+            // lookLeft();
         }
 
         if (pressedKeys[39]) {
             // right arrow
-            $('#keys li[name=R]').css('font-weight', 'bold');
-            lookRight();
+            $('#r').css('font-weight', 'bold');
+            // lookRight();
         }
 
         if (pressedKeys[87]) {
@@ -132,6 +132,14 @@ $(document).ready(function() {
         e = e || window.event;
         pressedKeys[e.keyCode || e.which] = false;
 
+        if (!pressedKeys[37]) {
+            // left arrow
+            $('#l').css('font-weight', 'normal');
+        }
+        if (!pressedKeys[39]) {
+            // right arrow
+            $('#r').css('font-weight', 'normal');
+        }
         if (!pressedKeys[87]) {
             // w key
             $('#w').css('font-weight', 'normal');
