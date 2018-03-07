@@ -41,13 +41,13 @@ $(document).ready(function() {
         if (pressedKeys[37]) {
             // left arrow
             $('#l').css('font-weight', 'bold');
-            // lookLeft();
+            lookLeft();
         }
 
         if (pressedKeys[39]) {
             // right arrow
             $('#r').css('font-weight', 'bold');
-            // lookRight();
+            lookRight();
         }
 
         if (pressedKeys[87]) {
@@ -266,23 +266,27 @@ $(document).ready(function() {
     }
 
     function lookLeft() {
-        var transform = me.css.transform;
-        transform.rotateY += 2;
-        updateMe();
+        var transform = mannequin.data('css').transform;
+        transform.rotateZ -= 2;
+        updateMannequin();
 
+        /*
         var transform = perspective.css.transform;
         transform.rotateY -= 2;
         updatePerspective();
+        */
     }
 
     function lookRight() {
-        var transform = me.css.transform;
-        transform.rotateY -= 2;
-        updateMe();
+        var transform = mannequin.data('css').transform;
+        transform.rotateZ += 2;
+        updateMannequin();
 
+        /*
         var transform = perspective.css.transform;
         transform.rotateY += 2;
         updatePerspective();
+        */
     }
 
     function moveForward() {
