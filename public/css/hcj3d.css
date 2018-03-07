@@ -19,6 +19,8 @@ hcj3d-perspective {
 	display: block;
     position: absolute;
     transform-style: preserve-3d;
+    width: 1000px;
+    height: 1000px;
 }
 hcj3d-ground {
     display: block;
