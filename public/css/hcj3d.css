@@ -50,7 +50,7 @@ hcj3d-mannequin {
         width: 10px;
         height: 10px;
         transform-style: preserve-3d;
-        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(40px) translateY(10px) translateZ(50px);
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(45px) translateY(45px) translateZ(50px);
     }
         hcj3d-mannequin-head-bottom {
             display: block;
@@ -114,7 +114,7 @@ hcj3d-mannequin {
         width: 30px;
         height: 10px;
         transform-style: preserve-3d;
-        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(30px) translateY(10px) translateZ(15px);
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(35px) translateY(45px) translateZ(15px);
         background-color: tan;
     }
         hcj3d-mannequin-body-bottom {
@@ -172,10 +172,10 @@ hcj3d-mannequin {
         transform-style: preserve-3d;
     }
     hcj3d-mannequin-leg.left {
-        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(30px) translateY(10px) translateZ(1px);
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(35px) translateY(45px) translateZ(1px);
     }
     hcj3d-mannequin-leg.right {
-        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(50px) translateY(10px) translateZ(1px);
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(55px) translateY(45px) translateZ(1px);
     }
         hcj3d-mannequin-leg-bottom {
             display: block;
