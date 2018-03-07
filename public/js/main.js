@@ -228,12 +228,12 @@ $(document).ready(function() {
             'css',
             {
                 'transform': {
-                    'rotateX': 100,
+                    'rotateX': 0,
                     'rotateY': 0,
                     'rotateZ': 0,
                     'translateX': $(window).width() * 0.5 - 950,
-                    'translateY': -450,
-                    'translateZ': $(window).height() * -0.075 - 160,
+                    'translateY': 2140,
+                    'translateZ': 88.525
                 },
                 'transform-origin': {
                     'x': 0,
