@@ -181,9 +181,9 @@ $(document).ready(function() {
 
     function getTransformOrigin() {
         var transformOrigin = {
-            'x': me.css.transform.translateX + 50,
-            'y': me.css.transform.translateY + 50,
-            'z': me.css.transform.translateZ,
+            'x': mannequin.data('css').transform.translateX + 50,
+            'y': mannequin.data('css').transform.translateY + 50,
+            'z': mannequin.data('css').transform.translateZ + 50,
         };
         return transformOrigin;
     }
@@ -202,8 +202,8 @@ $(document).ready(function() {
                     'translateZ': 0,
                 },
                 'transform-origin': {
-                    'x': 0,
-                    'y': 0,
+                    'x': 950,
+                    'y': 950,
                     'z': 0,
                 },
             }
@@ -382,6 +382,9 @@ $(document).ready(function() {
     }
 
     function updateMannequin() {
+        var transformOrigin = getTransformOrigin();
+        mannequin.css('transform-origin', transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px');
+
         var transform = mannequin.data('css').transform;
         mannequin.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
     }
