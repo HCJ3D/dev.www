@@ -13,10 +13,10 @@ $(document).ready(function() {
     var selectedTool = 'hex-ff0000';
 
     var perspective = initPerspective();
-    updatePerspective();
-
     var mannequin = initMannequin();
+
     updateMannequin();
+    updatePerspective();
 
     var relevantCubes;
 
@@ -266,27 +266,19 @@ $(document).ready(function() {
     }
 
     function lookLeft() {
-        var transform = mannequin.data('css').transform;
-        transform.rotateZ -= 2;
+        mannequin.data('css').transform.rotateZ -= 2;
         updateMannequin();
 
-        /*
-        var transform = perspective.css.transform;
-        transform.rotateY -= 2;
+        perspective.data('css').transform.rotateZ += 2;
         updatePerspective();
-        */
     }
 
     function lookRight() {
-        var transform = mannequin.data('css').transform;
-        transform.rotateZ += 2;
+        mannequin.data('css').transform.rotateZ += 2;
         updateMannequin();
 
-        /*
-        var transform = perspective.css.transform;
-        transform.rotateY += 2;
+        perspective.data('css').transform.rotateZ -= 2;
         updatePerspective();
-        */
     }
 
     function moveForward() {
@@ -394,9 +386,6 @@ $(document).ready(function() {
     }
 
     function updatePerspective() {
-        //var transformOrigin = getTransformOrigin();
-        //$('#perspective').css('transform-origin', transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px');
-
         var transform = perspective.data('css').transform;
         perspective.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
     }

@@ -21,6 +21,7 @@ hcj3d-perspective {
     transform-style: preserve-3d;
     width: 1000px;
     height: 1000px;
+    transform-origin: 503px 3090px 0px;
 }
 hcj3d-ground {
     display: block;
