@@ -387,6 +387,14 @@ $(document).ready(function() {
 
     function updatePerspective() {
         var transform = perspective.data('css').transform;
+        var mannequinTransform = mannequin.data('css').transform;
+
+        perspective.css(
+            'transform-origin',
+            (transform.translateX + mannequinTransform.translateX + 50) + 'px '
+            + (transform.translateY + mannequinTransform.translateY + 50) + 'px'
+        );
+
         perspective.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
     }
 
