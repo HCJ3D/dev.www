@@ -14,9 +14,11 @@ $(document).ready(function() {
 
     var mannequin   = initMannequin();
     var perspective = initPerspective();
+    var view        = initView();
 
     updateMannequin();
     updatePerspective();
+    updateView();
 
     var relevantCubes;
 
@@ -234,6 +236,29 @@ $(document).ready(function() {
         return perspective;
     }
 
+    function initView() {
+        var view = $('hcj3d-view');
+        view.data(
+            'css',
+            {
+                'transform': {
+                    'rotateX': 87,
+                    'rotateY': 0,
+                    'rotateZ': 0,
+                    'translateX': 0,
+                    'translateY': 0,
+                    'translateZ': 0
+                },
+                'transform-origin': {
+                    'x': 0,
+                    'y': 0,
+                    'z': 0,
+                },
+            }
+        );
+        return view;
+    }
+
     function lookDown() {
         var transform = perspective.css.transform;
         if (transform.rotateX <= -45) {
@@ -353,6 +378,11 @@ $(document).ready(function() {
         );
 
         perspective.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
+    }
+
+    function updateView() {
+        var transform = view.data('css').transform;
+        view.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
     }
 
     $('#universe').on({
