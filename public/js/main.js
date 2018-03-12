@@ -42,13 +42,13 @@ $(document).ready(function() {
 
         if (pressedKeys[37]) {
             // left arrow
-            $('#l').css('font-weight', 'bold');
+            $('#left').css('font-weight', 'bold');
             lookLeft();
         }
 
         if (pressedKeys[39]) {
             // right arrow
-            $('#r').css('font-weight', 'bold');
+            $('#right').css('font-weight', 'bold');
             lookRight();
         }
 
