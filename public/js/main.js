@@ -32,11 +32,13 @@ $(document).ready(function() {
     function oneCentisecondLoop() {
         if (pressedKeys[38]) {
             // up arrow
+            $('#up').css('font-weight', 'bold');
             // lookDown();
         }
 
         if (pressedKeys[40]) {
             // down arrow
+            $('#down').css('font-weight', 'bold');
             // lookUp();
         }
 
@@ -138,9 +140,17 @@ $(document).ready(function() {
             // left arrow
             $('#left').css('font-weight', 'normal');
         }
+        if (!pressedKeys[38]) {
+            // up arrow
+            $('#up').css('font-weight', 'normal');
+        }
         if (!pressedKeys[39]) {
             // right arrow
             $('#right').css('font-weight', 'normal');
+        }
+        if (!pressedKeys[40]) {
+            // down arrow
+            $('#down').css('font-weight', 'normal');
         }
         if (!pressedKeys[87]) {
             // w key
