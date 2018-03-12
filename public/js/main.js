@@ -136,11 +136,11 @@ $(document).ready(function() {
 
         if (!pressedKeys[37]) {
             // left arrow
-            $('#l').css('font-weight', 'normal');
+            $('#left').css('font-weight', 'normal');
         }
         if (!pressedKeys[39]) {
             // right arrow
-            $('#r').css('font-weight', 'normal');
+            $('#right').css('font-weight', 'normal');
         }
         if (!pressedKeys[87]) {
             // w key
