@@ -12,8 +12,8 @@ $(document).ready(function() {
     var pressedKeys = [];
     var selectedTool = 'hex-ff0000';
 
+    var mannequin   = initMannequin();
     var perspective = initPerspective();
-    var mannequin = initMannequin();
 
     updateMannequin();
     updatePerspective();
@@ -212,17 +212,6 @@ $(document).ready(function() {
     }
 
     function initPerspective() {
-
-        //console.log($(window).height());
-
-        // 445, -150
-        // 633, -170
-        // 751, -180
-        // 953, -200
-        //
-        // y = mx + b
-        // translateZ = -0.1x + -110
-
         var perspective = $('hcj3d-perspective');
         perspective.data(
             'css',
