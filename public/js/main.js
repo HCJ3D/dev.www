@@ -33,13 +33,13 @@ $(document).ready(function() {
         if (pressedKeys[38]) {
             // up arrow
             $('#up').css('font-weight', 'bold');
-            // lookDown();
+            lookDown();
         }
 
         if (pressedKeys[40]) {
             // down arrow
             $('#down').css('font-weight', 'bold');
-            // lookUp();
+            lookUp();
         }
 
         if (pressedKeys[37]) {
@@ -270,23 +270,29 @@ $(document).ready(function() {
     }
 
     function lookDown() {
-        var transform = perspective.css.transform;
+        var transform = view.data('css').transform;
+
+        /*
         if (transform.rotateX <= -45) {
             return;
         }
+        */
 
-        transform.rotateX -= 1;
-        updatePerspective();
+        transform.rotateX -= 0.01;
+        updateView();
     }
 
     function lookUp() {
-        var transform = perspective.css.transform;
+        var transform = view.data('css').transform;
+
+        /*
         if (transform.rotateX >= 0) {
             return;
         }
+        */
 
-        transform.rotateX += 1;
-        updatePerspective();
+        transform.rotateX += 0.01;
+        updateView();
     }
 
     function lookLeft() {
