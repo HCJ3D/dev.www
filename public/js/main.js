@@ -282,98 +282,66 @@ $(document).ready(function() {
     }
 
     function moveForward() {
-        /**
-        var transform = me.css.transform;
+      var transform = mannequin.data('css').transform;
+      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
+      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
+      transform.translateX += 10 * sin;
+      transform.translateY -= 10 * cos;
+      updateMannequin();
 
-        var sin = Math.sin(0 * Math.PI / 180);
-        var cos = Math.cos(0 * Math.PI / 180);
-        var translateX = 10 * sin;
-        var translateZ = 10 * cos;
-
-        transform.translateX -= translateX;
-        transform.translateZ -= translateZ;
-        updateMe();
-        */
-
-        mannequin.data('css').transform.translateY -= 10;
-        updateMannequin();
-
-        perspective.data('css').transform.translateY += 10;
-        updatePerspective();
+      var transform = perspective.data('css').transform;
+      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
+      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
+      transform.translateX += 10 * sin;
+      transform.translateY += 10 * cos;
+      updatePerspective();
     }
 
     function moveBackward() {
-      /**
-      var transform = me.css.transform;
-      var sin = Math.sin(transform.rotateY * Math.PI / 180);
-      var cos = Math.cos(transform.rotateY * Math.PI / 180);
-      var translateX = 10 * sin;
-      var translateZ = 10 * cos;
-
-      transform.translateX += translateX;
-      transform.translateZ += translateZ;
-      updateMe();
-
-      var transform = perspective.css.transform;
-      transform.translateX -= translateX;
-      transform.translateZ -= translateZ;
-      updatePerspective();
-      */
-
-      mannequin.data('css').transform.translateY += 10;
+      var transform = mannequin.data('css').transform;
+      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
+      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
+      transform.translateX -= 10 * sin;
+      transform.translateY += 10 * cos;
       updateMannequin();
 
-      perspective.data('css').transform.translateY -= 10;
+      var transform = perspective.data('css').transform;
+      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
+      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
+      transform.translateX -= 10 * sin;
+      transform.translateY -= 10 * cos;
       updatePerspective();
     }
 
     function moveLeft() {
-      /*
-        var transform = me.css.transform;
-        var sin = Math.sin(transform.rotateY * Math.PI / 180);
-        var cos = Math.cos(transform.rotateY * Math.PI / 180);
-        var translateX = 10 * cos;
-        var translateZ = 10 * sin;
-
-        transform.translateX -= translateX;
-        transform.translateZ += translateZ;
-        updateMe();
-
-        var transform = perspective.css.transform;
-        transform.translateX += translateX;
-        transform.translateZ -= translateZ;
-        updatePerspective();
-      */
-
-      mannequin.data('css').transform.translateX -= 10;
+      var transform = mannequin.data('css').transform;
+      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
+      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
+      transform.translateX -= 10 * cos;
+      transform.translateY -= 10 * sin;
       updateMannequin();
 
-      perspective.data('css').transform.translateX += 10;
+      var transform = perspective.data('css').transform;
+      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
+      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
+      transform.translateX += 10 * cos;
+      transform.translateY -= 10 * sin;
       updatePerspective();
     }
 
     function moveRight() {
-      /*
-      var transform = me.css.transform;
-      var sin = Math.sin(transform.rotateY * Math.PI / 180);
-      var cos = Math.cos(transform.rotateY * Math.PI / 180);
-      var translateX = 10 * cos;
-      var translateZ = 10 * sin;
-
-      transform.translateX += translateX;
-      transform.translateZ -= translateZ;
-      updateMe();
-
-      var transform = perspective.css.transform;
-      transform.translateX -= translateX;
-      transform.translateZ += translateZ;
-      updatePerspective();
-      */
-
-      mannequin.data('css').transform.translateX += 10;
+      var transform = mannequin.data('css').transform;
+      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
+      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
+      transform.translateX += 10 * cos;
+      transform.translateY += 10 * sin;
       updateMannequin();
 
-      perspective.data('css').transform.translateX -= 10;
+      var transform = perspective.data('css').transform;
+      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
+      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
+      transform.translateX -= 10 * cos;
+      transform.translateY += 10 * sin;
       updatePerspective();
     }
 
