@@ -201,26 +201,26 @@ $(document).ready(function() {
     }
 
     function initMannequin() {
-        var mannequin = $('hcj3d-mannequin');
-        mannequin.data(
-            'css',
-            {
-                'transform': {
-                    'rotateX': 0,
-                    'rotateY': 0,
-                    'rotateZ': 0,
-                    'translateX': 900,
-                    'translateY': 900,
-                    'translateZ': 0,
-                },
-                'transform-origin': {
-                    'x': 950,
-                    'y': 950,
-                    'z': 0,
-                },
-            }
-        );
-        return mannequin;
+      var mannequin = $('hcj3d-mannequin');
+      mannequin.data(
+        'css',
+        {
+          'transform': {
+            'rotateX': 0,
+            'rotateY': 0,
+            'rotateZ': 320,
+            'translateX': 800,
+            'translateY': 700,
+            'translateZ': 0,
+          },
+          'transform-origin': {
+            'x': 950,
+            'y': 950,
+            'z': 0,
+          },
+        }
+      );
+      return mannequin;
     }
 
     function initPerspective(mannequin) {
@@ -237,7 +237,7 @@ $(document).ready(function() {
               'translateX': -transform.translateX + ($(window).width() * 0.5 - 50),
 
               'translateY': -transform.translateY + 3040,
-              'translateZ': 88.525
+              'translateZ': 88.525 // never changes
             },
             'transform-origin': {
               'x': 0,
