@@ -227,25 +227,22 @@ $(document).ready(function() {
         var perspective = $('hcj3d-perspective');
         var transform = mannequin.data('css').transform;
 
-        perspective.data(
-          'css',
-          {
-            'transform': {
-              'rotateX': 0, // never changes
-              'rotateY': 0, // never changes
-              'rotateZ': -transform.rotateZ,
-              'translateX': -transform.translateX + ($(window).width() * 0.5 - 50),
+        perspective.data('css', {});
+        perspective.data('css')['transform'] = {
+          'rotateX': 0, // never changes
+          'rotateY': 0, // never changes
+          'rotateZ': -transform.rotateZ,
+          'translateX': -transform.translateX + ($(window).width() * 0.5 - 50),
 
-              'translateY': -transform.translateY + 3040,
-              'translateZ': 88.525 // never changes
-            },
-            'transform-origin': {
-              'x': 0,
-              'y': 0,
-              'z': 0,
-            },
-          }
-        );
+          'translateY': -transform.translateY + 3040,
+          'translateZ': 88.525 // never changes
+        };
+        perspective.data('css')['transform-origin'] = {
+          'x': 0,
+          'y': 0,
+          'z': 0,
+        };
+
         return perspective;
     }
 
