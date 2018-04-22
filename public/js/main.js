@@ -208,9 +208,9 @@ $(document).ready(function() {
           'transform': {
             'rotateX': 0,
             'rotateY': 0,
-            'rotateZ': 320,
-            'translateX': 800,
-            'translateY': 700,
+            'rotateZ': Math.floor(Math.random() * 361),
+            'translateX': Math.floor(Math.random() * 951),
+            'translateY': Math.floor(Math.random() * 951),
             'translateZ': 0,
           },
           'transform-origin': {
