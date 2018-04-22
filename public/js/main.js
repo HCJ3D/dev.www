@@ -13,7 +13,7 @@ $(document).ready(function() {
     var selectedTool = 'hex-ff0000';
 
     var mannequin   = initMannequin();
-    var perspective = initPerspective();
+    var perspective = initPerspective(mannequin);
     var view        = initView();
 
     updateMannequin();
@@ -223,25 +223,28 @@ $(document).ready(function() {
         return mannequin;
     }
 
-    function initPerspective() {
+    function initPerspective(mannequin) {
         var perspective = $('hcj3d-perspective');
+        var transform = mannequin.data('css').transform;
+
         perspective.data(
-            'css',
-            {
-                'transform': {
-                    'rotateX': 0,
-                    'rotateY': 0,
-                    'rotateZ': 0,
-                    'translateX': $(window).width() * 0.5 - 950,
-                    'translateY': 2140,
-                    'translateZ': 88.525
-                },
-                'transform-origin': {
-                    'x': 0,
-                    'y': 0,
-                    'z': 0,
-                },
-            }
+          'css',
+          {
+            'transform': {
+              'rotateX': 0, // never changes
+              'rotateY': 0, // never changes
+              'rotateZ': -transform.rotateZ,
+              'translateX': -transform.translateX + ($(window).width() * 0.5 - 50),
+
+              'translateY': -transform.translateY + 3040,
+              'translateZ': 88.525
+            },
+            'transform-origin': {
+              'x': 0,
+              'y': 0,
+              'z': 0,
+            },
+          }
         );
         return perspective;
     }
