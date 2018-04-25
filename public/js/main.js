@@ -272,7 +272,9 @@ $(document).ready(function() {
     }
 
     function moveRight() {
-      var transform = mannequin.data('css').transform;
+      var transform       = mannequin.data('css')['transform'];
+      var transformOrigin = mannequin.data('css')['transform-origin'];
+
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
       transform.translateX += 10 * cos;
@@ -293,10 +295,16 @@ $(document).ready(function() {
             'y': mannequin.data('css').transform.translateY + 50,
             'z': mannequin.data('css').transform.translateZ + 50,
         };
-        mannequin.css('transform-origin', transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px');
+        mannequin.css(
+          'transform-origin',
+          transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px'
+        );
 
         var transform = mannequin.data('css').transform;
-        mannequin.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
+        mannequin.css(
+          'transform',
+          'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)'
+        );
     }
 
     function updatePerspective() {
