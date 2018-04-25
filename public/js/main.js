@@ -22,13 +22,6 @@ $(document).ready(function() {
 
     var relevantCubes;
 
-    /**
-    ajaxService.getMe().done(function (data) {
-        me = data;
-        updateMe();
-    });
-    */
-
     function oneCentisecondLoop() {
         if (pressedKeys[38]) {
             // up arrow
@@ -128,24 +121,22 @@ $(document).ready(function() {
 
     function initMannequin() {
       var mannequin = $('hcj3d-mannequin');
-      mannequin.data(
-        'css',
-        {
-          'transform': {
-            'rotateX': 0,
-            'rotateY': 0,
-            'rotateZ': Math.floor(Math.random() * 361),
-            'translateX': Math.floor(Math.random() * 951),
-            'translateY': Math.floor(Math.random() * 951),
-            'translateZ': 0,
-          },
-          'transform-origin': {
-            'x': 950,
-            'y': 950,
-            'z': 0,
-          },
-        }
-      );
+      mannequin.data('css', {});
+      mannequin.data('css')['transform'] = {
+        'rotateX': 0,
+        'rotateY': 0,
+        'rotateZ': Math.floor(Math.random() * 361),
+        'translateX': Math.floor(Math.random() * 951),
+        'translateY': Math.floor(Math.random() * 951),
+        'translateZ': 0,
+      };
+      mannequin.data('css')['transform-origin'] = {
+        'transform-origin': {
+          'x': 950,
+          'y': 950,
+          'z': 0,
+        },
+      };
       return mannequin;
     }
 
@@ -277,8 +268,10 @@ $(document).ready(function() {
 
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform.translateX += 10 * cos;
-      transform.translateY += 10 * sin;
+      transform['translateX'] += 10 * cos;
+      transform['translateY'] += 10 * sin;
+      transformOrigin['x'] = transform['translateX'] + 50;
+      transformOrigin['y'] = transform['translateY'] + 50;
       updateMannequin();
 
       var transform = perspective.data('css').transform;
