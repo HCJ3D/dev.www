@@ -145,8 +145,8 @@ $(document).ready(function() {
     function initPerspective(mannequin) {
         var perspective = $('hcj3d-perspective');
         var mannequinTransform = mannequin.data('css').transform;
-
         perspective.data('css', {});
+
         perspective.data('css')['transform'] = {
           'rotateX': 0, // never changes
           'rotateY': 0, // never changes
@@ -156,9 +156,11 @@ $(document).ready(function() {
           'translateY': -mannequinTransform.translateY + 3040,
           'translateZ': 88.525 // never changes
         };
+        var perspectiveTransform = perspective.data('css')['transform'];
+
         perspective.data('css')['transform-origin'] = {
-          'x': 0,
-          'y': 0,
+          'x': perspectiveTransform.translateX + mannequinTransform.translateX + 50,
+          'y': perspectiveTransform.translateY + mannequinTransform.translateY + 50,
           'z': 0,
         };
 
