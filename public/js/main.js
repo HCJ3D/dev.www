@@ -134,11 +134,9 @@ $(document).ready(function() {
 
       var transform = mannequin.data('css')['transform'];
       mannequin.data('css')['transform-origin'] = {
-        'transform-origin': {
-          'x': transform['translateX'] + 50,
-          'y': transform['translateY'] + 50,
-          'z': 50,
-        },
+        'x': transform['translateX'] + 50,
+        'y': transform['translateY'] + 50,
+        'z': 50,
       };
 
       return mannequin;
@@ -292,6 +290,8 @@ $(document).ready(function() {
             'y': mannequin.data('css').transform.translateY + 50,
             'z': mannequin.data('css').transform.translateZ + 50,
         };
+        // var transformOrigin = mannequin.data('css')['transform-origin'];
+
         mannequin.css(
           'transform-origin',
           transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px'
