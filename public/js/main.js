@@ -197,26 +197,12 @@ $(document).ready(function() {
 
     function lookDown() {
         var transform = view.data('css').transform;
-
-        /*
-        if (transform.rotateX <= -45) {
-            return;
-        }
-        */
-
         transform.rotateX -= 0.01;
         updateView();
     }
 
     function lookUp() {
         var transform = view.data('css').transform;
-
-        /*
-        if (transform.rotateX >= 0) {
-            return;
-        }
-        */
-
         transform.rotateX += 0.01;
         updateView();
     }
