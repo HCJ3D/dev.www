@@ -311,16 +311,19 @@ $(document).ready(function() {
     }
 
     function updatePerspective() {
-        var transform = perspective.data('css').transform;
-        var mannequinTransform = mannequin.data('css').transform;
+      var perspectiveTransform = perspective.data('css').transform;
+      var mannequinTransform = mannequin.data('css').transform;
 
-        perspective.css(
-            'transform-origin',
-            (transform.translateX + mannequinTransform.translateX + 50) + 'px '
-            + (transform.translateY + mannequinTransform.translateY + 50) + 'px'
-        );
+      perspective.css(
+        'transform-origin',
+        (perspectiveTransform.translateX + mannequinTransform.translateX + 50) + 'px '
+        + (perspectiveTransform.translateY + mannequinTransform.translateY + 50) + 'px'
+      );
 
-        perspective.css('transform', 'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)');
+      perspective.css(
+        'transform',
+        'rotateX(' + perspectiveTransform.rotateX + 'deg) rotateY(' + perspectiveTransform.rotateY + 'deg) rotateZ(' + perspectiveTransform.rotateZ + 'deg) translateX(' + perspectiveTransform.translateX + 'px) translateY(' + perspectiveTransform.translateY + 'px) translateZ(' + perspectiveTransform.translateZ + 'px)'
+      );
     }
 
     function updateView() {
