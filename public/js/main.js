@@ -217,7 +217,9 @@ $(document).ready(function() {
     }
 
     function moveForward() {
-      var transform = mannequin.data('css').transform;
+      var transform       = mannequin.data('css')['transform'];
+      var transformOrigin = mannequin.data('css')['transform-origin'];
+
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
       transform.translateX += 10 * sin;
@@ -233,7 +235,9 @@ $(document).ready(function() {
     }
 
     function moveBackward() {
-      var transform = mannequin.data('css').transform;
+      var transform       = mannequin.data('css')['transform'];
+      var transformOrigin = mannequin.data('css')['transform-origin'];
+
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
       transform.translateX -= 10 * sin;
@@ -249,7 +253,9 @@ $(document).ready(function() {
     }
 
     function moveLeft() {
-      var transform = mannequin.data('css').transform;
+      var transform       = mannequin.data('css')['transform'];
+      var transformOrigin = mannequin.data('css')['transform-origin'];
+
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
       transform.translateX -= 10 * cos;
