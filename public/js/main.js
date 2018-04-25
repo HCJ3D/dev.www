@@ -191,15 +191,6 @@ $(document).ready(function() {
         });
     }
 
-    function getTransformOrigin() {
-        var transformOrigin = {
-            'x': mannequin.data('css').transform.translateX + 50,
-            'y': mannequin.data('css').transform.translateY + 50,
-            'z': mannequin.data('css').transform.translateZ + 50,
-        };
-        return transformOrigin;
-    }
-
     function initMannequin() {
       var mannequin = $('hcj3d-mannequin');
       mannequin.data(
@@ -376,7 +367,11 @@ $(document).ready(function() {
     }
 
     function updateMannequin() {
-        var transformOrigin = getTransformOrigin();
+        var transformOrigin = {
+            'x': mannequin.data('css').transform.translateX + 50,
+            'y': mannequin.data('css').transform.translateY + 50,
+            'z': mannequin.data('css').transform.translateZ + 50,
+        };
         mannequin.css('transform-origin', transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px');
 
         var transform = mannequin.data('css').transform;
