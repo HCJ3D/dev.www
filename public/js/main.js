@@ -297,17 +297,17 @@ $(document).ready(function() {
     }
 
     function updateMannequin() {
-        var transformOrigin = mannequin.data('css')['transform-origin'];
-        mannequin.css(
-          'transform-origin',
-          transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px'
-        );
+      var transform = mannequin.data('css').transform;
+      mannequin.css(
+        'transform',
+        'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)'
+      );
 
-        var transform = mannequin.data('css').transform;
-        mannequin.css(
-          'transform',
-          'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)'
-        );
+      var transformOrigin = mannequin.data('css')['transform-origin'];
+      mannequin.css(
+        'transform-origin',
+        transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px'
+      );
     }
 
     function updatePerspective() {
@@ -315,14 +315,14 @@ $(document).ready(function() {
       var mannequinTransform = mannequin.data('css').transform;
 
       perspective.css(
-        'transform-origin',
-        (perspectiveTransform.translateX + mannequinTransform.translateX + 50) + 'px '
-        + (perspectiveTransform.translateY + mannequinTransform.translateY + 50) + 'px'
+        'transform',
+        'rotateX(' + perspectiveTransform.rotateX + 'deg) rotateY(' + perspectiveTransform.rotateY + 'deg) rotateZ(' + perspectiveTransform.rotateZ + 'deg) translateX(' + perspectiveTransform.translateX + 'px) translateY(' + perspectiveTransform.translateY + 'px) translateZ(' + perspectiveTransform.translateZ + 'px)'
       );
 
       perspective.css(
-        'transform',
-        'rotateX(' + perspectiveTransform.rotateX + 'deg) rotateY(' + perspectiveTransform.rotateY + 'deg) rotateZ(' + perspectiveTransform.rotateZ + 'deg) translateX(' + perspectiveTransform.translateX + 'px) translateY(' + perspectiveTransform.translateY + 'px) translateZ(' + perspectiveTransform.translateZ + 'px)'
+        'transform-origin',
+        (perspectiveTransform.translateX + mannequinTransform.translateX + 50) + 'px '
+        + (perspectiveTransform.translateY + mannequinTransform.translateY + 50) + 'px'
       );
     }
 
