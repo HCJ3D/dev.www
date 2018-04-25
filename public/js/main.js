@@ -126,15 +126,6 @@ $(document).ready(function() {
         }
     }
 
-    function getEveryoneElse() {
-        ajaxService.getEveryoneElse().done(function(everyoneElse) {
-            for (var key in everyoneElse) {
-                var user = everyoneElse[key];
-                $('#user-' + user.user_id).css('transform', 'translateX(' + user.translate_x + 'px) translateY(' + user.translate_y + 'px) translateZ(' + user.translate_z + 'px) rotateX(' + user.rotate_x + 'deg) rotateY(' + user.rotate_y + 'deg) rotateZ(' + user.rotate_z + 'deg)');
-            }
-        });
-    }
-
     function initMannequin() {
       var mannequin = $('hcj3d-mannequin');
       mannequin.data(
