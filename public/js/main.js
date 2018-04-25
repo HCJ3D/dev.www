@@ -77,52 +77,8 @@ $(document).ready(function() {
             $('#d').css('font-weight', 'bold');
             moveRight();
         }
-
-        /*
-        if (cubesService.shouldRelevantCubesBeUpdated(me, positionWhenRelevantCubesWereDrawn)) {
-            positionWhenRelevantCubesWereDrawn = {
-                translateX: me.css.transform.translateX,
-                translateY: me.css.transform.translateY,
-                translateZ: me.css.transform.translateZ,
-            };
-
-            ajaxService.getRelevantCubes().done(function (data) {
-                relevantCubes = data;
-            });
-        }
-
-        if (cubesService.shouldVisibleCubesBeUpdated(
-            me,
-            relevantCubes,
-            positionWhenVisibleCubesWereDrawn
-        )) {
-            positionWhenVisibleCubesWereDrawn = {
-                translateX: me.css.transform.translateX,
-                translateY: me.css.transform.translateY,
-                translateZ: me.css.transform.translateZ,
-            };
-            var previouslyVisibleCubes = visibleCubes;
-            var newlyVisibleCubes     = cubesService.getVisibleCubes(
-                me,
-                relevantCubes
-            );
-            visibleCubes = newlyVisibleCubes;
-
-            cubesService.updateVisibleCubes(
-                previouslyVisibleCubes,
-                newlyVisibleCubes
-            );
-        }
-        */
     }
     setInterval(oneCentisecondLoop, 10);
-
-
-    //getEveryoneElse();
-    function oneSecondLoop() {
-        //getEveryoneElse();
-    }
-    setInterval(oneSecondLoop, 1000);
 
     document.onkeydown = keyIsPressed;
     document.onkeyup   = keyIsReleased;
@@ -168,18 +124,6 @@ $(document).ready(function() {
             // d key
             $('#d').css('font-weight', 'normal');
         }
-
-        /**
-        var transform = me.css.transform;
-        ajaxService.setMe(
-            transform.translateX,
-            transform.translateY,
-            transform.translateZ,
-            transform.rotateX,
-            transform.rotateY,
-            transform.rotateZ
-        );
-        */
     }
 
     function getEveryoneElse() {
