@@ -122,6 +122,7 @@ $(document).ready(function() {
     function initMannequin() {
       var mannequin = $('hcj3d-mannequin');
       mannequin.data('css', {});
+
       mannequin.data('css')['transform'] = {
         'rotateX': 0,
         'rotateY': 0,
@@ -130,13 +131,16 @@ $(document).ready(function() {
         'translateY': Math.floor(Math.random() * 951),
         'translateZ': 0,
       };
+
+      var transform = mannequin.data('css')['transform'];
       mannequin.data('css')['transform-origin'] = {
         'transform-origin': {
-          'x': 950,
-          'y': 950,
-          'z': 0,
+          'x': transform['translateX'] + 50,
+          'y': transform['translateY'] + 50,
+          'z': 50,
         },
       };
+
       return mannequin;
     }
 
