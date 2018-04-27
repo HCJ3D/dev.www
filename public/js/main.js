@@ -13,7 +13,10 @@ $(document).ready(function() {
     var selectedTool = 'hex-ff0000';
 
     var mannequin   = initMannequin();
-    var perspective = initPerspective(mannequin);
+
+    var perspective = $('hcj3d-perspective');
+    initPerspective(perspective, mannequin);
+
     var view        = initView();
 
     updateMannequin();
@@ -142,8 +145,7 @@ $(document).ready(function() {
       return mannequin;
     }
 
-    function initPerspective(mannequin) {
-        var perspective = $('hcj3d-perspective');
+    function initPerspective(perspective, mannequin) {
         var mannequinTransform = mannequin.data('css').transform;
         perspective.data('css', {});
 
@@ -163,8 +165,6 @@ $(document).ready(function() {
           'y': perspectiveTransform.translateY + mannequinTransform.translateY + 50,
           'z': 0,
         };
-
-        return perspective;
     }
 
     function initView() {
