@@ -551,5 +551,10 @@ $(document).ready(function() {
         $(this).css('border', '2px solid #f00');
         selectedTool = $(this).attr('data-type');
     });
+
+    $(window).resize(function() {
+      setPerspectiveDataAroundMannequin(perspective, mannequin);
+      updatePerspectiveCss();
+    });
 });
 
