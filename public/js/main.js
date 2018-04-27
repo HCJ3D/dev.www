@@ -200,6 +200,25 @@ $(document).ready(function() {
       var transform = mannequin.data('css')['transform'];
       //transform.translateZ = 20;
       updateMannequin();
+
+      if ($("hcj3d-mannequin").is(':animated')) {
+        return;
+      }
+
+			$("hcj3d-mannequin").animate(
+        {
+          opacity: 100,
+        },
+        {
+          step: function (now, fx) {
+            console.log(now);
+          },
+          duration: 10000,
+          complete: function () {
+            console.log('done');
+          },
+        },
+      );
     }
 
     function lookDown() {
