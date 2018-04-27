@@ -313,8 +313,8 @@ $(document).ready(function() {
     }
 
     function updatePerspective() {
-      var perspectiveTransform = perspective.data('css').transform;
-      var mannequinTransform = mannequin.data('css').transform;
+      var perspectiveTransform       = perspective.data('css')['transform'];
+      var perspectiveTransformOrigin = perspective.data('css')['transform-origin'];
 
       perspective.css(
         'transform',
@@ -323,8 +323,7 @@ $(document).ready(function() {
 
       perspective.css(
         'transform-origin',
-        (perspectiveTransform.translateX + mannequinTransform.translateX + 50) + 'px '
-        + (perspectiveTransform.translateY + mannequinTransform.translateY + 50) + 'px'
+        perspectiveTransformOrigin.x + 'px ' + perspectiveTransformOrigin.y + 'px'
       );
     }
 
