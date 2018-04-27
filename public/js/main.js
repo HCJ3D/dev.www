@@ -156,8 +156,8 @@ $(document).ready(function() {
           'translateY': -mannequinTransform.translateY + 3040,
           'translateZ': 88.525 // never changes
         };
-        var perspectiveTransform = perspective.data('css')['transform'];
 
+        var perspectiveTransform = perspective.data('css')['transform'];
         perspective.data('css')['transform-origin'] = {
           'x': perspectiveTransform.translateX + mannequinTransform.translateX + 50,
           'y': perspectiveTransform.translateY + mannequinTransform.translateY + 50,
