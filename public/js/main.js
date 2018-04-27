@@ -27,53 +27,53 @@ $(document).ready(function() {
     var relevantCubes;
 
     function oneCentisecondLoop() {
-        if (pressedKeys[38]) {
-            // up arrow
-            $('#up').css('font-weight', 'bold');
-            lookDown();
-        }
+      if (pressedKeys[38]) {
+        // up arrow
+        $('#up').css('font-weight', 'bold');
+        lookDown();
+      }
 
-        if (pressedKeys[40]) {
-            // down arrow
-            $('#down').css('font-weight', 'bold');
-            lookUp();
-        }
+      if (pressedKeys[40]) {
+        // down arrow
+        $('#down').css('font-weight', 'bold');
+        lookUp();
+      }
 
-        if (pressedKeys[37]) {
-            // left arrow
-            $('#left').css('font-weight', 'bold');
-            lookLeft();
-        }
+      if (pressedKeys[37]) {
+        // left arrow
+        $('#left').css('font-weight', 'bold');
+        lookLeft();
+      }
 
-        if (pressedKeys[39]) {
-            // right arrow
-            $('#right').css('font-weight', 'bold');
-            lookRight();
-        }
+      if (pressedKeys[39]) {
+        // right arrow
+        $('#right').css('font-weight', 'bold');
+        lookRight();
+      }
 
-        if (pressedKeys[87]) {
-            // w key
-            $('#w').css('font-weight', 'bold');
-            moveForward();
-        }
+      if (pressedKeys[87]) {
+        // w key
+        $('#w').css('font-weight', 'bold');
+        moveForward();
+      }
 
-        if (pressedKeys[83]) {
-            // s key
-            $('#s').css('font-weight', 'bold');
-            moveBackward();
-        }
+      if (pressedKeys[83]) {
+        // s key
+        $('#s').css('font-weight', 'bold');
+        moveBackward();
+      }
 
-        if (pressedKeys[65]) {
-            // a key
-            $('#a').css('font-weight', 'bold');
-            moveLeft();
-        }
+      if (pressedKeys[65]) {
+        // a key
+        $('#a').css('font-weight', 'bold');
+        moveLeft();
+      }
 
-        if (pressedKeys[68]) {
-            // d key
-            $('#d').css('font-weight', 'bold');
-            moveRight();
-        }
+      if (pressedKeys[68]) {
+        // d key
+        $('#d').css('font-weight', 'bold');
+        moveRight();
+      }
     }
     setInterval(oneCentisecondLoop, 10);
 
@@ -81,46 +81,46 @@ $(document).ready(function() {
     document.onkeyup   = keyIsReleased;
 
     function keyIsPressed(e) {
-        e = e || window.event;
-        pressedKeys[e.keyCode || e.which] = true;
+      e = e || window.event;
+      pressedKeys[e.keyCode || e.which] = true;
     }
 
     function keyIsReleased(e) {
-        e = e || window.event;
-        pressedKeys[e.keyCode || e.which] = false;
+      e = e || window.event;
+      pressedKeys[e.keyCode || e.which] = false;
 
-        if (!pressedKeys[37]) {
-            // left arrow
-            $('#left').css('font-weight', 'normal');
-        }
-        if (!pressedKeys[38]) {
-            // up arrow
-            $('#up').css('font-weight', 'normal');
-        }
-        if (!pressedKeys[39]) {
-            // right arrow
-            $('#right').css('font-weight', 'normal');
-        }
-        if (!pressedKeys[40]) {
-            // down arrow
-            $('#down').css('font-weight', 'normal');
-        }
-        if (!pressedKeys[87]) {
-            // w key
-            $('#w').css('font-weight', 'normal');
-        }
-        if (!pressedKeys[83]) {
-            // s key
-            $('#s').css('font-weight', 'normal');
-        }
-        if (!pressedKeys[65]) {
-            // a key
-            $('#a').css('font-weight', 'normal');
-        }
-        if (!pressedKeys[68]) {
-            // d key
-            $('#d').css('font-weight', 'normal');
-        }
+      if (!pressedKeys[37]) {
+        // left arrow
+        $('#left').css('font-weight', 'normal');
+      }
+      if (!pressedKeys[38]) {
+        // up arrow
+        $('#up').css('font-weight', 'normal');
+      }
+      if (!pressedKeys[39]) {
+        // right arrow
+        $('#right').css('font-weight', 'normal');
+      }
+      if (!pressedKeys[40]) {
+        // down arrow
+        $('#down').css('font-weight', 'normal');
+      }
+      if (!pressedKeys[87]) {
+        // w key
+        $('#w').css('font-weight', 'normal');
+      }
+      if (!pressedKeys[83]) {
+        // s key
+        $('#s').css('font-weight', 'normal');
+      }
+      if (!pressedKeys[65]) {
+        // a key
+        $('#a').css('font-weight', 'normal');
+      }
+      if (!pressedKeys[68]) {
+        // d key
+        $('#d').css('font-weight', 'normal');
+      }
     }
 
     function initMannequin() {
@@ -147,47 +147,47 @@ $(document).ready(function() {
     }
 
     function setPerspectiveDataAroundMannequin(perspective, mannequin) {
-        var mannequinTransform = mannequin.data('css').transform;
+      var mannequinTransform = mannequin.data('css').transform;
 
-        perspective.data('css')['transform'] = {
-          'rotateX': 0, // never changes
-          'rotateY': 0, // never changes
-          'rotateZ': -mannequinTransform.rotateZ,
-          'translateX': -mannequinTransform.translateX + ($(window).width() * 0.5 - 50),
+      perspective.data('css')['transform'] = {
+        'rotateX': 0, // never changes
+        'rotateY': 0, // never changes
+        'rotateZ': -mannequinTransform.rotateZ,
+        'translateX': -mannequinTransform.translateX + ($(window).width() * 0.5 - 50),
 
-          'translateY': -mannequinTransform.translateY + 3040,
-          'translateZ': 88.525 // never changes
-        };
+        'translateY': -mannequinTransform.translateY + 3040,
+        'translateZ': 88.525 // never changes
+      };
 
-        var perspectiveTransform = perspective.data('css')['transform'];
-        perspective.data('css')['transform-origin'] = {
-          'x': perspectiveTransform.translateX + mannequinTransform.translateX + 50,
-          'y': perspectiveTransform.translateY + mannequinTransform.translateY + 50,
-          'z': 0,
-        };
+      var perspectiveTransform = perspective.data('css')['transform'];
+      perspective.data('css')['transform-origin'] = {
+        'x': perspectiveTransform.translateX + mannequinTransform.translateX + 50,
+        'y': perspectiveTransform.translateY + mannequinTransform.translateY + 50,
+        'z': 0,
+      };
     }
 
     function initView() {
-        var view = $('hcj3d-view');
-        view.data(
-            'css',
-            {
-                'transform': {
-                    'rotateX': 87,
-                    'rotateY': 0,
-                    'rotateZ': 0,
-                    'translateX': 0,
-                    'translateY': 0,
-                    'translateZ': 0
-                },
-                'transform-origin': {
-                    'x': 0,
-                    'y': 0,
-                    'z': 0,
-                },
-            }
-        );
-        return view;
+      var view = $('hcj3d-view');
+      view.data(
+        'css',
+        {
+          'transform': {
+            'rotateX': 87,
+            'rotateY': 0,
+            'rotateZ': 0,
+            'translateX': 0,
+            'translateY': 0,
+            'translateZ': 0,
+          },
+          'transform-origin': {
+            'x': 0,
+            'y': 0,
+            'z': 0,
+          },
+        }
+      );
+      return view;
     }
 
     function lookDown() {
