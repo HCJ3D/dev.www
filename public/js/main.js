@@ -21,7 +21,7 @@ $(document).ready(function() {
     var view        = initView();
 
     updateMannequin();
-    updatePerspective();
+    updatePerspectiveCss();
     updateView();
 
     var relevantCubes;
@@ -207,7 +207,7 @@ $(document).ready(function() {
         updateMannequin();
 
         setPerspectiveDataAroundMannequin(perspective, mannequin);
-        updatePerspective();
+        updatePerspectiveCss();
     }
 
     function lookRight() {
@@ -215,7 +215,7 @@ $(document).ready(function() {
         updateMannequin();
 
         setPerspectiveDataAroundMannequin(perspective, mannequin);
-        updatePerspective();
+        updatePerspectiveCss();
     }
 
     function moveForward() {
@@ -231,7 +231,7 @@ $(document).ready(function() {
       updateMannequin();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
-      updatePerspective();
+      updatePerspectiveCss();
     }
 
     function moveBackward() {
@@ -247,7 +247,7 @@ $(document).ready(function() {
       updateMannequin();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
-      updatePerspective();
+      updatePerspectiveCss();
     }
 
     function moveLeft() {
@@ -263,7 +263,7 @@ $(document).ready(function() {
       updateMannequin();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
-      updatePerspective();
+      updatePerspectiveCss();
     }
 
     function moveRight() {
@@ -279,7 +279,7 @@ $(document).ready(function() {
       updateMannequin();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
-      updatePerspective();
+      updatePerspectiveCss();
     }
 
     function updateMannequin() {
@@ -296,7 +296,7 @@ $(document).ready(function() {
       );
     }
 
-    function updatePerspective() {
+    function updatePerspectiveCss() {
       var perspectiveTransform       = perspective.data('css')['transform'];
       var perspectiveTransformOrigin = perspective.data('css')['transform-origin'];
 
