@@ -197,25 +197,27 @@ $(document).ready(function() {
     }
 
     function jump () {
+      var duration = 1000;
+      var jumpHeight = 10;
       var transform = mannequin.data('css')['transform'];
-      //transform.translateZ = 20;
-      updateMannequin();
 
       if ($("hcj3d-mannequin").is(':animated')) {
         return;
       }
 
-			$("hcj3d-mannequin").animate(
+			$('hcj3d-mannequin').animate(
         {
-          opacity: 100,
+          textIndent: 100,
         },
         {
           step: function (now, fx) {
-            console.log(now);
+            transform.translateZ = 50 - Math.abs(50 - now);
+            updateMannequin();
           },
-          duration: 10000,
+          duration: duration,
+          easing: 'linear',
           complete: function () {
-            console.log('done');
+            $('hcj3d-mannequin').css('text-indent', 0);
           },
         },
       );
