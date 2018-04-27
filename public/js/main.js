@@ -27,6 +27,12 @@ $(document).ready(function() {
     var relevantCubes;
 
     function oneCentisecondLoop() {
+      if (pressedKeys[32]) {
+        // space bar
+        $('#space-bar').css('font-weight', 'bold');
+        jump();
+      }
+
       if (pressedKeys[38]) {
         // up arrow
         $('#up').css('font-weight', 'bold');
@@ -188,6 +194,12 @@ $(document).ready(function() {
         }
       );
       return view;
+    }
+
+    function jump () {
+      var transform = mannequin.data('css')['transform'];
+      //transform.translateZ = 20;
+      updateMannequin();
     }
 
     function lookDown() {
