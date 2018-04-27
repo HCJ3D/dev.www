@@ -131,8 +131,8 @@ $(document).ready(function() {
         'rotateX': 0,
         'rotateY': 0,
         'rotateZ': Math.floor(Math.random() * 361),
-        'translateX': Math.floor(Math.random() * 951),
-        'translateY': Math.floor(Math.random() * 951),
+        'translateX': Math.floor(Math.random() * 1951),
+        'translateY': Math.floor(Math.random() * 1951),
         'translateZ': 0,
       };
 
