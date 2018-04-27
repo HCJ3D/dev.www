@@ -15,7 +15,8 @@ $(document).ready(function() {
     var mannequin   = initMannequin();
 
     var perspective = $('hcj3d-perspective');
-    initPerspective(perspective, mannequin);
+    perspective.data('css', {});
+    setPerspectiveDataAroundMannequin(perspective, mannequin);
 
     var view        = initView();
 
@@ -145,9 +146,8 @@ $(document).ready(function() {
       return mannequin;
     }
 
-    function initPerspective(perspective, mannequin) {
+    function setPerspectiveDataAroundMannequin(perspective, mannequin) {
         var mannequinTransform = mannequin.data('css').transform;
-        perspective.data('css', {});
 
         perspective.data('css')['transform'] = {
           'rotateX': 0, // never changes
@@ -206,7 +206,7 @@ $(document).ready(function() {
         mannequin.data('css').transform.rotateZ -= 2;
         updateMannequin();
 
-        perspective.data('css').transform.rotateZ += 2;
+        setPerspectiveDataAroundMannequin(perspective, mannequin);
         updatePerspective();
     }
 
@@ -214,7 +214,7 @@ $(document).ready(function() {
         mannequin.data('css').transform.rotateZ += 2;
         updateMannequin();
 
-        perspective.data('css').transform.rotateZ -= 2;
+        setPerspectiveDataAroundMannequin(perspective, mannequin);
         updatePerspective();
     }
 
@@ -230,11 +230,7 @@ $(document).ready(function() {
       transformOrigin['y'] = transform['translateY'] + 50;
       updateMannequin();
 
-      var transform = perspective.data('css').transform;
-      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
-      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform.translateX += 10 * sin;
-      transform.translateY += 10 * cos;
+      setPerspectiveDataAroundMannequin(perspective, mannequin);
       updatePerspective();
     }
 
@@ -250,11 +246,7 @@ $(document).ready(function() {
       transformOrigin['y'] = transform['translateY'] + 50;
       updateMannequin();
 
-      var transform = perspective.data('css').transform;
-      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
-      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform.translateX -= 10 * sin;
-      transform.translateY -= 10 * cos;
+      setPerspectiveDataAroundMannequin(perspective, mannequin);
       updatePerspective();
     }
 
@@ -270,11 +262,7 @@ $(document).ready(function() {
       transformOrigin['y'] = transform['translateY'] + 50;
       updateMannequin();
 
-      var transform = perspective.data('css').transform;
-      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
-      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform.translateX += 10 * cos;
-      transform.translateY -= 10 * sin;
+      setPerspectiveDataAroundMannequin(perspective, mannequin);
       updatePerspective();
     }
 
@@ -290,11 +278,7 @@ $(document).ready(function() {
       transformOrigin['y'] = transform['translateY'] + 50;
       updateMannequin();
 
-      var transform = perspective.data('css').transform;
-      var sin = Math.sin(transform.rotateZ * Math.PI / 180);
-      var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform.translateX -= 10 * cos;
-      transform.translateY += 10 * sin;
+      setPerspectiveDataAroundMannequin(perspective, mannequin);
       updatePerspective();
     }
 
