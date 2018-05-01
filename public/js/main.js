@@ -13,12 +13,11 @@ $(document).ready(function() {
     var selectedTool = 'hex-ff0000';
 
     var mannequin   = initMannequin();
+    var view        = initView();
 
     var perspective = $('hcj3d-perspective');
     perspective.data('css', {});
     setPerspectiveDataAroundMannequin(perspective, mannequin);
-
-    var view        = initView();
 
     updateMannequin();
     updatePerspectiveCss();
