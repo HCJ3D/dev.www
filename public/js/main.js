@@ -23,7 +23,7 @@ $(document).ready(function() {
       if (pressedKeys[32]) {
         // space bar
         $('#space-bar').css('font-weight', 'bold');
-        jump();
+        jump(mannequin);
       }
 
       if (pressedKeys[38]) {
@@ -194,7 +194,7 @@ $(document).ready(function() {
       return view;
     }
 
-    function jump () {
+    function jump (mannequin) {
       var duration  = 500;
       var transform = mannequin.data('css')['transform'];
 
