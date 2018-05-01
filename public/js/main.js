@@ -95,6 +95,11 @@ $(document).ready(function() {
       e = e || window.event;
       pressedKeys[e.keyCode || e.which] = false;
 
+      if (!pressedKeys[32]) {
+        // space bar
+        $('#space-bar').css('font-weight', 'normal');
+      }
+
       if (!pressedKeys[37]) {
         // left arrow
         $('#left').css('font-weight', 'normal');

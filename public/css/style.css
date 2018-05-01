@@ -33,7 +33,7 @@ footer {
     }
         footer div ol li {
             display: inline-block;
-            width: 30px;
+            min-width: 30px;
             text-align: center;
         }
 header {
