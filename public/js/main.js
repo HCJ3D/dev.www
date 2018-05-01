@@ -6,12 +6,7 @@ var cubesService = new Model.Service.Cubes();
 var pointsService = new Model.Service.Points();
 
 $(document).ready(function() {
-    var visibleCubes;
-    var positionWhenRelevantCubesWereDrawn;
-    var positionWhenVisibleCubesWereDrawn;
     var pressedKeys = [];
-    var selectedTool = 'hex-ff0000';
-
     var mannequin   = initMannequin();
     var view        = initView();
 
@@ -22,8 +17,6 @@ $(document).ready(function() {
     updateMannequin();
     updatePerspectiveCss();
     updateView();
-
-    var relevantCubes;
 
     function oneCentisecondLoop() {
       if (pressedKeys[32]) {
