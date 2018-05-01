@@ -1,10 +1,11 @@
 // Singleston services.
-var ajaxService  = new Model.Service.Ajax();
-var arrayService = new Model.Service.Array();
-var cubeService = new Model.Service.Cube();
-var cubeDrawService = new Model.Service.Cube.Draw();
-var cubesService = new Model.Service.Cubes();
-var pointsService = new Model.Service.Points();
+var ajaxService          = new Model.Service.Ajax();
+var arrayService         = new Model.Service.Array();
+var cubeService          = new Model.Service.Cube();
+var cubeDrawService      = new Model.Service.Cube.Draw();
+var cubesService         = new Model.Service.Cubes();
+var mannequinDrawService = new Model.Service.Mannequin.Draw();
+var pointsService        = new Model.Service.Points();
 
 $(document).ready(function() {
     var pressedKeys = [];
@@ -354,7 +355,7 @@ $(document).ready(function() {
       updatePerspectiveCss();
     });
 
-    for (var x = 0; x < 10; x++) {
+    for (var x = 0; x < 5; x++) {
       var cubeEntity = new Model.Entity.Cube();
       cubeEntity.rotateX = 0;
       cubeEntity.rotateY = 0;
@@ -365,14 +366,17 @@ $(document).ready(function() {
       cubeDrawService.draw(cubeEntity);
     }
 
-    var mannequin1 = new Model.Entity.Mannequin();
-    mannequin1.rotateX = 0;
-    mannequin1.rotateY = 0;
-    mannequin1.rotateZ = Math.floor(Math.random() * 360); // 0 to 359
-    mannequin1.translateX = Math.floor(Math.random() * 1951);
-    mannequin1.translateY = Math.floor(Math.random() * 1951);
-    mannequin1.translateZ = 0;
-    mannequin1.transformOriginX = mannequin1.translateX + 50;
-    mannequin1.transformOriginY = mannequin1.translateY + 50;
-    mannequin1.transformOriginZ = 50;
+    for (var x = 0; x < 5; x++) {
+      var mannequinEntity = new Model.Entity.Mannequin();
+      mannequinEntity.rotateX = 0;
+      mannequinEntity.rotateY = 0;
+      mannequinEntity.rotateZ = Math.floor(Math.random() * 360); // 0 to 359
+      mannequinEntity.translateX = Math.floor(Math.random() * 1951);
+      mannequinEntity.translateY = Math.floor(Math.random() * 1951);
+      mannequinEntity.translateZ = 0;
+      mannequinEntity.transformOriginX = mannequinEntity.translateX + 50;
+      mannequinEntity.transformOriginY = mannequinEntity.translateY + 50;
+      mannequinEntity.transformOriginZ = 50;
+      mannequinDrawService.draw(mannequinEntity);
+    }
 });
