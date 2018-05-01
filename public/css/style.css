@@ -17,16 +17,15 @@ footer {
     width: 100%;
     z-index: 1;
 }
-    footer div:first-child {
-        padding: 10px;
-        background-color: #fff;
+    footer div {
+        background-color: rgba(255, 255, 255, 0.9);
         display: inline-block;
+        padding: 10px;
+    }
+    footer div:first-child {
         border-radius: 0 10px 0 0;
     }
     footer div:last-child {
-        padding: 10px;
-        background-color: #fff;
-        display: inline-block;
         border-radius: 10px 0 0 0;
     }
     footer div ol {
@@ -66,7 +65,7 @@ header {
     header div {
         margin: 0;
         padding: 10px;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.9);
         display: block;
         border-radius: 0 0 0 10px;
     }
