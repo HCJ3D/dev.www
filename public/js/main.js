@@ -2,6 +2,7 @@
 var ajaxService  = new Model.Service.Ajax();
 var arrayService = new Model.Service.Array();
 var cubeService = new Model.Service.Cube();
+var cubeDrawService = new Model.Service.Cube.Draw();
 var cubesService = new Model.Service.Cubes();
 var pointsService = new Model.Service.Points();
 
@@ -352,5 +353,15 @@ $(document).ready(function() {
       setPerspectiveDataAroundMannequin(perspective, mannequin);
       updatePerspectiveCss();
     });
-});
 
+    for (var x = 0; x < 10; x++) {
+      var cubeEntity = new Model.Entity.Cube();
+      cubeEntity.rotateX = 0;
+      cubeEntity.rotateY = 0;
+      cubeEntity.rotateZ = 0;
+      cubeEntity.translateX = Math.floor(Math.random() * 20) * 100;
+      cubeEntity.translateY = Math.floor(Math.random() * 20) * 100;
+      cubeEntity.translateZ = 0;
+      cubeDrawService.draw(cubeEntity);
+    }
+});
