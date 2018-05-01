@@ -234,7 +234,7 @@ $(document).ready(function() {
     }
 
     function lookLeft() {
-        mannequin.data('css').transform.rotateZ -= 2;
+        mannequin.data('css').transform.rotateZ -= 1;
         updateMannequin();
 
         setPerspectiveDataAroundMannequin(perspective, mannequin);
@@ -242,7 +242,7 @@ $(document).ready(function() {
     }
 
     function lookRight() {
-        mannequin.data('css').transform.rotateZ += 2;
+        mannequin.data('css').transform.rotateZ += 1;
         updateMannequin();
 
         setPerspectiveDataAroundMannequin(perspective, mannequin);
