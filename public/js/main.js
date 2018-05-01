@@ -364,4 +364,15 @@ $(document).ready(function() {
       cubeEntity.translateZ = 0;
       cubeDrawService.draw(cubeEntity);
     }
+
+    var mannequin1 = new Model.Entity.Mannequin();
+    mannequin1.rotateX = 0;
+    mannequin1.rotateY = 0;
+    mannequin1.rotateZ = Math.floor(Math.random() * 360); // 0 to 359
+    mannequin1.translateX = Math.floor(Math.random() * 1951);
+    mannequin1.translateY = Math.floor(Math.random() * 1951);
+    mannequin1.translateZ = 0;
+    mannequin1.transformOriginX = mannequin1.translateX + 50;
+    mannequin1.transformOriginY = mannequin1.translateY + 50;
+    mannequin1.transformOriginZ = 50;
 });
