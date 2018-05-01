@@ -23,55 +23,55 @@ $(document).ready(function() {
     function oneCentisecondLoop() {
       if (pressedKeys[32]) {
         // space bar
-        $('#space-bar').css('font-weight', 'bold');
+        $('#space-bar').addClass('bc-g');
         jump(mannequin);
       }
 
       if (pressedKeys[38]) {
         // up arrow
-        $('#up').css('font-weight', 'bold');
+        $('#up').addClass('bc-g');
         lookDown();
       }
 
       if (pressedKeys[40]) {
         // down arrow
-        $('#down').css('font-weight', 'bold');
+        $('#down').addClass('bc-g');
         lookUp();
       }
 
       if (pressedKeys[37]) {
         // left arrow
-        $('#left').css('font-weight', 'bold');
+        $('#left').addClass('bc-g');
         lookLeft();
       }
 
       if (pressedKeys[39]) {
         // right arrow
-        $('#right').css('font-weight', 'bold');
+        $('#right').addClass('bc-g');
         lookRight();
       }
 
       if (pressedKeys[87]) {
         // w key
-        $('#w').css('font-weight', 'bold');
+        $('#w').addClass('bc-g');
         moveForward();
       }
 
       if (pressedKeys[83]) {
         // s key
-        $('#s').css('font-weight', 'bold');
+        $('#s').addClass('bc-g');
         moveBackward();
       }
 
       if (pressedKeys[65]) {
         // a key
-        $('#a').css('font-weight', 'bold');
+        $('#a').addClass('bc-g');
         moveLeft();
       }
 
       if (pressedKeys[68]) {
         // d key
-        $('#d').css('font-weight', 'bold');
+        $('#d').addClass('bc-g');
         moveRight();
       }
     }
@@ -91,40 +91,40 @@ $(document).ready(function() {
 
       if (!pressedKeys[32]) {
         // space bar
-        $('#space-bar').css('font-weight', 'normal');
+        $('#space-bar').removeClass('bc-g');
       }
 
       if (!pressedKeys[37]) {
         // left arrow
-        $('#left').css('font-weight', 'normal');
+        $('#left').removeClass('bc-g');
       }
       if (!pressedKeys[38]) {
         // up arrow
-        $('#up').css('font-weight', 'normal');
+        $('#up').removeClass('bc-g');
       }
       if (!pressedKeys[39]) {
         // right arrow
-        $('#right').css('font-weight', 'normal');
+        $('#right').removeClass('bc-g');
       }
       if (!pressedKeys[40]) {
         // down arrow
-        $('#down').css('font-weight', 'normal');
+        $('#down').removeClass('bc-g');
       }
       if (!pressedKeys[87]) {
         // w key
-        $('#w').css('font-weight', 'normal');
+        $('#w').removeClass('bc-g');
       }
       if (!pressedKeys[83]) {
         // s key
-        $('#s').css('font-weight', 'normal');
+        $('#s').removeClass('bc-g');
       }
       if (!pressedKeys[65]) {
         // a key
-        $('#a').css('font-weight', 'normal');
+        $('#a').removeClass('bc-g');
       }
       if (!pressedKeys[68]) {
         // d key
-        $('#d').css('font-weight', 'normal');
+        $('#d').removeClass('bc-g');
       }
     }
 
