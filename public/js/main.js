@@ -21,6 +21,10 @@ $(document).ready(function() {
     updateView();
 
     function oneCentisecondLoop() {
+      if ($('div.dialog').is(':visible')) {
+        return;
+      }
+
       if (pressedKeys[32]) {
         // space bar
         $('#space-bar').addClass('bc-g');
@@ -379,4 +383,16 @@ $(document).ready(function() {
       mannequinEntity.transformOriginZ = 50;
       mannequinDrawService.draw(mannequinEntity);
     }
+
+    /*
+    $('main').on('click', 'hcj3d-mannequin#me hcj3d-mannequin-body-back', function() {
+      $('div#body').fadeIn('fast');
+      $('div#body input[type=text]').focus();
+    });
+
+    $('div#body form').submit(function(event) {
+      event.preventDefault();
+      $('div#body').fadeOut('fast');
+    });
+    */
 });

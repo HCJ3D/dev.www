@@ -80,6 +80,12 @@ hcj3d-mannequin {
     height: 100px;
     transform-style: preserve-3d;
 }
+/*
+hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
+    background-color: #d6bb97;
+    cursor: pointer;
+}
+*/
     hcj3d-mannequin-head {
         display: block;
         position: absolute;
@@ -196,7 +202,8 @@ hcj3d-mannequin {
             height: 30px;
             background-color: tan;
             transform-style: preserve-3d;
-            transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(15px) translateZ(5px);
+            transform: rotateX(90deg) rotateY(180deg) rotateZ(180deg) translateX(0px) translateY(-15px) translateZ(-5px);
+            font-size: 5px;
             border: 1px dotted #000;
             box-sizing: border-box;
         }

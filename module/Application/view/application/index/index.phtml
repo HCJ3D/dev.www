@@ -69,7 +69,7 @@
                             class="arrows"
                             style="transform: translateX(1000px) translateY(1000px) translateZ(0px);"
                         ></hcj3d-ground>
-                        <hcj3d-mannequin>
+                        <hcj3d-mannequin id="me">
                             <hcj3d-mannequin-leg class="left">
                                 <hcj3d-mannequin-leg-bottom></hcj3d-mannequin-leg-bottom>
                                 <hcj3d-mannequin-leg-top></hcj3d-mannequin-leg-top>
@@ -142,5 +142,13 @@
                 </ol>
             </div>
         </footer>
+
+        <div id="body" class="dialog" style="display: none;">
+            <h2>Body</h2>
+            <form>
+                Name: <input type="text" name="name">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </body>
 </html>
