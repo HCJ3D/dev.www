@@ -147,8 +147,8 @@ $(document).ready(function() {
 
       var transform = mannequin.data('css')['transform'];
       mannequin.data('css')['transform-origin'] = {
-        'x': transform['translateX'] + 50,
-        'y': transform['translateY'] + 50,
+        'x': transform['translateX'] + 15,
+        'y': transform['translateY'] + 5,
         'z': 50,
       };
 
@@ -162,7 +162,7 @@ $(document).ready(function() {
         'rotateX': 0, // never changes
         'rotateY': 0, // never changes
         'rotateZ': -mannequinTransform.rotateZ,
-        'translateX': -mannequinTransform.translateX + ($(window).width() * 0.5 - 50),
+        'translateX': -mannequinTransform.translateX + ($(window).width() * 0.5 - 15),
 
         'translateY': -mannequinTransform.translateY + 3040,
         'translateZ': 88.525 // never changes
@@ -170,8 +170,8 @@ $(document).ready(function() {
 
       var perspectiveTransform = perspective.data('css')['transform'];
       perspective.data('css')['transform-origin'] = {
-        'x': perspectiveTransform.translateX + mannequinTransform.translateX + 50,
-        'y': perspectiveTransform.translateY + mannequinTransform.translateY + 50,
+        'x': perspectiveTransform.translateX + mannequinTransform.translateX + 15,
+        'y': perspectiveTransform.translateY + mannequinTransform.translateY + 5,
         'z': 0,
       };
     }
@@ -261,8 +261,8 @@ $(document).ready(function() {
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
       transform.translateX += 10 * sin;
       transform.translateY -= 10 * cos;
-      transformOrigin['x'] = transform['translateX'] + 50;
-      transformOrigin['y'] = transform['translateY'] + 50;
+      transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
+      transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
       updateMannequin();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
@@ -277,8 +277,8 @@ $(document).ready(function() {
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
       transform.translateX -= 10 * sin;
       transform.translateY += 10 * cos;
-      transformOrigin['x'] = transform['translateX'] + 50;
-      transformOrigin['y'] = transform['translateY'] + 50;
+      transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
+      transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
       updateMannequin();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
@@ -293,8 +293,8 @@ $(document).ready(function() {
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
       transform.translateX -= 10 * cos;
       transform.translateY -= 10 * sin;
-      transformOrigin['x'] = transform['translateX'] + 50;
-      transformOrigin['y'] = transform['translateY'] + 50;
+      transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
+      transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
       updateMannequin();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
@@ -309,8 +309,8 @@ $(document).ready(function() {
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
       transform['translateX'] += 10 * cos;
       transform['translateY'] += 10 * sin;
-      transformOrigin['x'] = transform['translateX'] + 50;
-      transformOrigin['y'] = transform['translateY'] + 50;
+      transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
+      transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
       updateMannequin();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
