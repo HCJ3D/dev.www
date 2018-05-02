@@ -76,8 +76,8 @@ hcj3d-ground {
 hcj3d-mannequin {
     display: block;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 10px;
     transform-style: preserve-3d;
 }
 /*
