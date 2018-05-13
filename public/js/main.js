@@ -407,7 +407,15 @@ $(document).ready(function() {
       updatePerspectiveCss();
     });
 
-    for (var x = 0; x < 5; x++) {
+    var cubeEntity = new Model.Entity.Cube();
+    cubeEntity.rotateX = 0;
+    cubeEntity.rotateY = 0;
+    cubeEntity.rotateZ = 0;
+    cubeEntity.translateX = 100;
+    cubeEntity.translateY = 100;
+    cubeEntity.translateZ = 0;
+    cubeDrawService.draw(cubeEntity);
+    for (var x = 0; x < 4; x++) {
       var cubeEntity = new Model.Entity.Cube();
       cubeEntity.rotateX = 0;
       cubeEntity.rotateY = 0;
@@ -418,7 +426,7 @@ $(document).ready(function() {
       cubeDrawService.draw(cubeEntity);
     }
 
-    for (var x = 0; x < 5; x++) {
+    for (var x = 0; x < 9; x++) {
       var mannequinEntity = new Model.Entity.Mannequin();
       mannequinEntity.rotateX = 0;
       mannequinEntity.rotateY = 0;
