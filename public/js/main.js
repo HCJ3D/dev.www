@@ -277,6 +277,20 @@ $(document).ready(function() {
         newY = transform.translateY;
       }
 
+      // Approaching cube while in X column.
+      if ((transform.translateX > 85) && (transform.translateX < 185)) {
+        if ((newY > 95) && (newY < 195)) {
+          newY = transform.translateY;
+        }
+      }
+
+      // Approaching cube while in Y row.
+      if ((transform.translateY > 95) && (transform.translateY < 195)) {
+        if ((newX > 85) && (newX < 185)) {
+          newX = transform.translateX;
+        }
+      }
+
       transform.translateX = newX;
       transform.translateY = newY;
       transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
