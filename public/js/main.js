@@ -270,11 +270,11 @@ $(document).ready(function() {
 
       var newX = transform.translateX + 10 * sin;
       if ((newX < -15) || (newX > 1985)) {
-        return;
+        newX = transform.translateX;
       }
       var newY = transform.translateY - 10 * cos;
       if ((newY < -5) || (newY > 1995)) {
-        return;
+        newY = transform.translateY;
       }
 
       transform.translateX = newX;
@@ -296,11 +296,11 @@ $(document).ready(function() {
 
       var newX = transform.translateX - 10 * sin;
       if ((newX < -15) || (newX > 1985)) {
-        return;
+        newX = transform.translateX;
       }
       var newY = transform.translateY + 10 * cos;
       if ((newY < -5) || (newY > 1995)) {
-        return;
+        newY = transform.translateY;
       }
 
       transform.translateX = newX;
@@ -322,11 +322,11 @@ $(document).ready(function() {
 
       var newX = transform.translateX - 10 * cos;
       if ((newX < -15) || (newX > 1985)) {
-        return;
+        newX = transform.translateX;
       }
       var newY = transform.translateY - 10 * sin;
       if ((newY < -5) || (newY > 1995)) {
-        return;
+        newY = transform.translateY;
       }
 
       transform.translateX = newX;
@@ -348,11 +348,11 @@ $(document).ready(function() {
 
       var newX = transform.translateX + 10 * cos;
       if ((newX < -15) || (newX > 1985)) {
-        return;
+        newX = transform.translateX;
       }
       var newY = transform.translateY + 10 * sin;
       if ((newY < -5) || (newY > 1995)) {
-        return;
+        newY = transform.translateY;
       }
 
       transform['translateX'] = newX;
