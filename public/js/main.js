@@ -253,14 +253,32 @@ $(document).ready(function() {
         updatePerspectiveCss();
     }
 
+    /*
+     * min x    0 - 15 = -15
+     * max x 2000 - 15 = 1985
+     *
+     * min y     0 - 5 = -5
+     * max y  2000 - 5 = 1995
+     */
+
     function moveForward() {
       var transform       = mannequin.data('css')['transform'];
       var transformOrigin = mannequin.data('css')['transform-origin'];
 
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform.translateX += 10 * sin;
-      transform.translateY -= 10 * cos;
+
+      var newX = transform.translateX + 10 * sin;
+      if ((newX < -15) || (newX > 1985)) {
+        return;
+      }
+      var newY = transform.translateY - 10 * cos;
+      if ((newY < -5) || (newY > 1995)) {
+        return;
+      }
+
+      transform.translateX = newX;
+      transform.translateY = newY;
       transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
       transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
       updateMannequin();
@@ -275,8 +293,18 @@ $(document).ready(function() {
 
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform.translateX -= 10 * sin;
-      transform.translateY += 10 * cos;
+
+      var newX = transform.translateX - 10 * sin;
+      if ((newX < -15) || (newX > 1985)) {
+        return;
+      }
+      var newY = transform.translateY + 10 * cos;
+      if ((newY < -5) || (newY > 1995)) {
+        return;
+      }
+
+      transform.translateX = newX;
+      transform.translateY = newY;
       transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
       transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
       updateMannequin();
@@ -291,8 +319,18 @@ $(document).ready(function() {
 
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform.translateX -= 10 * cos;
-      transform.translateY -= 10 * sin;
+
+      var newX = transform.translateX - 10 * cos;
+      if ((newX < -15) || (newX > 1985)) {
+        return;
+      }
+      var newY = transform.translateY - 10 * sin;
+      if ((newY < -5) || (newY > 1995)) {
+        return;
+      }
+
+      transform.translateX = newX;
+      transform.translateY = newY;
       transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
       transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
       updateMannequin();
@@ -307,8 +345,18 @@ $(document).ready(function() {
 
       var sin = Math.sin(transform.rotateZ * Math.PI / 180);
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-      transform['translateX'] += 10 * cos;
-      transform['translateY'] += 10 * sin;
+
+      var newX = transform.translateX + 10 * cos;
+      if ((newX < -15) || (newX > 1985)) {
+        return;
+      }
+      var newY = transform.translateY + 10 * sin;
+      if ((newY < -5) || (newY > 1995)) {
+        return;
+      }
+
+      transform['translateX'] = newX;
+      transform['translateY'] = newY;
       transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
       transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
       updateMannequin();
