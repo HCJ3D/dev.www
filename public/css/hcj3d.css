@@ -210,7 +210,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
     hcj3d-mannequin-leg {
         display: block;
         position: absolute;
-        width: 10px;
+        width: 8px;
         height: 10px;
         transform-style: preserve-3d;
     }
@@ -218,12 +218,12 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
         transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(0px);
     }
     hcj3d-mannequin-leg.right {
-        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(10px) translateY(0px) translateZ(0px);
+        transform: rotateX(0) rotateY(0) rotateZ(0) translateX(12px) translateY(0px) translateZ(0px);
     }
         hcj3d-mannequin-leg-bottom {
             display: block;
             position: absolute;
-            width: 10px;
+            width: 8px;
             height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
@@ -232,7 +232,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
         hcj3d-mannequin-leg-top {
             display: block;
             position: absolute;
-            width: 10px;
+            width: 8px;
             height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
@@ -254,12 +254,12 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
-            transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
+            transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(3px);
         }
         hcj3d-mannequin-leg-front {
             display: block;
             position: absolute;
-            width: 10px;
+            width: 8px;
             height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
@@ -268,7 +268,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
         hcj3d-mannequin-leg-back {
             display: block;
             position: absolute;
-            width: 10px;
+            width: 8px;
             height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
