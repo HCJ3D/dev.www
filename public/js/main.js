@@ -494,9 +494,9 @@ $(document).ready(function() {
       mannequinEntity.translateX = Math.floor(Math.random() * 1951);
       mannequinEntity.translateY = Math.floor(Math.random() * 1951);
       mannequinEntity.translateZ = 0;
-      mannequinEntity.transformOriginX = mannequinEntity.translateX + 50;
-      mannequinEntity.transformOriginY = mannequinEntity.translateY + 50;
-      mannequinEntity.transformOriginZ = 50;
+      mannequinEntity.transformOriginX = mannequinEntity.translateX + 10;
+      mannequinEntity.transformOriginY = mannequinEntity.translateY + 5;
+      mannequinEntity.transformOriginZ = 5;
       mannequinEntities.push(mannequinEntity);
       mannequinDrawService.draw(mannequinEntity);
     }
