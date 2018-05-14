@@ -278,16 +278,18 @@ $(document).ready(function() {
         newY = transform.translateY;
       }
 
+      var cubeEntity = cubeEntities[0];
+
       // Approaching cube while in X column.
-      if ((transform.translateX > 85) && (transform.translateX < 185)) {
-        if ((newY > 95) && (newY < 195)) {
+      if ((transform.translateX > cubeEntity.translateX - 15) && (transform.translateX < cubeEntity.translateX + 100 - 15)) {
+        if ((newY > cubeEntity.translateY - 5) && (newY < cubeEntity.translateY + 100 - 5)) {
           newY = transform.translateY;
         }
       }
 
       // Approaching cube while in Y row.
-      if ((transform.translateY > 95) && (transform.translateY < 195)) {
-        if ((newX > 85) && (newX < 185)) {
+      if ((transform.translateY > cubeEntity.translateY - 5) && (transform.translateY < cubeEntity.translateY + 100 - 5)) {
+        if ((newX > cubeEntity.translateX - 15) && (newX < cubeEntity.translateX + 100 - 15)) {
           newX = transform.translateX;
         }
       }
