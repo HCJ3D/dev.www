@@ -12,7 +12,6 @@ Model.Service.Mannequin.Move = class {
   ) {
     // Does new X fall off of the ground?
     if ((newX < -10) || (newX > 1990)) {
-      console.log(newX);
       return false;
     }
 
