@@ -5,6 +5,7 @@ var cubeService          = new Model.Service.Cube();
 var cubeDrawService      = new Model.Service.Cube.Draw();
 var cubesService         = new Model.Service.Cubes();
 var mannequinDrawService = new Model.Service.Mannequin.Draw();
+var mannequinMoveService = new Model.Service.Mannequin.Move();
 var pointsService        = new Model.Service.Points();
 
 $(document).ready(function() {
@@ -270,28 +271,26 @@ $(document).ready(function() {
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
 
       var newX = transform.translateX + 10 * sin;
-      if ((newX < -15) || (newX > 1985)) {
+      var newY = transform.translateY - 10 * cos;
+
+      var isNewXValid = mannequinMoveService.isNewXValid(
+        transform.translateX,
+        transform.translateY,
+        newX,
+        cubeEntities
+      );
+      var isNewYValid = mannequinMoveService.isNewYValid(
+        transform.translateX,
+        transform.translateY,
+        newY,
+        cubeEntities
+      );
+
+      if (!isNewXValid) {
         newX = transform.translateX;
       }
-      var newY = transform.translateY - 10 * cos;
-      if ((newY < -5) || (newY > 1995)) {
+      if (!isNewYValid) {
         newY = transform.translateY;
-      }
-
-      var cubeEntity = cubeEntities[0];
-
-      // Approaching cube while in X column.
-      if ((transform.translateX > cubeEntity.translateX - 15) && (transform.translateX < cubeEntity.translateX + 100 - 15)) {
-        if ((newY > cubeEntity.translateY - 5) && (newY < cubeEntity.translateY + 100 - 5)) {
-          newY = transform.translateY;
-        }
-      }
-
-      // Approaching cube while in Y row.
-      if ((transform.translateY > cubeEntity.translateY - 5) && (transform.translateY < cubeEntity.translateY + 100 - 5)) {
-        if ((newX > cubeEntity.translateX - 15) && (newX < cubeEntity.translateX + 100 - 15)) {
-          newX = transform.translateX;
-        }
       }
 
       transform.translateX = newX;
