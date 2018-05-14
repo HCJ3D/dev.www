@@ -9,10 +9,11 @@ var mannequinMoveService = new Model.Service.Mannequin.Move();
 var pointsService        = new Model.Service.Points();
 
 $(document).ready(function() {
-    var cubeEntities = [];
-    var pressedKeys  = [];
-    var mannequin    = initMannequin();
-    var view         = initView();
+    var cubeEntities      = [];
+    var mannequinEntities = [];
+    var pressedKeys       = [];
+    var mannequin         = initMannequin();
+    var view              = initView();
 
     var perspective = $('hcj3d-perspective');
     perspective.data('css', {});
@@ -277,13 +278,15 @@ $(document).ready(function() {
         transform.translateX,
         transform.translateY,
         newX,
-        cubeEntities
+        cubeEntities,
+        mannequinEntities
       );
       var isNewYValid = mannequinMoveService.isNewYValid(
         transform.translateX,
         transform.translateY,
         newY,
-        cubeEntities
+        cubeEntities,
+        mannequinEntities
       );
 
       if (!isNewXValid) {
@@ -317,13 +320,15 @@ $(document).ready(function() {
         transform.translateX,
         transform.translateY,
         newX,
-        cubeEntities
+        cubeEntities,
+        mannequinEntities
       );
       var isNewYValid = mannequinMoveService.isNewYValid(
         transform.translateX,
         transform.translateY,
         newY,
-        cubeEntities
+        cubeEntities,
+        mannequinEntities
       );
 
       if (!isNewXValid) {
@@ -357,13 +362,15 @@ $(document).ready(function() {
         transform.translateX,
         transform.translateY,
         newX,
-        cubeEntities
+        cubeEntities,
+        mannequinEntities
       );
       var isNewYValid = mannequinMoveService.isNewYValid(
         transform.translateX,
         transform.translateY,
         newY,
-        cubeEntities
+        cubeEntities,
+        mannequinEntities
       );
 
       if (!isNewXValid) {
@@ -397,13 +404,15 @@ $(document).ready(function() {
         transform.translateX,
         transform.translateY,
         newX,
-        cubeEntities
+        cubeEntities,
+        mannequinEntities
       );
       var isNewYValid = mannequinMoveService.isNewYValid(
         transform.translateX,
         transform.translateY,
         newY,
-        cubeEntities
+        cubeEntities,
+        mannequinEntities
       );
 
       if (!isNewXValid) {
@@ -488,6 +497,7 @@ $(document).ready(function() {
       mannequinEntity.transformOriginX = mannequinEntity.translateX + 50;
       mannequinEntity.transformOriginY = mannequinEntity.translateY + 50;
       mannequinEntity.transformOriginZ = 50;
+      mannequinEntities.push(mannequinEntity);
       mannequinDrawService.draw(mannequinEntity);
     }
 
