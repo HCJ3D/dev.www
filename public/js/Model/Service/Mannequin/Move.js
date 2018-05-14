@@ -20,7 +20,7 @@ Model.Service.Mannequin.Move = class {
     var cubeEntitiesLength = cubeEntities.length;
     for (var i = 0; i < cubeEntitiesLength; i++) {
       var cubeEntity = cubeEntities[i];
-      if ((currentY > cubeEntity.translateY - 10) && (currentY < cubeEntity.translateY + 90)) {
+      if ((currentY > cubeEntity.translateY - 10) && (currentY < cubeEntity.translateY + 100 - 10)) {
         if ((newX > cubeEntity.translateX - 10) && (newX < cubeEntity.translateX + 100 - 10)) {
           return false;
         }
@@ -48,7 +48,7 @@ Model.Service.Mannequin.Move = class {
     var cubeEntitiesLength = cubeEntities.length;
     for (var i = 0; i < cubeEntitiesLength; i++) {
       var cubeEntity = cubeEntities[i];
-      if ((currentX > cubeEntity.translateX - 10) && (currentX < cubeEntity.translateX + 90)) {
+      if ((currentX > cubeEntity.translateX - 10) && (currentX < cubeEntity.translateX + 100 - 10)) {
         if ((newY > cubeEntity.translateY - 10) && (newY < cubeEntity.translateY + 100 - 10)) {
           return false;
         }
