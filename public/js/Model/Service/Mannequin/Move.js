@@ -19,8 +19,8 @@ Model.Service.Mannequin.Move = class {
     var cubeEntitiesLength = cubeEntities.length;
     for (var i = 0; i < cubeEntitiesLength; i++) {
       var cubeEntity = cubeEntities[i];
-      if ((currentY > cubeEntity.translateY - 5) && (currentY < cubeEntity.translateY + 95)) {
-        if ((newX > cubeEntity.translateX - 5) && (newX < cubeEntity.translateX + 100 - 5)) {
+      if ((currentY > cubeEntity.translateY - 10) && (currentY < cubeEntity.translateY + 90)) {
+        if ((newX > cubeEntity.translateX - 10) && (newX < cubeEntity.translateX + 100 - 10)) {
           console.log('uhoh1');
           return false;
         }
@@ -48,8 +48,8 @@ Model.Service.Mannequin.Move = class {
     var cubeEntitiesLength = cubeEntities.length;
     for (var i = 0; i < cubeEntitiesLength; i++) {
       var cubeEntity = cubeEntities[i];
-      if ((currentX > cubeEntity.translateX - 5) && (currentX < cubeEntity.translateX + 95)) {
-        if ((newY > cubeEntity.translateY - 5) && (newY < cubeEntity.translateY + 100 - 5)) {
+      if ((currentX > cubeEntity.translateX - 10) && (currentX < cubeEntity.translateX + 90)) {
+        if ((newY > cubeEntity.translateY - 10) && (newY < cubeEntity.translateY + 100 - 10)) {
           console.log('uhoh2');
           return false;
         }
