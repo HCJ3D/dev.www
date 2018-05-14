@@ -465,16 +465,7 @@ $(document).ready(function() {
       updatePerspectiveCss();
     });
 
-    var cubeEntity = new Model.Entity.Cube();
-    cubeEntity.rotateX = 0;
-    cubeEntity.rotateY = 0;
-    cubeEntity.rotateZ = 0;
-    cubeEntity.translateX = 100;
-    cubeEntity.translateY = 100;
-    cubeEntity.translateZ = 0;
-    cubeEntities.push(cubeEntity);
-
-    for (var x = 0; x < 4; x++) {
+    for (var x = 0; x < 5; x++) {
       var cubeEntity = new Model.Entity.Cube();
       cubeEntity.rotateX = 0;
       cubeEntity.rotateY = 0;
