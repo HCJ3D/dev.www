@@ -474,11 +474,7 @@ $(document).ready(function() {
       cubeEntity.translateY = Math.floor(Math.random() * 20) * 100;
       cubeEntity.translateZ = 0;
       cubeEntities.push(cubeEntity);
-    }
-
-    cubeEntitiesLength = cubeEntities.length;
-    for (var i = 0; i < cubeEntitiesLength; i++) {
-      cubeDrawService.draw(cubeEntities[i]);
+      cubeDrawService.draw(cubeEntity);
     }
 
     for (var x = 0; x < 9; x++) {
