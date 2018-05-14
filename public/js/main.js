@@ -311,11 +311,25 @@ $(document).ready(function() {
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
 
       var newX = transform.translateX - 10 * sin;
-      if ((newX < -15) || (newX > 1985)) {
+      var newY = transform.translateY + 10 * cos;
+
+      var isNewXValid = mannequinMoveService.isNewXValid(
+        transform.translateX,
+        transform.translateY,
+        newX,
+        cubeEntities
+      );
+      var isNewYValid = mannequinMoveService.isNewYValid(
+        transform.translateX,
+        transform.translateY,
+        newY,
+        cubeEntities
+      );
+
+      if (!isNewXValid) {
         newX = transform.translateX;
       }
-      var newY = transform.translateY + 10 * cos;
-      if ((newY < -5) || (newY > 1995)) {
+      if (!isNewYValid) {
         newY = transform.translateY;
       }
 
@@ -337,11 +351,25 @@ $(document).ready(function() {
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
 
       var newX = transform.translateX - 10 * cos;
-      if ((newX < -15) || (newX > 1985)) {
+      var newY = transform.translateY - 10 * sin;
+
+      var isNewXValid = mannequinMoveService.isNewXValid(
+        transform.translateX,
+        transform.translateY,
+        newX,
+        cubeEntities
+      );
+      var isNewYValid = mannequinMoveService.isNewYValid(
+        transform.translateX,
+        transform.translateY,
+        newY,
+        cubeEntities
+      );
+
+      if (!isNewXValid) {
         newX = transform.translateX;
       }
-      var newY = transform.translateY - 10 * sin;
-      if ((newY < -5) || (newY > 1995)) {
+      if (!isNewYValid) {
         newY = transform.translateY;
       }
 
@@ -363,11 +391,25 @@ $(document).ready(function() {
       var cos = Math.cos(transform.rotateZ * Math.PI / 180);
 
       var newX = transform.translateX + 10 * cos;
-      if ((newX < -15) || (newX > 1985)) {
+      var newY = transform.translateY + 10 * sin;
+
+      var isNewXValid = mannequinMoveService.isNewXValid(
+        transform.translateX,
+        transform.translateY,
+        newX,
+        cubeEntities
+      );
+      var isNewYValid = mannequinMoveService.isNewYValid(
+        transform.translateX,
+        transform.translateY,
+        newY,
+        cubeEntities
+      );
+
+      if (!isNewXValid) {
         newX = transform.translateX;
       }
-      var newY = transform.translateY + 10 * sin;
-      if ((newY < -5) || (newY > 1995)) {
+      if (!isNewYValid) {
         newY = transform.translateY;
       }
 
