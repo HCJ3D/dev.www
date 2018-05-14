@@ -10,7 +10,8 @@ Model.Service.Mannequin.Move = class {
       cubeEntities
   ) {
     // Does new X fall off of the ground?
-    if ((newX < -5) || (newX > 1995)) {
+    if ((newX < -10) || (newX > 1990)) {
+      console.log(newX);
       return false;
     }
 
@@ -39,7 +40,7 @@ Model.Service.Mannequin.Move = class {
       cubeEntities
   ) {
     // Does new Y fall off of the ground?
-    if ((newY < -5) || (newY > 1995)) {
+    if ((newY < -10) || (newY > 1990)) {
       return false;
     }
 
