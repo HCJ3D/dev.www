@@ -256,14 +256,6 @@ $(document).ready(function() {
         updatePerspectiveCss();
     }
 
-    /*
-     * min x    0 - 15 = -15
-     * max x 2000 - 15 = 1985
-     *
-     * min y     0 - 5 = -5
-     * max y  2000 - 5 = 1995
-     */
-
     function moveForward() {
       var transform       = mannequin.data('css')['transform'];
       var transformOrigin = mannequin.data('css')['transform-origin'];
