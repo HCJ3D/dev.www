@@ -8,9 +8,10 @@ var mannequinDrawService = new Model.Service.Mannequin.Draw();
 var pointsService        = new Model.Service.Points();
 
 $(document).ready(function() {
-    var pressedKeys = [];
-    var mannequin   = initMannequin();
-    var view        = initView();
+    var cubeEntities = [];
+    var pressedKeys  = [];
+    var mannequin    = initMannequin();
+    var view         = initView();
 
     var perspective = $('hcj3d-perspective');
     perspective.data('css', {});
@@ -428,7 +429,8 @@ $(document).ready(function() {
     cubeEntity.translateX = 100;
     cubeEntity.translateY = 100;
     cubeEntity.translateZ = 0;
-    cubeDrawService.draw(cubeEntity);
+    cubeEntities.push(cubeEntity);
+
     for (var x = 0; x < 4; x++) {
       var cubeEntity = new Model.Entity.Cube();
       cubeEntity.rotateX = 0;
@@ -437,7 +439,12 @@ $(document).ready(function() {
       cubeEntity.translateX = Math.floor(Math.random() * 20) * 100;
       cubeEntity.translateY = Math.floor(Math.random() * 20) * 100;
       cubeEntity.translateZ = 0;
-      cubeDrawService.draw(cubeEntity);
+      cubeEntities.push(cubeEntity);
+    }
+
+    cubeEntitiesLength = cubeEntities.length;
+    for (var i = 0; i < cubeEntitiesLength; i++) {
+      cubeDrawService.draw(cubeEntities[i]);
     }
 
     for (var x = 0; x < 9; x++) {
