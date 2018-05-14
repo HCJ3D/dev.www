@@ -149,7 +149,7 @@ $(document).ready(function() {
 
       var transform = mannequin.data('css')['transform'];
       mannequin.data('css')['transform-origin'] = {
-        'x': transform['translateX'] + 15,
+        'x': transform['translateX'] + 10,
         'y': transform['translateY'] + 5,
         'z': 50,
       };
@@ -164,7 +164,7 @@ $(document).ready(function() {
         'rotateX': 0, // never changes
         'rotateY': 0, // never changes
         'rotateZ': -mannequinTransform.rotateZ,
-        'translateX': -mannequinTransform.translateX + ($(window).width() * 0.5 - 15),
+        'translateX': -mannequinTransform.translateX + ($(window).width() * 0.5 - 10),
 
         'translateY': -mannequinTransform.translateY + 3040,
         'translateZ': 88.525 // never changes
@@ -172,7 +172,7 @@ $(document).ready(function() {
 
       var perspectiveTransform = perspective.data('css')['transform'];
       perspective.data('css')['transform-origin'] = {
-        'x': perspectiveTransform.translateX + mannequinTransform.translateX + 15,
+        'x': perspectiveTransform.translateX + mannequinTransform.translateX + 10,
         'y': perspectiveTransform.translateY + mannequinTransform.translateY + 5,
         'z': 0,
       };
