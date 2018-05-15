@@ -55,6 +55,36 @@ hcj3d-ground {
         #8a3;
         background-size: 20px 20px;
     }
+    hcj3d-ground.half-rombes {
+		background: #36c;
+		background:
+		linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+		linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+		linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+		linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+		#36c;
+		background-size: 15px 30px;
+    }
+    hcj3d-ground.marrakesh {
+		background-color:white;
+		background-image:
+		radial-gradient(midnightblue 9px, transparent 10px),
+		repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);
+		background-size: 30px 30px, 90px 90px;
+		background-position: 0 0;
+	}
+    hcj3d-ground.rainbow-bokeh {
+		background:
+		radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+		radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+		radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+		radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+		radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+		radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+		linear-gradient(45deg, #343702 0%, #184500 20%, #187546 30%, #006782 40%, #0b1284 50%, #760ea1 60%, #83096e 70%, #840b2a 80%, #b13e12 90%, #e27412 100%);
+		background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+		background-color: #840b2a;
+    }
     hcj3d-ground.rocks {
         background-color:#556;
         background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
