@@ -4,6 +4,7 @@ hcj3d-world {
     display: block;
     position: absolute;
     transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(0px);
     perspective: 3000px;
 }
 hcj3d-view {
