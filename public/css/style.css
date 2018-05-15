@@ -7,6 +7,7 @@ a {
 body {
     margin: 0;
     font-size: 20px;
+    word-wrap: break-word;
 }
 div.dialog *:last-child {
     margin-bottom: 0;

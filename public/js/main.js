@@ -493,7 +493,6 @@ $(document).ready(function() {
       mannequinDrawService.draw(mannequinEntity);
     }
 
-    /*
     $('main').on('click', 'hcj3d-mannequin#me hcj3d-mannequin-body-back', function() {
       $('div#body').fadeIn('fast');
       $('div#body input[type=text]').focus();
@@ -502,6 +501,7 @@ $(document).ready(function() {
     $('div#body form').submit(function(event) {
       event.preventDefault();
       $('div#body').fadeOut('fast');
+      var name = $('div#body form input[name=name]').val();
+      $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.name').html(name);
     });
-    */
 });

@@ -130,12 +130,10 @@ hcj3d-mannequin {
     height: 10px;
     transform-style: preserve-3d;
 }
-/*
 hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
     background-color: #d6bb97;
     cursor: pointer;
 }
-*/
     hcj3d-mannequin-head {
         display: block;
         position: absolute;
@@ -257,6 +255,13 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             border: 1px dotted #000;
             box-sizing: border-box;
         }
+            hcj3d-mannequin-body-back div.name {
+                text-align: center;
+                text-indent: 0;
+                top: 5px;
+                width: 100%;
+                position: absolute;
+            }
     hcj3d-mannequin-leg {
         display: block;
         position: absolute;
