@@ -482,7 +482,7 @@ $(document).ready(function() {
       cubeDrawService.draw(cubeEntity);
     }
 
-    for (var x = 0; x < 19; x++) {
+    for (var x = 0; x < 20; x++) {
       var mannequinEntity = new Model.Entity.Mannequin();
       mannequinEntity.rotateX = 0;
       mannequinEntity.rotateY = 0;
