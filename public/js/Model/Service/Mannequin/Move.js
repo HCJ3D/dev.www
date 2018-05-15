@@ -19,8 +19,8 @@ Model.Service.Mannequin.Move = class {
     var cubeEntitiesLength = cubeEntities.length;
     for (var i = 0; i < cubeEntitiesLength; i++) {
       var cubeEntity = cubeEntities[i];
-      if ((currentY > cubeEntity.translateY - 10) && (currentY < cubeEntity.translateY + 100 - 10)) {
-        if ((newX > cubeEntity.translateX - 10) && (newX < cubeEntity.translateX + 100 - 10)) {
+      if ((currentY > cubeEntity.translateY - 5) && (currentY < cubeEntity.translateY + 50 - 5)) {
+        if ((newX > cubeEntity.translateX - 5) && (newX < cubeEntity.translateX + 50 - 5)) {
           return false;
         }
       }
@@ -30,8 +30,8 @@ Model.Service.Mannequin.Move = class {
     var mannequinEntitiesLength = mannequinEntities.length;
     for (var i = 0; i < mannequinEntitiesLength; i++) {
       var mannequinEntity = mannequinEntities[i];
-      if ((currentY > mannequinEntity.translateY - 10) && (currentY < mannequinEntity.translateY + 10)) {
-        if ((newX > mannequinEntity.translateX - 10) && (newX < mannequinEntity.translateX + 10)) {
+      if ((currentY > mannequinEntity.translateY - 5) && (currentY < mannequinEntity.translateY + 5)) {
+        if ((newX > mannequinEntity.translateX - 5) && (newX < mannequinEntity.translateX + 5)) {
           return false;
         }
       }
@@ -59,8 +59,8 @@ Model.Service.Mannequin.Move = class {
     var cubeEntitiesLength = cubeEntities.length;
     for (var i = 0; i < cubeEntitiesLength; i++) {
       var cubeEntity = cubeEntities[i];
-      if ((currentX > cubeEntity.translateX - 10) && (currentX < cubeEntity.translateX + 100 - 10)) {
-        if ((newY > cubeEntity.translateY - 10) && (newY < cubeEntity.translateY + 100 - 10)) {
+      if ((currentX > cubeEntity.translateX - 5) && (currentX < cubeEntity.translateX + 50 - 5)) {
+        if ((newY > cubeEntity.translateY - 5) && (newY < cubeEntity.translateY + 50 - 5)) {
           return false;
         }
       }
@@ -70,8 +70,8 @@ Model.Service.Mannequin.Move = class {
     var mannequinEntitiesLength = mannequinEntities.length;
     for (var i = 0; i < mannequinEntitiesLength; i++) {
       var mannequinEntity = mannequinEntities[i];
-      if ((currentX > mannequinEntity.translateX - 10) && (currentX < mannequinEntity.translateX + 10)) {
-        if ((newY > mannequinEntity.translateY - 10) && (newY < mannequinEntity.translateY + 10)) {
+      if ((currentX > mannequinEntity.translateX - 5) && (currentX < mannequinEntity.translateX + 5)) {
+        if ((newY > mannequinEntity.translateY - 5) && (newY < mannequinEntity.translateY + 5)) {
           return false;
         }
       }
