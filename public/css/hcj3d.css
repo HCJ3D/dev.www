@@ -29,6 +29,7 @@ hcj3d-ground {
     height: 1000px;
     transform-style: preserve-3d;
     background-color: black;
+    backface-visibility: hidden;
 }
     hcj3d-ground.dirt {
         background-color: hsl(34, 53%, 82%);
