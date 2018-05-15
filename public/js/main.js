@@ -88,6 +88,10 @@ $(document).ready(function() {
     document.onkeyup   = keyIsReleased;
 
     function keyIsPressed(e) {
+      if ($('div.dialog').is(':visible')) {
+        return;
+      }
+
       e = e || window.event;
       pressedKeys[e.keyCode || e.which] = true;
     }
