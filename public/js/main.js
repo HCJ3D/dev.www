@@ -466,25 +466,25 @@ $(document).ready(function() {
       updatePerspectiveCss();
     });
 
-    for (var x = 0; x < 5; x++) {
+    for (var x = 0; x < 10; x++) {
       var cubeEntity = new Model.Entity.Cube();
       cubeEntity.rotateX = 0;
       cubeEntity.rotateY = 0;
       cubeEntity.rotateZ = 0;
-      cubeEntity.translateX = Math.floor(Math.random() * 20) * 100;
-      cubeEntity.translateY = Math.floor(Math.random() * 20) * 100;
+      cubeEntity.translateX = Math.floor(Math.random() * 30) * 100;
+      cubeEntity.translateY = Math.floor(Math.random() * 30) * 100;
       cubeEntity.translateZ = 0;
       cubeEntities.push(cubeEntity);
       cubeDrawService.draw(cubeEntity);
     }
 
-    for (var x = 0; x < 9; x++) {
+    for (var x = 0; x < 19; x++) {
       var mannequinEntity = new Model.Entity.Mannequin();
       mannequinEntity.rotateX = 0;
       mannequinEntity.rotateY = 0;
       mannequinEntity.rotateZ = Math.floor(Math.random() * 360); // 0 to 359
-      mannequinEntity.translateX = Math.floor(Math.random() * 1951);
-      mannequinEntity.translateY = Math.floor(Math.random() * 1951);
+      mannequinEntity.translateX = Math.floor(Math.random() * 2951);
+      mannequinEntity.translateY = Math.floor(Math.random() * 2951);
       mannequinEntity.translateZ = 0;
       mannequinEntity.transformOriginX = mannequinEntity.translateX + 10;
       mannequinEntity.transformOriginY = mannequinEntity.translateY + 5;
