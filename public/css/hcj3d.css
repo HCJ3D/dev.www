@@ -291,6 +291,7 @@ hcj3d-cube hcj3d-cube-side {
     height: 100px;
     top: 0;
     left: 0;
+    backface-visibility: hidden;
 }
 hcj3d-cube hcj3d-cube-side[side=bottom] {
     background-color: #ff0;
