@@ -200,7 +200,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(5px) translateZ(5px);
-            border: 1px dotted #000;
+            border: 1px solid #000;
             box-sizing: border-box;
             backface-visibility: hidden;
         }
@@ -258,7 +258,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(180deg) rotateZ(180deg) translateX(0px) translateY(-15px) translateZ(-5px);
             font-size: 5px;
-            border: 1px dotted #000;
+            border: 1px solid #000;
             box-sizing: border-box;
         }
             hcj3d-mannequin-body-back div.name {
@@ -334,7 +334,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(5px) translateZ(-5px);
-            border: 1px dotted #000;
+            border: 1px solid #000;
             box-sizing: border-box;
         }
 hcj3d-cube {
