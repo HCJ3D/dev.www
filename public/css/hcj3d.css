@@ -244,6 +244,8 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             will-change: transform;
         }
         hcj3d-mannequin-head-front {
+            border: 1px solid #000;
+            box-sizing: border-box;
             display: block;
             position: absolute;
             width: 10px;
@@ -308,6 +310,8 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             will-change: transform;
         }
         hcj3d-mannequin-body-front {
+            border: 1px solid #000;
+            box-sizing: border-box;
             display: block;
             position: absolute;
             width: 20px;
@@ -393,6 +397,8 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             will-change: transform;
         }
         hcj3d-mannequin-leg-front {
+            border: 1px solid #000;
+            box-sizing: border-box;
             display: block;
             position: absolute;
             width: 8px;
