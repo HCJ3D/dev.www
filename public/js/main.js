@@ -475,8 +475,8 @@ $(document).ready(function() {
       cubeEntity.rotateX = 0;
       cubeEntity.rotateY = 0;
       cubeEntity.rotateZ = 0;
-      cubeEntity.translateX = Math.floor(Math.random() * 30) * 100;
-      cubeEntity.translateY = Math.floor(Math.random() * 30) * 100;
+      cubeEntity.translateX = Math.floor(Math.random() * 40) * 100;
+      cubeEntity.translateY = Math.floor(Math.random() * 40) * 100;
       cubeEntity.translateZ = 0;
       cubeEntities.push(cubeEntity);
       cubeDrawService.draw(cubeEntity);
@@ -487,8 +487,8 @@ $(document).ready(function() {
       mannequinEntity.rotateX = 0;
       mannequinEntity.rotateY = 0;
       mannequinEntity.rotateZ = Math.floor(Math.random() * 360); // 0 to 359
-      mannequinEntity.translateX = Math.floor(Math.random() * 2951);
-      mannequinEntity.translateY = Math.floor(Math.random() * 2951);
+      mannequinEntity.translateX = Math.floor(Math.random() * 3995);
+      mannequinEntity.translateY = Math.floor(Math.random() * 3995);
       mannequinEntity.translateZ = 0;
       mannequinEntity.transformOriginX = mannequinEntity.translateX + 10;
       mannequinEntity.transformOriginY = mannequinEntity.translateY + 5;
