@@ -506,8 +506,9 @@ $(document).ready(function() {
     $('div#body form').submit(function(event) {
       event.preventDefault();
       $('div#body').fadeOut('fast');
-      var name = $('div#body form input[name=name]').val();
-      $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.name').html(name);
+      var username = $('div#body form input[name=username]').val();
+      username = username.replace(/\W/g, '');
+      $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.username').html(username);
     });
 
     for (var x = 0; x <= 4000; x += 1000) {
