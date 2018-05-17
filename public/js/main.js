@@ -4,6 +4,7 @@ var arrayService         = new Model.Service.Array();
 var cubeService          = new Model.Service.Cube();
 var cubeDrawService      = new Model.Service.Cube.Draw();
 var cubesService         = new Model.Service.Cubes();
+var groundDrawService    = new Model.Service.Ground.Draw();
 var mannequinDrawService = new Model.Service.Mannequin.Draw();
 var mannequinMoveService = new Model.Service.Mannequin.Move();
 var pointsService        = new Model.Service.Points();
@@ -508,4 +509,24 @@ $(document).ready(function() {
       var name = $('div#body form input[name=name]').val();
       $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.name').html(name);
     });
+
+    for (var x = 0; x <= 4000; x += 1000) {
+      for (var y = 0; y <= 4000; y += 1000) {
+        var groundEntity = new Model.Entity.Ground();
+        groundEntity.rotateX    = 0;
+        groundEntity.rotateY    = 0;
+        groundEntity.rotateZ    = 0;
+        groundEntity.translateX = x;
+        groundEntity.translateY = y;
+        groundEntity.translateZ = 0;
+        groundEntity.backgroundColor = {
+          'rgb': {
+            'r': Math.floor(Math.random() * 256),
+            'g': Math.floor(Math.random() * 256),
+            'b': Math.floor(Math.random() * 256),
+          },
+        };
+        groundDrawService.draw(groundEntity);
+      }
+    }
 });

@@ -19,6 +19,8 @@ Model.Entity.Ground = class {
         this.rotateX    = rotateX;
         this.rotateY    = rotateY;
         this.rotateZ    = rotateZ;
+
+        this.backgroundColor;
         this.transformOriginX;
         this.transformOriginY;
         this.transformOriginZ;
