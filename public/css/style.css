@@ -20,6 +20,7 @@ div#body {
     border-radius: 10px;
     padding: 10px;
     transform: translateX(-50%) translateY(-50%);
+    will-change: transform;
 }
 footer {
     display: flex;

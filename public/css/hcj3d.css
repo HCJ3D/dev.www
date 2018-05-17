@@ -5,6 +5,7 @@ hcj3d-world {
     position: absolute;
     transform-style: preserve-3d;
     transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(0px);
+    will-change: transform;
     perspective: 3000px;
 }
 hcj3d-view {
@@ -14,6 +15,7 @@ hcj3d-view {
     position: absolute;
     perspective-origin: 50% 400%;
     transform-style: preserve-3d;
+    will-change: transform;
 }
 hcj3d-perspective {
 	display: block;
@@ -22,6 +24,7 @@ hcj3d-perspective {
     width: 1000px;
     height: 1000px;
     transform-origin: 503px 3090px 0px;
+    will-change: transform;
 }
 hcj3d-ground {
     display: block;
@@ -31,13 +34,27 @@ hcj3d-ground {
     transform-style: preserve-3d;
     background-color: black;
     backface-visibility: hidden;
+    will-change: transform;
 }
+    hcj3d-ground.carbon-fibre {
+        background:
+        radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+        background-color:#282828;
+        background-size:16px 16px;
+    }
     hcj3d-ground.checkerboard {
         background-color: #eee;
         background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
         linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
         background-size:60px 60px;
         background-position:0 0, 30px 30px;
+    }
+    hcj3d-ground.diagonal-stripes {
+        background-color: gray;
+        background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
     }
     hcj3d-ground.dirt {
         background-color: hsl(34, 53%, 82%);
@@ -123,12 +140,20 @@ hcj3d-ground {
         background-color:#e1ebbd;
         background-size: 128px 128px;
     }
+    hcj3d-ground.waves {
+        background:
+        radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+        radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+        background-color: slategray;
+        background-size:75px 100px;
+    }
 hcj3d-mannequin {
     display: block;
     position: absolute;
     width: 20px;
     height: 10px;
     transform-style: preserve-3d;
+    will-change: transform;
 }
 hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
     background-color: #d6bb97;
@@ -141,6 +166,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
         height: 10px;
         transform-style: preserve-3d;
         transform: rotateX(0) rotateY(0) rotateZ(0) translateX(5px) translateY(0px) translateZ(44px);
+        will-change: transform;
     }
         hcj3d-mannequin-head-bottom {
             display: block;
@@ -151,6 +177,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             transform-style: preserve-3d;
             transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
             backface-visibility: hidden;
+            will-change: transform;
         }
         hcj3d-mannequin-head-top {
             display: block;
@@ -161,6 +188,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             transform-style: preserve-3d;
             transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(10px);
             backface-visibility: hidden;
+            will-change: transform;
         }
         hcj3d-mannequin-head-left {
             display: block;
@@ -171,6 +199,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(-90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
             backface-visibility: hidden;
+            will-change: transform;
         }
         hcj3d-mannequin-head-right {
             display: block;
@@ -181,6 +210,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
             backface-visibility: hidden;
+            will-change: transform;
         }
         hcj3d-mannequin-head-front {
             display: block;
@@ -191,6 +221,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(0deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
             backface-visibility: hidden;
+            will-change: transform;
         }
         hcj3d-mannequin-head-back {
             display: block;
@@ -203,6 +234,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             border: 1px solid #000;
             box-sizing: border-box;
             backface-visibility: hidden;
+            will-change: transform;
         }
     hcj3d-mannequin-body {
         display: block;
@@ -212,6 +244,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
         transform-style: preserve-3d;
         transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(12px);
         background-color: tan;
+        will-change: transform;
     }
         hcj3d-mannequin-body-bottom {
             display: block;
@@ -221,6 +254,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(30px);
+            will-change: transform;
         }
         hcj3d-mannequin-body-left {
             display: block;
@@ -230,6 +264,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-15px) translateY(0px) translateZ(5px);
+            will-change: transform;
         }
         hcj3d-mannequin-body-right {
             display: block;
@@ -239,6 +274,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(-15px) translateY(0px) translateZ(-15px);
+            will-change: transform;
         }
         hcj3d-mannequin-body-front {
             display: block;
@@ -248,6 +284,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(15px) translateZ(15px);
+            will-change: transform;
         }
         hcj3d-mannequin-body-back {
             display: block;
@@ -260,6 +297,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             font-size: 5px;
             border: 1px solid #000;
             box-sizing: border-box;
+            will-change: transform;
         }
             hcj3d-mannequin-body-back div.name {
                 text-align: center;
@@ -267,6 +305,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
                 top: 5px;
                 width: 100%;
                 position: absolute;
+                will-change: transform;
             }
     hcj3d-mannequin-leg {
         display: block;
@@ -274,6 +313,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
         width: 8px;
         height: 10px;
         transform-style: preserve-3d;
+        will-change: transform;
     }
     hcj3d-mannequin-leg.left {
         transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(0px);
@@ -289,6 +329,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(0px);
+            will-change: transform;
         }
         hcj3d-mannequin-leg-top {
             display: block;
@@ -298,6 +339,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(10px);
+            will-change: transform;
         }
         hcj3d-mannequin-leg-left {
             display: block;
@@ -307,6 +349,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(-5px);
+            will-change: transform;
         }
         hcj3d-mannequin-leg-right {
             display: block;
@@ -316,6 +359,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(90deg) rotateZ(0) translateX(0px) translateY(5px) translateZ(3px);
+            will-change: transform;
         }
         hcj3d-mannequin-leg-front {
             display: block;
@@ -325,6 +369,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             background-color: tan;
             transform-style: preserve-3d;
             transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(5px) translateZ(5px);
+            will-change: transform;
         }
         hcj3d-mannequin-leg-back {
             display: block;
@@ -336,6 +381,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(5px) translateZ(-5px);
             border: 1px solid #000;
             box-sizing: border-box;
+            will-change: transform;
         }
 hcj3d-cube {
     display: block;
@@ -343,6 +389,7 @@ hcj3d-cube {
     width: 100px;
     height: 100px;
     transform-style: preserve-3d;
+    will-change: transform;
 }
 hcj3d-cube hcj3d-cube-side {
     display: block;
@@ -352,6 +399,7 @@ hcj3d-cube hcj3d-cube-side {
     top: 0;
     left: 0;
     backface-visibility: hidden;
+    will-change: transform;
 }
 hcj3d-cube hcj3d-cube-side[side=bottom] {
     background-color: #ff0;
