@@ -11,7 +11,7 @@ Model.Service.Mannequin.Move = class {
       mannequinEntities
   ) {
     // Does new X fall off of the ground?
-    if ((newX < -5) || (newX > 4995)) {
+    if ((newX < -5) || (newX > 6995)) {
       return false;
     }
 
@@ -51,7 +51,7 @@ Model.Service.Mannequin.Move = class {
       mannequinEntities
   ) {
     // Does new Y fall off of the ground?
-    if ((newY < -5) || (newY > 4995)) {
+    if ((newY < -5) || (newY > 6995)) {
       return false;
     }
 

@@ -476,8 +476,8 @@ $(document).ready(function() {
       cubeEntity.rotateX = 0;
       cubeEntity.rotateY = 0;
       cubeEntity.rotateZ = 0;
-      cubeEntity.translateX = Math.floor(Math.random() * 50) * 100;
-      cubeEntity.translateY = Math.floor(Math.random() * 50) * 100;
+      cubeEntity.translateX = Math.floor(Math.random() * 70) * 100;
+      cubeEntity.translateY = Math.floor(Math.random() * 70) * 100;
       cubeEntity.translateZ = 0;
       cubeEntities.push(cubeEntity);
       cubeDrawService.draw(cubeEntity);
@@ -488,8 +488,8 @@ $(document).ready(function() {
       mannequinEntity.rotateX = 0;
       mannequinEntity.rotateY = 0;
       mannequinEntity.rotateZ = Math.floor(Math.random() * 360); // 0 to 359
-      mannequinEntity.translateX = Math.floor(Math.random() * 4995);
-      mannequinEntity.translateY = Math.floor(Math.random() * 4995);
+      mannequinEntity.translateX = Math.floor(Math.random() * 6995);
+      mannequinEntity.translateY = Math.floor(Math.random() * 6995);
       mannequinEntity.translateZ = 0;
       mannequinEntity.transformOriginX = mannequinEntity.translateX + 10;
       mannequinEntity.transformOriginY = mannequinEntity.translateY + 5;
@@ -511,8 +511,8 @@ $(document).ready(function() {
       $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.username').html(username);
     });
 
-    for (var x = 0; x <= 4000; x += 1000) {
-      for (var y = 0; y <= 4000; y += 1000) {
+    for (var x = 0; x <= 6000; x += 1000) {
+      for (var y = 0; y <= 6000; y += 1000) {
         var groundEntity = new Model.Entity.Ground();
         groundEntity.rotateX    = 0;
         groundEntity.rotateY    = 0;
