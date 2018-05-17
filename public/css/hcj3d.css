@@ -341,6 +341,17 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             will-change: transform;
             backface-visibility: hidden;
         }
+        hcj3d-mannequin-body-top {
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background-color: tan;
+            transform-style: preserve-3d;
+            transform: rotateX(0) rotateY(0) rotateZ(0) translateX(0px) translateY(0px) translateZ(30px);
+            will-change: transform;
+            backface-visibility: hidden;
+        }
             hcj3d-mannequin-body-back div.username {
                 text-align: center;
                 text-indent: 0;
