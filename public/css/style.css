@@ -77,15 +77,49 @@ header {
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 0 0 10px 0;
+        padding: 10px;
     }
+    header div.sun {
+        position: absolute;
+        top: -200px;
+        left: -200px;
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+        background-color: yellow;
+    }
+        header div.sun div.ray.long {
+            position: absolute;
+            width: 20px;
+            height: 200px;
+            background-color: yellow;
+        }
+        header div.sun div.ray.short {
+            position: absolute;
+            width: 20px;
+            height: 100px;
+            background-color: yellow;
+        }
+        header div.sun div.ray[data-id="1"] {
+            transform: translateX(220px) translateY(350px);
+        }
+        header div.sun div.ray[data-id="2"] {
+            transform: translateX(440px) translateY(130px) rotateZ(90deg);
+        }
+        header div.sun div.ray[data-id="3"] {
+            transform: translateX(360px) translateY(270px) rotateZ(-45deg);
+        }
+        header div.sun div.ray[data-id="4"] {
+            transform: translateX(290px) translateY(360px) rotateZ(-22.5deg);
+        }
+        header div.sun div.ray[data-id="5"] {
+            transform: translateX(390px) translateY(250px) rotateZ(-67.5deg);
+        }
     header div.left span {
         font-size: 20px;
     }
     header div {
         margin: 0;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.9);
         display: block;
     }
     header div.right {
@@ -93,6 +127,8 @@ header {
         top: 0;
         right: 0;
         border-radius: 0 0 0 10px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 html {
     font-family: sans-serif;
