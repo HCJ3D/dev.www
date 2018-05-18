@@ -31,16 +31,17 @@ footer {
     width: 100%;
     z-index: 1;
 }
-    footer div {
+    footer > div {
         background-color: rgba(255, 255, 255, 0.9);
         display: inline-block;
         padding: 10px;
     }
-    footer div:first-child {
+    footer > div:first-child {
         border-radius: 0 10px 0 0;
     }
-    footer div:last-child {
+    footer > div:last-child {
         border-radius: 10px 0 0 0;
+        display: flex;
     }
     footer div ol {
         list-style-type: none;
