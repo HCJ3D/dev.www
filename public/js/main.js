@@ -147,9 +147,9 @@ $(document).ready(function() {
       mannequin.data('css')['transform'] = {
         'rotateX': 0,
         'rotateY': 0,
-        'rotateZ': Math.floor(Math.random() * 361),
-        'translateX': Math.floor(Math.random() * 1951),
-        'translateY': Math.floor(Math.random() * 1951),
+        'rotateZ': Math.floor(Math.random() * 360),
+        'translateX': Math.floor(Math.random() * 6995),
+        'translateY': Math.floor(Math.random() * 6995),
         'translateZ': 0,
       };
 
