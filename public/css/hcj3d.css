@@ -360,6 +360,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
                 position: absolute;
                 will-change: transform;
                 backface-visibility: hidden;
+                transform: translateZ(1px);
             }
     hcj3d-mannequin-leg {
         display: block;
