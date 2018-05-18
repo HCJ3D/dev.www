@@ -11,6 +11,7 @@ var pointsService        = new Model.Service.Points();
 
 $(document).ready(function() {
   var cubeEntities      = [];
+  var distanceTraveled  = 0;
   var mannequinEntities = [];
   var pressedKeys       = [];
   var mannequin         = initMannequin();
@@ -293,6 +294,13 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
+    var pointA = new Model.Entity.Point(transform.translateX, transform.translateY, 0);
+    var pointB = new Model.Entity.Point(newX, newY, 0);
+    distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
+      pointA,
+      pointB
+    );
+
     transform.translateX = newX;
     transform.translateY = newY;
     transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
@@ -334,6 +342,13 @@ $(document).ready(function() {
     if (!isNewYValid) {
       newY = transform.translateY;
     }
+
+    var pointA = new Model.Entity.Point(transform.translateX, transform.translateY, 0);
+    var pointB = new Model.Entity.Point(newX, newY, 0);
+    distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
+      pointA,
+      pointB
+    );
 
     transform.translateX = newX;
     transform.translateY = newY;
@@ -377,6 +392,13 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
+    var pointA = new Model.Entity.Point(transform.translateX, transform.translateY, 0);
+    var pointB = new Model.Entity.Point(newX, newY, 0);
+    distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
+      pointA,
+      pointB
+    );
+
     transform.translateX = newX;
     transform.translateY = newY;
     transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
@@ -418,6 +440,13 @@ $(document).ready(function() {
     if (!isNewYValid) {
       newY = transform.translateY;
     }
+
+    var pointA = new Model.Entity.Point(transform.translateX, transform.translateY, 0);
+    var pointB = new Model.Entity.Point(newX, newY, 0);
+    distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
+      pointA,
+      pointB
+    );
 
     transform['translateX'] = newX;
     transform['translateY'] = newY;
