@@ -300,6 +300,7 @@ $(document).ready(function() {
       pointA,
       pointB
     );
+    $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
 
     transform.translateX = newX;
     transform.translateY = newY;
@@ -349,6 +350,7 @@ $(document).ready(function() {
       pointA,
       pointB
     );
+    $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
 
     transform.translateX = newX;
     transform.translateY = newY;
@@ -398,6 +400,7 @@ $(document).ready(function() {
       pointA,
       pointB
     );
+    $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
 
     transform.translateX = newX;
     transform.translateY = newY;
@@ -447,6 +450,7 @@ $(document).ready(function() {
       pointA,
       pointB
     );
+    $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
 
     transform['translateX'] = newX;
     transform['translateY'] = newY;
