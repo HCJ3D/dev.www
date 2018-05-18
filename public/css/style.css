@@ -68,15 +68,15 @@ h2 {
     font-size: 40px;
 }
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
 }
     header div.left {
+        position: absolute;
+        top: 0;
+        left: 0;
         border-radius: 0 0 10px 0;
     }
     header div.left span {
@@ -89,6 +89,9 @@ header {
         display: block;
     }
     header div.right {
+        position: absolute;
+        top: 0;
+        right: 0;
         border-radius: 0 0 0 10px;
     }
 html {
