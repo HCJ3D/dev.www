@@ -30,6 +30,10 @@ $(document).ready(function() {
       return;
     }
 
+    if (pressedKeys[13]) {
+      console.log('enter key detected');
+    }
+
     if (pressedKeys[32]) {
       // space bar
       $('#space-bar').addClass('bc-g');
