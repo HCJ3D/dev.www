@@ -164,7 +164,7 @@ $(document).ready(function() {
     mannequin.data('css')['transform-origin'] = {
       'x': transform['translateX'] + 10,
       'y': transform['translateY'] + 5,
-      'z': 50,
+      'z': 0,
     };
 
     return mannequin;
@@ -532,7 +532,7 @@ $(document).ready(function() {
     mannequinEntity.translateZ = 0;
     mannequinEntity.transformOriginX = mannequinEntity.translateX + 10;
     mannequinEntity.transformOriginY = mannequinEntity.translateY + 5;
-    mannequinEntity.transformOriginZ = 5;
+    mannequinEntity.transformOriginZ = 0;
     mannequinEntities.push(mannequinEntity);
     mannequinDrawService.draw(mannequinEntity);
   }
