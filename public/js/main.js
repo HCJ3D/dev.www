@@ -30,9 +30,17 @@ $(document).ready(function() {
       return;
     }
 
+    /*
+    var speechSynthesis = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance('now i can make it say anything with the press of the return key');
     if (pressedKeys[13]) {
       console.log('enter key detected');
+      if (speechSynthesis.speaking) {
+        return;
+      }
+      speechSynthesis.speak(utterance);
     }
+    */
 
     if (pressedKeys[32]) {
       // space bar
