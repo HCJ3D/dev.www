@@ -383,7 +383,7 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             will-change: transform;
             backface-visibility: hidden;
         }
-            hcj3d-mannequin-body-back div.username {
+            hcj3d-mannequin-body-back div.display-name {
                 text-align: center;
                 text-indent: 0;
                 top: 5px;

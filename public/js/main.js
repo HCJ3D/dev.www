@@ -544,6 +544,8 @@ $(document).ready(function() {
   }
 
   $('main').on('click', 'hcj3d-mannequin#me hcj3d-mannequin-body-back', function() {
+    var displayName = $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.display-name').html();
+    $('div.dialog.body form input[name=display-name]').val(displayName);
     $('div.dialog.body').fadeIn('fast');
     $('div.dialog.body input[type=text]').select();
   });
@@ -551,9 +553,9 @@ $(document).ready(function() {
   $('div.dialog.body form').submit(function(event) {
     event.preventDefault();
     $('div.dialog.body').fadeOut('fast');
-    var username = $('div.dialog.body form input[name=username]').val();
-    username = username.replace(/[^\w ]/g, '');
-    $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.username').html(username);
+    var displayName = $('div.dialog.body form input[name=display-name]').val();
+    displayName = displayName.replace(/[^\w ]/g, '');
+    $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.display-name').html(displayName);
   });
 
   $('div.dialog.text-to-speech form').submit(function(event) {
