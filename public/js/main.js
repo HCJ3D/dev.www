@@ -544,14 +544,14 @@ $(document).ready(function() {
   }
 
   $('main').on('click', 'hcj3d-mannequin#me hcj3d-mannequin-body-back', function() {
-    $('div#body').fadeIn('fast');
-    $('div#body input[type=text]').focus();
+    $('div.dialog.body').fadeIn('fast');
+    $('div.dialog.body input[type=text]').select();
   });
 
-  $('div#body form').submit(function(event) {
+  $('div.dialog.body form').submit(function(event) {
     event.preventDefault();
-    $('div#body').fadeOut('fast');
-    var username = $('div#body form input[name=username]').val();
+    $('div.dialog.body').fadeOut('fast');
+    var username = $('div.dialog.body form input[name=username]').val();
     username = username.replace(/\W/g, '');
     $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.username').html(username);
   });
