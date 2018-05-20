@@ -553,11 +553,30 @@ $(document).ready(function() {
   $('div.dialog.text-to-speech form').submit(function(event) {
     event.preventDefault();
     var speech = $('div.dialog.text-to-speech form input[name=speech]').val();
+
     $('div.dialog.text-to-speech').fadeOut('fast', function() {
       $('div.dialog.text-to-speech form input[name=speech]').val('');
     });
+
+    if (!speech.length) {
+      return;
+    }
+
+    $('hcj3d-mannequin#me hcj3d-mannequin-bubble-text').html(speech);
+
+    $('hcj3d-mannequin#me hcj3d-mannequin-bubble').fadeIn('fast');
+
+    $('hcj3d-mannequin#me hcj3d-mannequin-bubble-text').css('left', 0 + 'px');
+    var outerWidth = $('hcj3d-mannequin#me hcj3d-mannequin-bubble-text').outerWidth();
+    var left = (50 - outerWidth) / 2;
+    $('hcj3d-mannequin#me hcj3d-mannequin-bubble-text').css('left', left + 'px');
+
+
     var speechSynthesis = window.speechSynthesis;
     var utterance = new SpeechSynthesisUtterance(speech);
+    utterance.onend = function (event) {
+      $('hcj3d-mannequin#me hcj3d-mannequin-bubble').fadeOut('fast');
+    };
     speechSynthesis.speak(utterance);
   });
 

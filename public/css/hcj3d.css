@@ -190,6 +190,36 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
     background-color: #d6bb97;
     cursor: pointer;
 }
+    hcj3d-mannequin-bubble {
+        display: none;
+        position: absolute;
+        transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateX(-15px) translateY(-58px) translateZ(10px);
+        width: 50px;
+    }
+        hcj3d-mannequin-bubble-text {
+            display: block;
+            position: absolute;
+            background-color: #fff;
+            font-size: 5px;
+            padding: 2px;
+            border-radius: 5px;
+            width: auto;
+            min-width: 20px;
+            bottom: 0px;
+            box-sizing: border-box;
+            text-align: center;
+            text-indent: 0;
+        }
+        hcj3d-mannequin-bubble-arrow {
+            display: block;
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            border-right: 3px solid transparent;
+            border-left: 3px solid transparent;
+            border-top: 3px solid #fff;
+            transform: translateX(22px);
+        }
     hcj3d-mannequin-head {
         display: block;
         position: absolute;
