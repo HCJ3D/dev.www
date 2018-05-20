@@ -375,8 +375,8 @@ $(document).ready(function() {
     var sin = Math.sin(transform.rotateZ * Math.PI / 180);
     var cos = Math.cos(transform.rotateZ * Math.PI / 180);
 
-    var newX = transform.translateX - 10 * cos;
-    var newY = transform.translateY - 10 * sin;
+    var newX = transform.translateX - 5 * cos;
+    var newY = transform.translateY - 5 * sin;
 
     var isNewXValid = mannequinMoveService.isNewXValid(
       transform.translateX,
@@ -425,8 +425,8 @@ $(document).ready(function() {
     var sin = Math.sin(transform.rotateZ * Math.PI / 180);
     var cos = Math.cos(transform.rotateZ * Math.PI / 180);
 
-    var newX = transform.translateX + 10 * cos;
-    var newY = transform.translateY + 10 * sin;
+    var newX = transform.translateX + 5 * cos;
+    var newY = transform.translateY + 5 * sin;
 
     var isNewXValid = mannequinMoveService.isNewXValid(
       transform.translateX,
