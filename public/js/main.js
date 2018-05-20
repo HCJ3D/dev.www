@@ -552,7 +552,7 @@ $(document).ready(function() {
     event.preventDefault();
     $('div.dialog.body').fadeOut('fast');
     var username = $('div.dialog.body form input[name=username]').val();
-    username = username.replace(/\W/g, '');
+    username = username.replace(/[^\w ]/g, '');
     $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.username').html(username);
   });
 
