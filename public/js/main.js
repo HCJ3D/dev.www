@@ -30,17 +30,11 @@ $(document).ready(function() {
       return;
     }
 
-    /*
-    var speechSynthesis = window.speechSynthesis;
-    var utterance = new SpeechSynthesisUtterance('now i can make it say anything with the press of the return key');
+    // return key
     if (pressedKeys[13]) {
-      console.log('enter key detected');
-      if (speechSynthesis.speaking) {
-        return;
-      }
-      speechSynthesis.speak(utterance);
+      $('div.dialog.text-to-speech').fadeIn('fast');
+      $('div.dialog.text-to-speech input[type=text]').select();
     }
-    */
 
     if (pressedKeys[32]) {
       // space bar
@@ -554,6 +548,17 @@ $(document).ready(function() {
     var username = $('div.dialog.body form input[name=username]').val();
     username = username.replace(/\W/g, '');
     $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.username').html(username);
+  });
+
+  $('div.dialog.text-to-speech form').submit(function(event) {
+    event.preventDefault();
+    var speech = $('div.dialog.text-to-speech form input[name=speech]').val();
+    $('div.dialog.text-to-speech').fadeOut('fast', function() {
+      $('div.dialog.text-to-speech form input[name=speech]').val('');
+    });
+    var speechSynthesis = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(speech);
+    speechSynthesis.speak(utterance);
   });
 
   for (var x = 0; x <= 6000; x += 1000) {
