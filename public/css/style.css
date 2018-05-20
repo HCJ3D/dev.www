@@ -9,18 +9,21 @@ body {
     font-size: 20px;
     word-wrap: break-word;
 }
-div.dialog *:last-child {
-    margin-bottom: 0;
+div.dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    transform: translateX(-50%) translateY(-50%);
+    will-change: transform;
 }
-    div.dialog.body {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        padding: 10px;
-        transform: translateX(-50%) translateY(-50%);
-        will-change: transform;
+    div.dialog *:last-child {
+        margin-bottom: 0;
+    }
+    div.dialog.text-to-speech input[type=text] {
+        width: 400px;
     }
 footer {
     display: flex;
