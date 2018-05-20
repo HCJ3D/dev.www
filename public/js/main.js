@@ -32,6 +32,7 @@ $(document).ready(function() {
 
     // return key
     if (pressedKeys[13]) {
+      $('#return').addClass('bc-g');
       $('div.dialog.text-to-speech').fadeIn('fast');
       $('div.dialog.text-to-speech input[type=text]').select();
     }
@@ -107,6 +108,11 @@ $(document).ready(function() {
   function keyIsReleased(e) {
     e = e || window.event;
     pressedKeys[e.keyCode || e.which] = false;
+
+    // return
+    if (!pressedKeys[13]) {
+      $('#return').removeClass('bc-g');
+    }
 
     if (!pressedKeys[32]) {
       // space bar
