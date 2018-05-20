@@ -264,12 +264,32 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             height: 10px;
             background-color: tan;
             transform-style: preserve-3d;
-            transform: rotateX(90deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(5px) translateZ(5px);
+            transform: rotateX(90deg) rotateY(180deg) rotateZ(180deg) translateX(0px) translateY(-5px) translateZ(5px);
             border: 1px solid #000;
             box-sizing: border-box;
             backface-visibility: hidden;
+            font-size: 5px;
             will-change: transform;
         }
+            hcj3d-mannequin-head-back div.username {
+                font-size: 5px;
+                text-align: center;
+                text-indent: 0;
+                top: 5px;
+                width: 100%;
+                position: absolute;
+                backface-visibility: hidden;
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(1px);
+
+                    /*
+                backface-visibility: hidden;
+                display: block;
+                position: absolute;
+                transform: rotateX(-90deg) rotateY(0) rotateZ(0) translateX(0px) translateY(-100px) translateZ(0px);
+                transform-style: preserve-3d;
+                will-change: transform;
+                */
+            }
     hcj3d-mannequin-body {
         display: block;
         position: absolute;
@@ -358,7 +378,6 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
                 top: 5px;
                 width: 100%;
                 position: absolute;
-                will-change: transform;
                 backface-visibility: hidden;
                 transform: translateZ(1px);
             }
