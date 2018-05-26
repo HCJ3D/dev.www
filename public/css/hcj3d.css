@@ -372,6 +372,15 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             will-change: transform;
             backface-visibility: hidden;
         }
+            hcj3d-mannequin-body-back div.display-name {
+                text-align: center;
+                text-indent: 0;
+                top: 40%;
+                width: 100%;
+                position: absolute;
+                backface-visibility: hidden;
+                transform: translateY(-55%) translateZ(1px);
+            }
         hcj3d-mannequin-body-top {
             display: block;
             position: absolute;
@@ -383,15 +392,6 @@ hcj3d-mannequin#me hcj3d-mannequin-body hcj3d-mannequin-body-back:hover {
             will-change: transform;
             backface-visibility: hidden;
         }
-            hcj3d-mannequin-body-back div.display-name {
-                text-align: center;
-                text-indent: 0;
-                top: 5px;
-                width: 100%;
-                position: absolute;
-                backface-visibility: hidden;
-                transform: translateZ(1px);
-            }
     hcj3d-mannequin-leg {
         display: block;
         position: absolute;
