@@ -59,6 +59,12 @@ footer {
             font-size: 20px;
             padding: 5px;
         }
+    footer ol.panels li {
+        border-radius: 10px 10px 0 0;
+    }
+    footer ol.panels li:last-child {
+        border-radius: 10px 0 0 0;
+    }
 h1 {
     display: block;
     margin: 0;
@@ -165,4 +171,18 @@ main {
     display: block;
     position: fixed;
     background: linear-gradient(SkyBlue, White);
+}
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ol.panels {
+    font-size: 0;
+}
+ol.panels li {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 20px;
+    padding: 10px;
 }
