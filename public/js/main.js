@@ -239,6 +239,9 @@ $(document).ready(function() {
         step: function (now, fx) {
           transform.translateZ = (-Math.pow((now - 50), 2) + 2500) / 100;
           updateMannequin();
+
+          z = transform.translateZ;
+          $('#z').html(Math.round(z * 100) / 100);
         },
         duration: duration,
         easing: 'linear',
@@ -314,6 +317,10 @@ $(document).ready(function() {
       new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
+    x = newX;
+    $('#x').html(Math.round(x * 100) / 100);
+    y = newY;
+    $('#y').html(Math.round(y * 100) / 100);
 
     transform.translateX = newX;
     transform.translateY = newY;
@@ -362,6 +369,10 @@ $(document).ready(function() {
       new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
+    x = newX;
+    $('#x').html(Math.round(x * 100) / 100);
+    y = newY;
+    $('#y').html(Math.round(y * 100) / 100);
 
     transform.translateX = newX;
     transform.translateY = newY;
@@ -410,6 +421,10 @@ $(document).ready(function() {
       new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
+    x = newX;
+    $('#x').html(Math.round(x * 100) / 100);
+    y = newY;
+    $('#y').html(Math.round(y * 100) / 100);
 
     transform.translateX = newX;
     transform.translateY = newY;
@@ -458,6 +473,10 @@ $(document).ready(function() {
       new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
+    x = newX;
+    $('#x').html(Math.round(x * 100) / 100);
+    y = newY;
+    $('#y').html(Math.round(y * 100) / 100);
 
     transform['translateX'] = newX;
     transform['translateY'] = newY;
