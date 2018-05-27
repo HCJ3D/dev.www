@@ -20,6 +20,11 @@ $(document).ready(function() {
   var y;
   var z;
 
+  x = mannequin.data('css')['transform']['translateX'];
+  $('#x').html(Math.round(x * 100) / 100);
+  y = mannequin.data('css')['transform']['translateY'];
+  $('#y').html(Math.round(y * 100) / 100);
+
   var perspective = $('hcj3d-perspective');
   perspective.data('css', {});
   setPerspectiveDataAroundMannequin(perspective, mannequin);
