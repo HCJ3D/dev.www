@@ -16,6 +16,9 @@ $(document).ready(function() {
   var pressedKeys       = [];
   var mannequin         = initMannequin();
   var view              = initView();
+  var x;
+  var y;
+  var z;
 
   var perspective = $('hcj3d-perspective');
   perspective.data('css', {});
@@ -306,11 +309,9 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
-    var pointA = new Model.Entity.Point(transform.translateX, transform.translateY, 0);
-    var pointB = new Model.Entity.Point(newX, newY, 0);
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
-      pointA,
-      pointB
+      new Model.Entity.Point(transform.translateX, transform.translateY, 0),
+      new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
 
@@ -356,11 +357,9 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
-    var pointA = new Model.Entity.Point(transform.translateX, transform.translateY, 0);
-    var pointB = new Model.Entity.Point(newX, newY, 0);
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
-      pointA,
-      pointB
+      new Model.Entity.Point(transform.translateX, transform.translateY, 0),
+      new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
 
@@ -406,11 +405,9 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
-    var pointA = new Model.Entity.Point(transform.translateX, transform.translateY, 0);
-    var pointB = new Model.Entity.Point(newX, newY, 0);
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
-      pointA,
-      pointB
+      new Model.Entity.Point(transform.translateX, transform.translateY, 0),
+      new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
 
@@ -456,11 +453,9 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
-    var pointA = new Model.Entity.Point(transform.translateX, transform.translateY, 0);
-    var pointB = new Model.Entity.Point(newX, newY, 0);
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
-      pointA,
-      pointB
+      new Model.Entity.Point(transform.translateX, transform.translateY, 0),
+      new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
 
