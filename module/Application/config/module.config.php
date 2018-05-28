@@ -21,6 +21,15 @@ return [
                     ],
                 ],
             ],
+            'mannequin' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route'    => '/mannequin/:action',
+                    'defaults' => [
+                        'controller' => Controller\Mannequin::class,
+                    ],
+                ],
+            ],
             'user' => [
                 'type' => Segment::class,
                 'options' => [
@@ -38,6 +47,9 @@ return [
                 return new ApplicationController\Index(
                     $serviceManager->get(UserFactory\User\BuildFromCookies::class)
                 );
+            },
+            ApplicationController\Mannequin::class => function ($serviceManager) {
+                return new ApplicationController\Mannequin();
             },
             ApplicationController\User::class => function ($serviceManager) {
                 return new ApplicationController\User(
