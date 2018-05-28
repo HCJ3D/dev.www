@@ -101,6 +101,12 @@ $(document).ready(function() {
   }
   setInterval(oneCentisecondLoop, 10);
 
+  function oneSecondLoop() {
+    // console.log('great');
+  }
+  setInterval(oneSecondLoop, 1000);
+
+
   document.onkeydown = keyIsPressed;
   document.onkeyup   = keyIsReleased;
 
