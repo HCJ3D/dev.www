@@ -181,6 +181,14 @@ $(document).ready(function() {
       'z': 0,
     };
 
+    $.get(
+      'user/getDisplayName',
+      function (displayName) {
+        $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.display-name')
+          .html(displayName);
+      },
+    );
+
     return mannequin;
   }
 
