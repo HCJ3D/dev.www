@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "83084fd4cd74085d5545906133d6f9f7",
-    "content-hash": "bc0cd10e993fecb3fee023a89373f2b9",
+    "hash": "f39061f75e6a007a5ecc7146d37bbd60",
+    "content-hash": "0150ed6f8f4beb1437253b26443f6a5d",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -243,6 +243,37 @@
                 "MIT"
             ],
             "time": "2018-04-29 05:21:22"
+        },
+        {
+            "name": "leo-galleguillos/three-dimensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LeoGalleguillos/ThreeDimensions.git",
+                "reference": "669790c0513164a977e1e2bdbc2f0fbaaf29611e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LeoGalleguillos/ThreeDimensions/zipball/669790c0513164a977e1e2bdbc2f0fbaaf29611e",
+                "reference": "669790c0513164a977e1e2bdbc2f0fbaaf29611e",
+                "shasum": ""
+            },
+            "require": {
+                "zendframework/zend-db": "^2.9",
+                "zendframework/zend-test": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LeoGalleguillos\\ThreeDimensions\\": "src/",
+                    "LeoGalleguillos\\ThreeDimensionsTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2018-05-28 05:18:38"
         },
         {
             "name": "leo-galleguillos/user",
@@ -2836,6 +2867,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "leo-galleguillos/entity": 20,
+        "leo-galleguillos/three-dimensions": 20,
         "leo-galleguillos/user": 20,
         "zendframework/zend-component-installer": 20
     },
