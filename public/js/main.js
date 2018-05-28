@@ -575,6 +575,11 @@ $(document).ready(function() {
     var displayName = $('div.dialog.body form input[name=display-name]').val();
     displayName = displayName.replace(/[^\w ]/g, '');
     $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.display-name').html(displayName);
+
+    $.post(
+      '/user/updateDisplayName',
+      $('div.dialog.body form').serialize()
+    );
   });
 
   $('div.dialog.text-to-speech form').submit(function(event) {
