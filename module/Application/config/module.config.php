@@ -3,6 +3,7 @@ namespace Application;
 
 use Application\Controller as ApplicationController;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
+use LeoGalleguillos\User\Model\Table as UserTable;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
@@ -40,7 +41,8 @@ return [
             },
             ApplicationController\User::class => function ($serviceManager) {
                 return new ApplicationController\User(
-                    $serviceManager->get(UserFactory\User\BuildFromCookies::class)
+                    $serviceManager->get(UserFactory\User\BuildFromCookies::class),
+                    $serviceManager->get(UserTable\User\DisplayName::class)
                 );
             },
         ],
