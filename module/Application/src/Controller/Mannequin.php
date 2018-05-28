@@ -1,22 +1,17 @@
 <?php
 namespace Application\Controller;
 
-use LeoGalleguillos\User\Model\Factory as UserFactory;
-use LeoGalleguillos\User\Model\Table as UserTable;
+use LeoGalleguillos\ThreeDimensions\Model\Table as ThreeDimensionsTable;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class Mannequin extends AbstractActionController
 {
-    /**
     public function __construct(
-        UserFactory\User\BuildFromCookies $buildFromCookiesFactory,
-        UserTable\User\DisplayName $displayNameTable
+        ThreeDimensionsTable\Mannequin $mannequinTable
     ) {
-        $this->buildFromCookiesFactory = $buildFromCookiesFactory;
-        $this->displayNameTable        = $displayNameTable;
+        $this->mannequinTable = $mannequinTable;
     }
-     */
 
     public function updateWhereUserIdAction()
     {

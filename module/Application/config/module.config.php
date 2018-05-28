@@ -2,6 +2,7 @@
 namespace Application;
 
 use Application\Controller as ApplicationController;
+use LeoGalleguillos\ThreeDimensions\Model\Table as ThreeDimensionsTable;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
 use LeoGalleguillos\User\Model\Table as UserTable;
 use Zend\Router\Http\Literal;
@@ -49,7 +50,9 @@ return [
                 );
             },
             ApplicationController\Mannequin::class => function ($serviceManager) {
-                return new ApplicationController\Mannequin();
+                return new ApplicationController\Mannequin(
+                    $serviceManager->get(ThreeDimensionsTable\Mannequin::class)
+                );
             },
             ApplicationController\User::class => function ($serviceManager) {
                 return new ApplicationController\User(
