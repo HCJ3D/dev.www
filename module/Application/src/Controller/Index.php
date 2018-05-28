@@ -7,13 +7,11 @@ use Zend\View\Model\ViewModel;
 
 class Index extends AbstractActionController
 {
-    /*
     public function __construct(
         UserFactory\User $userFactory
     ) {
         $this->userFactory = $userFactory;
     }
-     */
 
     public function indexAction()
     {

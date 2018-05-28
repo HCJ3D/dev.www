@@ -2,6 +2,7 @@
 namespace Application;
 
 use Application\Controller as ApplicationController;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
@@ -19,21 +20,15 @@ return [
                     ],
                 ],
             ],
-            'application' => [
-                'type'    => Segment::class,
-                'options' => [
-                    'route'    => '/application[/:action]',
-                    'defaults' => [
-                        'controller' => Controller\Index::class,
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
         ],
     ],
     'controllers' => [
         'factories' => [
-            Controller\Index::class => InvokableFactory::class,
+            ApplicationController\Index::class => function ($serviceManager) {
+                return new ApplicationController\Index(
+                    $serviceManager->get(UserFactory\User::class)
+                );
+            },
         ],
     ],
     'view_manager' => [
