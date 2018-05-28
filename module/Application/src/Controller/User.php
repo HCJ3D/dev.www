@@ -16,6 +16,19 @@ class User extends AbstractActionController
         $this->displayNameTable        = $displayNameTable;
     }
 
+    public function getDisplayNameAction()
+    {
+        $viewModel = new ViewModel();
+        $viewModel->setTerminal(true);
+
+        $viewModel->setVariable(
+            'userEntity',
+            $this->buildFromCookiesFactory->buildFromCookies()
+        );
+
+        return $viewModel;
+    }
+
     public function updateDisplayNameAction()
     {
         $displayName = $_POST['display-name'];

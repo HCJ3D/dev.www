@@ -1,0 +1,8 @@
+<?php
+try {
+    $displayName = $userEntity->getDisplayName();
+} catch (TypeError $typeError) {
+    $displayName = 'Your Name Here';
+}
+?>
+<?= $displayName; ?>
