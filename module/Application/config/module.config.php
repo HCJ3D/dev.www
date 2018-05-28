@@ -20,13 +20,27 @@ return [
                     ],
                 ],
             ],
+            'user' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route'    => '/user/:action',
+                    'defaults' => [
+                        'controller' => Controller\User::class,
+                    ],
+                ],
+            ],
         ],
     ],
     'controllers' => [
         'factories' => [
             ApplicationController\Index::class => function ($serviceManager) {
                 return new ApplicationController\Index(
-                    $serviceManager->get(UserFactory\User::class)
+                    $serviceManager->get(UserFactory\User\BuildFromCookies::class)
+                );
+            },
+            ApplicationController\User::class => function ($serviceManager) {
+                return new ApplicationController\User(
+                    $serviceManager->get(UserFactory\User\BuildFromCookies::class)
                 );
             },
         ],

@@ -5,7 +5,7 @@ use LeoGalleguillos\User\Model\Factory as UserFactory;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class Index extends AbstractActionController
+class User extends AbstractActionController
 {
     public function __construct(
         UserFactory\User\BuildFromCookies $buildFromCookiesFactory
@@ -13,7 +13,7 @@ class Index extends AbstractActionController
         $this->buildFromCookiesFactory = $buildFromCookiesFactory;
     }
 
-    public function indexAction()
+    public function updateDisplayNameAction()
     {
         $this->buildFromCookiesFactory->buildFromCookies();
 
