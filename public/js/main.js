@@ -13,6 +13,7 @@ $(document).ready(function() {
   var cubeEntities      = [];
   var distanceTraveled  = 0;
   var mannequinEntities = [];
+  var me                = new Model.Entity.Mannequin();
   var pressedKeys       = [];
   var mannequin         = initMannequin();
   var view              = initView();
@@ -178,16 +179,27 @@ $(document).ready(function() {
   }
 
   function initMannequin() {
+    me.rotateX = 0;
+    me.rotateY = 0;
+    me.rotateZ = Math.floor(Math.random() * 360);
+    me.translateX = Math.floor(Math.random() * 6995);
+    me.translateY = Math.floor(Math.random() * 6995);
+    me.translateZ = 0;
+    me.transformOriginX = me.translateX + 10;
+    me.transformOriginY = me.translateY + 5;
+    me.transformOriginZ = 0;
+    me.jQuery = $('hcj3d-mannequin#me');
+
     var mannequin = $('hcj3d-mannequin');
     mannequin.data('css', {});
 
     mannequin.data('css')['transform'] = {
-      'rotateX': 0,
-      'rotateY': 0,
-      'rotateZ': Math.floor(Math.random() * 360),
-      'translateX': Math.floor(Math.random() * 6995),
-      'translateY': Math.floor(Math.random() * 6995),
-      'translateZ': 0,
+      'rotateX': me.rotateX,
+      'rotateY': me.rotateY,
+      'rotateZ': me.rotateZ,
+      'translateX': me.translateX,
+      'translateY': me.translateY,
+      'translateZ': me.translateZ,
     };
 
     var transform = mannequin.data('css')['transform'];
