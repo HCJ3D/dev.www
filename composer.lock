@@ -250,12 +250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/ThreeDimensions.git",
-                "reference": "05819ee5156b6366d612af136f9de0e46b1ce1b9"
+                "reference": "0de253f3baf9212fc0c7e7a909ce4b0e0981e4c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/ThreeDimensions/zipball/05819ee5156b6366d612af136f9de0e46b1ce1b9",
-                "reference": "05819ee5156b6366d612af136f9de0e46b1ce1b9",
+                "url": "https://api.github.com/repos/LeoGalleguillos/ThreeDimensions/zipball/0de253f3baf9212fc0c7e7a909ce4b0e0981e4c6",
+                "reference": "0de253f3baf9212fc0c7e7a909ce4b0e0981e4c6",
                 "shasum": ""
             },
             "require": {
@@ -273,7 +273,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-05-28 21:51:27"
+            "time": "2018-05-28 21:54:34"
         },
         {
             "name": "leo-galleguillos/user",
