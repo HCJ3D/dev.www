@@ -102,7 +102,17 @@ $(document).ready(function() {
   setInterval(oneCentisecondLoop, 10);
 
   function oneSecondLoop() {
-    // console.log('great');
+    $.post(
+      '/mannequin/updateWhereUserId',
+      {
+        'translateX': 0,
+        'translateY': 0,
+        'translateZ': 0,
+        'rotateX': 0,
+        'rotateY': 0,
+        'rotateZ': 0,
+      }
+    );
   }
   setInterval(oneSecondLoop, 1000);
 

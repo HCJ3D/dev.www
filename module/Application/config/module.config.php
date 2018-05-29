@@ -51,7 +51,8 @@ return [
             },
             ApplicationController\Mannequin::class => function ($serviceManager) {
                 return new ApplicationController\Mannequin(
-                    $serviceManager->get(ThreeDimensionsTable\Mannequin::class)
+                    $serviceManager->get(ThreeDimensionsTable\Mannequin::class),
+                    $serviceManager->get(UserFactory\User\BuildFromCookies::class)
                 );
             },
             ApplicationController\User::class => function ($serviceManager) {
