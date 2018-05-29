@@ -250,12 +250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/ThreeDimensions.git",
-                "reference": "3ec60999f98d02d30269a6229707d5ad4e7be831"
+                "reference": "e24010d5ce335a78e56df626c82d90c089e93ae6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/ThreeDimensions/zipball/3ec60999f98d02d30269a6229707d5ad4e7be831",
-                "reference": "3ec60999f98d02d30269a6229707d5ad4e7be831",
+                "url": "https://api.github.com/repos/LeoGalleguillos/ThreeDimensions/zipball/e24010d5ce335a78e56df626c82d90c089e93ae6",
+                "reference": "e24010d5ce335a78e56df626c82d90c089e93ae6",
                 "shasum": ""
             },
             "require": {
@@ -273,7 +273,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-05-29 05:56:45"
+            "time": "2018-05-29 06:26:19"
         },
         {
             "name": "leo-galleguillos/user",
@@ -281,12 +281,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "3dfa94e1f0db562b9bc53064ad09a8f79a46fae3"
+                "reference": "9b043dc88cee9a63cb4cc8f2477dc2d071aa64fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/3dfa94e1f0db562b9bc53064ad09a8f79a46fae3",
-                "reference": "3dfa94e1f0db562b9bc53064ad09a8f79a46fae3",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/9b043dc88cee9a63cb4cc8f2477dc2d071aa64fd",
+                "reference": "9b043dc88cee9a63cb4cc8f2477dc2d071aa64fd",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-05-28 20:30:21"
+            "time": "2018-05-29 06:29:37"
         },
         {
             "name": "myclabs/deep-copy",
