@@ -2,6 +2,7 @@
 namespace Application\Controller;
 
 use LeoGalleguillos\ThreeDimensions\Model\Factory as ThreeDimensionsFactory;
+use LeoGalleguillos\ThreeDimensions\Model\Service as ThreeDimensionsService;
 use LeoGalleguillos\ThreeDimensions\Model\Table as ThreeDimensionsTable;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -11,10 +12,12 @@ class Mannequin extends AbstractActionController
 {
     public function __construct(
         ThreeDimensionsFactory\Mannequin $mannequinFactory,
+        ThreeDimensionsService\Mannequin\Json $mannequinJsonService,
         ThreeDimensionsTable\Mannequin $mannequinTable,
         UserFactory\User\BuildFromCookies $buildFromCookiesFactory
     ) {
         $this->mannequinFactory        = $mannequinFactory;
+        $this->mannequinJsonService    = $mannequinJsonService;
         $this->mannequinTable          = $mannequinTable;
         $this->buildFromCookiesFactory = $buildFromCookiesFactory;
     }

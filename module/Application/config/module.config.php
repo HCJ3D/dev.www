@@ -3,6 +3,7 @@ namespace Application;
 
 use Application\Controller as ApplicationController;
 use LeoGalleguillos\ThreeDimensions\Model\Factory as ThreeDimensionsFactory;
+use LeoGalleguillos\ThreeDimensions\Model\Service as ThreeDimensionsService;
 use LeoGalleguillos\ThreeDimensions\Model\Table as ThreeDimensionsTable;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
 use LeoGalleguillos\User\Model\Table as UserTable;
@@ -53,6 +54,7 @@ return [
             ApplicationController\Mannequin::class => function ($serviceManager) {
                 return new ApplicationController\Mannequin(
                     $serviceManager->get(ThreeDimensionsFactory\Mannequin::class),
+                    $serviceManager->get(ThreeDimensionsService\Mannequin\Json::class),
                     $serviceManager->get(ThreeDimensionsTable\Mannequin::class),
                     $serviceManager->get(UserFactory\User\BuildFromCookies::class)
                 );
