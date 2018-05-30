@@ -26,6 +26,9 @@ class Mannequin extends AbstractActionController
             $_POST['rotateX'],
             $_POST['rotateY'],
             $_POST['rotateZ'],
+            $_POST['transformOriginX'],
+            $_POST['transformOriginY'],
+            $_POST['transformOriginZ'],
             $userEntity->getUserId()
         );
 

@@ -112,6 +112,9 @@ $(document).ready(function() {
         'rotateX': me.rotateX,
         'rotateY': me.rotateY,
         'rotateZ': me.rotateZ,
+        'transformOriginX': me.transformOriginX,
+        'transformOriginY': me.transformOriginY,
+        'transformOriginZ': me.transformOriginZ,
       }
     );
   }
@@ -353,8 +356,6 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
-    me.translateX = newX;
-    me.translateY = newY;
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(transform.translateX, transform.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
@@ -369,6 +370,10 @@ $(document).ready(function() {
     transform.translateY = newY;
     transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
     transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
+    me.translateX = newX;
+    me.translateY = newY;
+    me.transformOriginX = transformOrigin['x'];
+    me.transformOriginY = transformOrigin['y'];
     updateMannequin();
 
     setPerspectiveDataAroundMannequin(perspective, mannequin);
@@ -407,8 +412,6 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
-    me.translateX = newX;
-    me.translateY = newY;
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(transform.translateX, transform.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
@@ -423,6 +426,10 @@ $(document).ready(function() {
     transform.translateY = newY;
     transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
     transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
+    me.translateX = newX;
+    me.translateY = newY;
+    me.transformOriginX = transformOrigin['x'];
+    me.transformOriginY = transformOrigin['y'];
     updateMannequin();
 
     setPerspectiveDataAroundMannequin(perspective, mannequin);
@@ -461,8 +468,6 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
-    me.translateX = newX;
-    me.translateY = newY;
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(transform.translateX, transform.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
@@ -477,6 +482,10 @@ $(document).ready(function() {
     transform.translateY = newY;
     transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
     transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
+    me.translateX = newX;
+    me.translateY = newY;
+    me.transformOriginX = transformOrigin['x'];
+    me.transformOriginY = transformOrigin['y'];
     updateMannequin();
 
     setPerspectiveDataAroundMannequin(perspective, mannequin);
@@ -515,8 +524,6 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
-    me.translateX = newX;
-    me.translateY = newY;
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(transform.translateX, transform.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
@@ -531,6 +538,10 @@ $(document).ready(function() {
     transform['translateY'] = newY;
     transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
     transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
+    me.translateX = newX;
+    me.translateY = newY;
+    me.transformOriginX = transformOrigin['x'];
+    me.transformOriginY = transformOrigin['y'];
     updateMannequin();
 
     setPerspectiveDataAroundMannequin(perspective, mannequin);
