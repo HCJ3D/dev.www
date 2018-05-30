@@ -1,6 +1,7 @@
 <?php
 namespace Application\Controller;
 
+use LeoGalleguillos\ThreeDimensions\Model\Factory as ThreeDimensionsFactory;
 use LeoGalleguillos\ThreeDimensions\Model\Table as ThreeDimensionsTable;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -9,11 +10,18 @@ use Zend\View\Model\ViewModel;
 class Mannequin extends AbstractActionController
 {
     public function __construct(
+        ThreeDimensionsFactory\Mannequin $mannequinFactory,
         ThreeDimensionsTable\Mannequin $mannequinTable,
         UserFactory\User\BuildFromCookies $buildFromCookiesFactory
     ) {
+        $this->mannequinFactory        = $mannequinFactory;
         $this->mannequinTable          = $mannequinTable;
         $this->buildFromCookiesFactory = $buildFromCookiesFactory;
+    }
+
+    public function buildFromUserIdAction()
+    {
+
     }
 
     public function updateWhereUserIdAction()
