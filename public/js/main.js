@@ -106,12 +106,12 @@ $(document).ready(function() {
     $.post(
       '/mannequin/updateWhereUserId',
       {
-        'translateX': 0,
-        'translateY': 0,
+        'translateX': me.translateX,
+        'translateY': me.translateY,
         'translateZ': 0,
-        'rotateX': 0,
-        'rotateY': 0,
-        'rotateZ': 0,
+        'rotateX': me.rotateX,
+        'rotateY': me.rotateY,
+        'rotateZ': me.rotateZ,
       }
     );
   }
@@ -353,6 +353,8 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
+    me.translateX = newX;
+    me.translateY = newY;
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(transform.translateX, transform.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
@@ -405,6 +407,8 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
+    me.translateX = newX;
+    me.translateY = newY;
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(transform.translateX, transform.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
@@ -457,6 +461,8 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
+    me.translateX = newX;
+    me.translateY = newY;
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(transform.translateX, transform.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
@@ -509,6 +515,8 @@ $(document).ready(function() {
       newY = transform.translateY;
     }
 
+    me.translateX = newX;
+    me.translateY = newY;
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(transform.translateX, transform.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
