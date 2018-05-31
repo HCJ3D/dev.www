@@ -18,12 +18,12 @@ $(document).ready(function() {
   var pressedKeys       = [];
   var mannequin         = initMannequin();
   var view              = initView();
+  updateView();
 
   setPerspectiveDataAroundMannequin(perspective, mannequin);
 
   updateMannequinCss();
   updatePerspectiveCss();
-  updateView();
 
   function oneCentisecondLoop() {
     if ($('div.dialog').is(':visible')) {
