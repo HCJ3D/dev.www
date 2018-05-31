@@ -115,7 +115,6 @@ $(document).ready(function() {
   }
   setInterval(oneSecondLoop, 1000);
 
-
   document.onkeydown = keyIsPressed;
   document.onkeyup   = keyIsReleased;
 
@@ -180,6 +179,7 @@ $(document).ready(function() {
     $.get(
       'mannequin/buildFromUserId',
       function (mannequinJson) {
+        console.log(mannequinJson);
         callbackFunction(me)
       },
       'json'
@@ -218,8 +218,7 @@ $(document).ready(function() {
     $.get(
       'user/getDisplayName',
       function (displayName) {
-        $('hcj3d-mannequin#me hcj3d-mannequin-body-back div.display-name')
-          .html(displayName);
+        me.jQuery.find('hcj3d-mannequin-body-back div.display-name').html(displayName);
       },
     );
 
