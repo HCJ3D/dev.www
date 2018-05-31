@@ -44,7 +44,7 @@ $(document).ready(function () {
     if (pressedKeys[32]) {
       // space bar
       $('#space-bar').addClass('bc-g');
-      jump(mannequin);
+      jump(me);
     }
 
     if (pressedKeys[38]) {
@@ -274,29 +274,25 @@ $(document).ready(function () {
     return view;
   }
 
-  function jump (mannequin) {
-    var duration  = 500;
-    var transform = mannequin.data('css')['transform'];
-
-    if (mannequin.is(':animated')) {
+  function jump (mannequinEntity) {
+    if (mannequinEntity.jQuery.is(':animated')) {
       return;
     }
 
-    mannequin.animate(
+    mannequinEntity.jQuery.animate(
       {
         textIndent: 100,
       },
       {
         step: function (now, fx) {
           me.translateZ = (-Math.pow((now - 50), 2) + 2500) / 100;
-          transform.translateZ = me.translateZ;
           updateMannequinCss(me);
-          $('#z').html(Math.round(transform.translateZ * 100) / 100);
+          $('#z').html(Math.round(me.translateZ * 100) / 100);
         },
-        duration: duration,
+        duration: 500,
         easing: 'linear',
         complete: function () {
-          mannequin.css('text-indent', 0);
+          mannequinEntity.jQuery.css('text-indent', 0);
         },
       },
     );
