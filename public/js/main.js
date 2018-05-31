@@ -549,7 +549,6 @@ $(document).ready(function () {
   }
 
   function updateMannequinCss() {
-    var transform = mannequin.data('css').transform;
     mannequin.css(
       'transform',
       'rotateX(' + me.rotateX + 'deg) rotateY(' + me.rotateY + 'deg) rotateZ(' + me.rotateZ + 'deg) translateX(' + me.translateX + 'px) translateY(' + me.translateY + 'px) translateZ(' + me.translateZ + 'px)'
