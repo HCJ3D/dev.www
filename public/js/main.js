@@ -182,6 +182,15 @@ $(document).ready(function() {
   }
 
   function initMannequin() {
+    $.get(
+      'mannequin/buildFromUserId',
+      function (mannequinJson) {
+        console.log(mannequinJson.rotateZ);
+        // Do nothing.
+      },
+      'json'
+    );
+
     me.rotateX = 0;
     me.rotateY = 0;
     me.rotateZ = Math.floor(Math.random() * 360);
