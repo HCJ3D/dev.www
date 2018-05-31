@@ -21,7 +21,7 @@ $(document).ready(function() {
       $('#x').html(Math.round(me.translateX * 100) / 100);
       $('#y').html(Math.round(me.translateY * 100) / 100);
 
-      setPerspectiveDataAroundMannequin(perspective, mannequin);
+      setPerspectiveDataAroundMe(perspective, me);
       updateMannequinCss();
       updatePerspectiveCss();
     }
@@ -226,23 +226,21 @@ $(document).ready(function() {
     return mannequin;
   }
 
-  function setPerspectiveDataAroundMannequin(perspective, mannequin) {
-    var mannequinTransform = mannequin.data('css').transform;
-
+  function setPerspectiveDataAroundMe(perspective, me) {
     perspective.data('css')['transform'] = {
       'rotateX': 0, // never changes
       'rotateY': 0, // never changes
-      'rotateZ': -mannequinTransform.rotateZ,
-      'translateX': -mannequinTransform.translateX + ($(window).width() * 0.5 - 10),
+      'rotateZ': -me.rotateZ,
+      'translateX': -me.translateX + ($(window).width() * 0.5 - 10),
 
-      'translateY': -mannequinTransform.translateY + 3040,
+      'translateY': -me.translateY + 3040,
       'translateZ': 88.525 // never changes
     };
 
     var perspectiveTransform = perspective.data('css')['transform'];
     perspective.data('css')['transform-origin'] = {
-      'x': perspectiveTransform.translateX + mannequinTransform.translateX + 10,
-      'y': perspectiveTransform.translateY + mannequinTransform.translateY + 5,
+      'x': perspectiveTransform.translateX + me.translateX + 10,
+      'y': perspectiveTransform.translateY + me.translateY + 5,
       'z': 0,
     };
   }
@@ -320,7 +318,7 @@ $(document).ready(function() {
     mannequin.data('css').transform.rotateZ = me.rotateZ;
     updateMannequinCss();
 
-    setPerspectiveDataAroundMannequin(perspective, mannequin);
+    setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
   }
 
@@ -329,7 +327,7 @@ $(document).ready(function() {
     mannequin.data('css').transform.rotateZ = me.rotateZ
     updateMannequinCss();
 
-    setPerspectiveDataAroundMannequin(perspective, mannequin);
+    setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
   }
 
@@ -383,7 +381,7 @@ $(document).ready(function() {
     me.transformOriginY = transformOrigin['y'];
     updateMannequinCss();
 
-    setPerspectiveDataAroundMannequin(perspective, mannequin);
+    setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
   }
 
@@ -437,7 +435,7 @@ $(document).ready(function() {
     me.transformOriginY = transformOrigin['y'];
     updateMannequinCss();
 
-    setPerspectiveDataAroundMannequin(perspective, mannequin);
+    setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
   }
 
@@ -491,7 +489,7 @@ $(document).ready(function() {
     me.transformOriginY = transformOrigin['y'];
     updateMannequinCss();
 
-    setPerspectiveDataAroundMannequin(perspective, mannequin);
+    setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
   }
 
@@ -545,7 +543,7 @@ $(document).ready(function() {
     me.transformOriginY = transformOrigin['y'];
     updateMannequinCss();
 
-    setPerspectiveDataAroundMannequin(perspective, mannequin);
+    setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
   }
 
@@ -586,8 +584,8 @@ $(document).ready(function() {
       );
   }
 
-  $(window).resize(function() {
-    setPerspectiveDataAroundMannequin(perspective, mannequin);
+  $(window).resize(function () {
+    setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
   });
 
