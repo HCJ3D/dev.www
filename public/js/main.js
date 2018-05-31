@@ -9,7 +9,7 @@ var mannequinDrawService = new Model.Service.Mannequin.Draw();
 var mannequinMoveService = new Model.Service.Mannequin.Move();
 var pointsService        = new Model.Service.Points();
 
-$(document).ready(function() {
+$(document).ready(function () {
   var cubeEntities      = [];
   var distanceTraveled  = 0;
   var mannequinEntities = [];
@@ -288,7 +288,8 @@ $(document).ready(function() {
       },
       {
         step: function (now, fx) {
-          transform.translateZ = (-Math.pow((now - 50), 2) + 2500) / 100;
+          me.translateZ = (-Math.pow((now - 50), 2) + 2500) / 100;
+          transform.translateZ = me.translateZ;
           updateMannequinCss();
           $('#z').html(Math.round(transform.translateZ * 100) / 100);
         },
@@ -551,13 +552,13 @@ $(document).ready(function() {
     var transform = mannequin.data('css').transform;
     mannequin.css(
       'transform',
-      'rotateX(' + transform.rotateX + 'deg) rotateY(' + transform.rotateY + 'deg) rotateZ(' + transform.rotateZ + 'deg) translateX(' + transform.translateX + 'px) translateY(' + transform.translateY + 'px) translateZ(' + transform.translateZ + 'px)'
+      'rotateX(' + me.rotateX + 'deg) rotateY(' + me.rotateY + 'deg) rotateZ(' + me.rotateZ + 'deg) translateX(' + me.translateX + 'px) translateY(' + me.translateY + 'px) translateZ(' + me.translateZ + 'px)'
     );
 
     var transformOrigin = mannequin.data('css')['transform-origin'];
     mannequin.css(
       'transform-origin',
-      transformOrigin.x + 'px ' + transformOrigin.y + 'px ' + transformOrigin.z + 'px'
+      me.transformOriginX + 'px ' + me.transformOriginY + 'px ' + me.transformOriginZ + 'px'
     );
   }
 
