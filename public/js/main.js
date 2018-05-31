@@ -196,25 +196,6 @@ $(document).ready(function () {
     me.transformOriginZ = 0;
     me.jQuery = $('hcj3d-mannequin#me');
 
-    var mannequin = $('hcj3d-mannequin');
-    mannequin.data('css', {});
-
-    mannequin.data('css')['transform'] = {
-      'rotateX': me.rotateX,
-      'rotateY': me.rotateY,
-      'rotateZ': me.rotateZ,
-      'translateX': me.translateX,
-      'translateY': me.translateY,
-      'translateZ': me.translateZ,
-    };
-
-    var transform = mannequin.data('css')['transform'];
-    mannequin.data('css')['transform-origin'] = {
-      'x': transform['translateX'] + 10,
-      'y': transform['translateY'] + 5,
-      'z': 0,
-    };
-
     $.get(
       'user/getDisplayName',
       function (displayName) {
@@ -222,7 +203,7 @@ $(document).ready(function () {
       },
     );
 
-
+    var mannequin = $('hcj3d-mannequin');
     return mannequin;
   }
 
@@ -312,7 +293,6 @@ $(document).ready(function () {
 
   function lookLeft() {
     me.rotateZ -= 1;
-    mannequin.data('css').transform.rotateZ = me.rotateZ;
     updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
@@ -321,7 +301,6 @@ $(document).ready(function () {
 
   function lookRight() {
     me.rotateZ += 1;
-    mannequin.data('css').transform.rotateZ = me.rotateZ
     updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
