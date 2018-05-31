@@ -185,7 +185,6 @@ $(document).ready(function() {
     $.get(
       'mannequin/buildFromUserId',
       function (mannequinJson) {
-        console.log(mannequinJson.rotateZ);
         // Do nothing.
       },
       'json'
