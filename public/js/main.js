@@ -14,16 +14,11 @@ $(document).ready(function() {
   var distanceTraveled  = 0;
   var mannequinEntities = [];
   var me                = new Model.Entity.Mannequin();
+  var perspective       = initPerspective();
   var pressedKeys       = [];
-  var perspective;
   var mannequin         = initMannequin();
   var view              = initView();
 
-  $('#x').html(Math.round(me.translateX * 100) / 100);
-  $('#y').html(Math.round(me.translateY * 100) / 100);
-
-  perspective = $('hcj3d-perspective');
-  perspective.data('css', {});
   setPerspectiveDataAroundMannequin(perspective, mannequin);
 
   updateMannequinCss();
@@ -224,6 +219,9 @@ $(document).ready(function() {
       },
     );
 
+    $('#x').html(Math.round(me.translateX * 100) / 100);
+    $('#y').html(Math.round(me.translateY * 100) / 100);
+
     return mannequin;
   }
 
@@ -246,6 +244,12 @@ $(document).ready(function() {
       'y': perspectiveTransform.translateY + mannequinTransform.translateY + 5,
       'z': 0,
     };
+  }
+
+  function initPerspective () {
+    var perspective = $('hcj3d-perspective');
+    perspective.data('css', {});
+    return perspective;
   }
 
   function initView() {
