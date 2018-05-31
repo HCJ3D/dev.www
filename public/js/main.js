@@ -316,19 +316,21 @@ $(document).ready(function() {
   }
 
   function lookLeft() {
-      mannequin.data('css').transform.rotateZ -= 1;
-      updateMannequinCss();
+    me.rotateZ -= 1;
+    mannequin.data('css').transform.rotateZ = me.rotateZ;
+    updateMannequinCss();
 
-      setPerspectiveDataAroundMannequin(perspective, mannequin);
-      updatePerspectiveCss();
+    setPerspectiveDataAroundMannequin(perspective, mannequin);
+    updatePerspectiveCss();
   }
 
   function lookRight() {
-      mannequin.data('css').transform.rotateZ += 1;
-      updateMannequinCss();
+    me.rotateZ += 1;
+    mannequin.data('css').transform.rotateZ = me.rotateZ
+    updateMannequinCss();
 
-      setPerspectiveDataAroundMannequin(perspective, mannequin);
-      updatePerspectiveCss();
+    setPerspectiveDataAroundMannequin(perspective, mannequin);
+    updatePerspectiveCss();
   }
 
   function moveForward() {
