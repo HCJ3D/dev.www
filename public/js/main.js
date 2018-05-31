@@ -16,14 +16,18 @@ $(document).ready(function() {
   var me                = new Model.Entity.Mannequin();
   var perspective       = initPerspective();
   var pressedKeys       = [];
-  var mannequin         = initMannequin();
+  var mannequin         = initMannequin(
+    function (me) {
+      $('#x').html(Math.round(me.translateX * 100) / 100);
+      $('#y').html(Math.round(me.translateY * 100) / 100);
+
+      setPerspectiveDataAroundMannequin(perspective, mannequin);
+      updateMannequinCss();
+      updatePerspectiveCss();
+    }
+  );
   var view              = initView();
   updateView();
-
-  setPerspectiveDataAroundMannequin(perspective, mannequin);
-
-  updateMannequinCss();
-  updatePerspectiveCss();
 
   function oneCentisecondLoop() {
     if ($('div.dialog').is(':visible')) {
@@ -172,11 +176,11 @@ $(document).ready(function() {
     }
   }
 
-  function initMannequin() {
+  function initMannequin(callbackFunction) {
     $.get(
       'mannequin/buildFromUserId',
       function (mannequinJson) {
-        // Do nothing.
+        callbackFunction(me)
       },
       'json'
     );
@@ -219,8 +223,6 @@ $(document).ready(function() {
       },
     );
 
-    $('#x').html(Math.round(me.translateX * 100) / 100);
-    $('#y').html(Math.round(me.translateY * 100) / 100);
 
     return mannequin;
   }
