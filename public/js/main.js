@@ -329,53 +329,46 @@ $(document).ready(function () {
   }
 
   function moveForward() {
-    var transform       = mannequin.data('css')['transform'];
-    var transformOrigin = mannequin.data('css')['transform-origin'];
+    var sin = Math.sin(me.rotateZ * Math.PI / 180);
+    var cos = Math.cos(me.rotateZ * Math.PI / 180);
 
-    var sin = Math.sin(transform.rotateZ * Math.PI / 180);
-    var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-
-    var newX = transform.translateX + 10 * sin;
-    var newY = transform.translateY - 10 * cos;
+    var newX = me.translateX + 10 * sin;
+    var newY = me.translateY - 10 * cos;
 
     var isNewXValid = mannequinMoveService.isNewXValid(
-      transform.translateX,
-      transform.translateY,
+      me.translateX,
+      me.translateY,
       newX,
       cubeEntities,
       mannequinEntities
     );
     var isNewYValid = mannequinMoveService.isNewYValid(
-      transform.translateX,
-      transform.translateY,
+      me.translateX,
+      me.translateY,
       newY,
       cubeEntities,
       mannequinEntities
     );
 
     if (!isNewXValid) {
-      newX = transform.translateX;
+      newX = me.translateX;
     }
     if (!isNewYValid) {
-      newY = transform.translateY;
+      newY = me.translateY;
     }
 
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
-      new Model.Entity.Point(transform.translateX, transform.translateY, 0),
+      new Model.Entity.Point(me.translateX, me.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
     $('#x').html(Math.round(newX * 100) / 100);
     $('#y').html(Math.round(newY * 100) / 100);
 
-    transform.translateX = newX;
-    transform.translateY = newY;
-    transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
-    transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
     me.translateX = newX;
     me.translateY = newY;
-    me.transformOriginX = transformOrigin['x'];
-    me.transformOriginY = transformOrigin['y'];
+    me.transformOriginX = newX + mannequin.width() / 2;
+    me.transformOriginY = newY + mannequin.height() / 2;
     updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
@@ -383,53 +376,46 @@ $(document).ready(function () {
   }
 
   function moveBackward() {
-    var transform       = mannequin.data('css')['transform'];
-    var transformOrigin = mannequin.data('css')['transform-origin'];
+    var sin = Math.sin(me.rotateZ * Math.PI / 180);
+    var cos = Math.cos(me.rotateZ * Math.PI / 180);
 
-    var sin = Math.sin(transform.rotateZ * Math.PI / 180);
-    var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-
-    var newX = transform.translateX - 10 * sin;
-    var newY = transform.translateY + 10 * cos;
+    var newX = me.translateX - 10 * sin;
+    var newY = me.translateY + 10 * cos;
 
     var isNewXValid = mannequinMoveService.isNewXValid(
-      transform.translateX,
-      transform.translateY,
+      me.translateX,
+      me.translateY,
       newX,
       cubeEntities,
       mannequinEntities
     );
     var isNewYValid = mannequinMoveService.isNewYValid(
-      transform.translateX,
-      transform.translateY,
+      me.translateX,
+      me.translateY,
       newY,
       cubeEntities,
       mannequinEntities
     );
 
     if (!isNewXValid) {
-      newX = transform.translateX;
+      newX = me.translateX;
     }
     if (!isNewYValid) {
-      newY = transform.translateY;
+      newY = me.translateY;
     }
 
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
-      new Model.Entity.Point(transform.translateX, transform.translateY, 0),
+      new Model.Entity.Point(me.translateX, me.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
     $('#x').html(Math.round(newX * 100) / 100);
     $('#y').html(Math.round(newY * 100) / 100);
 
-    transform.translateX = newX;
-    transform.translateY = newY;
-    transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
-    transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
     me.translateX = newX;
     me.translateY = newY;
-    me.transformOriginX = transformOrigin['x'];
-    me.transformOriginY = transformOrigin['y'];
+    me.transformOriginX = newX + mannequin.width() / 2;
+    me.transformOriginY = newY + mannequin.height() / 2;
     updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
@@ -437,53 +423,46 @@ $(document).ready(function () {
   }
 
   function moveLeft() {
-    var transform       = mannequin.data('css')['transform'];
-    var transformOrigin = mannequin.data('css')['transform-origin'];
+    var sin = Math.sin(me.rotateZ * Math.PI / 180);
+    var cos = Math.cos(me.rotateZ * Math.PI / 180);
 
-    var sin = Math.sin(transform.rotateZ * Math.PI / 180);
-    var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-
-    var newX = transform.translateX - 5 * cos;
-    var newY = transform.translateY - 5 * sin;
+    var newX = me.translateX - 5 * cos;
+    var newY = me.translateY - 5 * sin;
 
     var isNewXValid = mannequinMoveService.isNewXValid(
-      transform.translateX,
-      transform.translateY,
+      me.translateX,
+      me.translateY,
       newX,
       cubeEntities,
       mannequinEntities
     );
     var isNewYValid = mannequinMoveService.isNewYValid(
-      transform.translateX,
-      transform.translateY,
+      me.translateX,
+      me.translateY,
       newY,
       cubeEntities,
       mannequinEntities
     );
 
     if (!isNewXValid) {
-      newX = transform.translateX;
+      newX = me.translateX;
     }
     if (!isNewYValid) {
-      newY = transform.translateY;
+      newY = me.translateY;
     }
 
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
-      new Model.Entity.Point(transform.translateX, transform.translateY, 0),
+      new Model.Entity.Point(me.translateX, me.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
     $('#x').html(Math.round(newX * 100) / 100);
     $('#y').html(Math.round(newY * 100) / 100);
 
-    transform.translateX = newX;
-    transform.translateY = newY;
-    transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
-    transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
     me.translateX = newX;
     me.translateY = newY;
-    me.transformOriginX = transformOrigin['x'];
-    me.transformOriginY = transformOrigin['y'];
+    me.transformOriginX = newX + mannequin.width() / 2;
+    me.transformOriginY = newY + mannequin.height() / 2;
     updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
@@ -491,53 +470,46 @@ $(document).ready(function () {
   }
 
   function moveRight() {
-    var transform       = mannequin.data('css')['transform'];
-    var transformOrigin = mannequin.data('css')['transform-origin'];
+    var sin = Math.sin(me.rotateZ * Math.PI / 180);
+    var cos = Math.cos(me.rotateZ * Math.PI / 180);
 
-    var sin = Math.sin(transform.rotateZ * Math.PI / 180);
-    var cos = Math.cos(transform.rotateZ * Math.PI / 180);
-
-    var newX = transform.translateX + 5 * cos;
-    var newY = transform.translateY + 5 * sin;
+    var newX = me.translateX + 5 * cos;
+    var newY = me.translateY + 5 * sin;
 
     var isNewXValid = mannequinMoveService.isNewXValid(
-      transform.translateX,
-      transform.translateY,
+      me.translateX,
+      me.translateY,
       newX,
       cubeEntities,
       mannequinEntities
     );
     var isNewYValid = mannequinMoveService.isNewYValid(
-      transform.translateX,
-      transform.translateY,
+      me.translateX,
+      me.translateY,
       newY,
       cubeEntities,
       mannequinEntities
     );
 
     if (!isNewXValid) {
-      newX = transform.translateX;
+      newX = me.translateX;
     }
     if (!isNewYValid) {
-      newY = transform.translateY;
+      newY = me.translateY;
     }
 
     distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
-      new Model.Entity.Point(transform.translateX, transform.translateY, 0),
+      new Model.Entity.Point(me.translateX, me.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
     );
     $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
     $('#x').html(Math.round(newX * 100) / 100);
     $('#y').html(Math.round(newY * 100) / 100);
 
-    transform['translateX'] = newX;
-    transform['translateY'] = newY;
-    transformOrigin['x'] = transform['translateX'] + mannequin.width() / 2;
-    transformOrigin['y'] = transform['translateY'] + mannequin.height() / 2;
     me.translateX = newX;
     me.translateY = newY;
-    me.transformOriginX = transformOrigin['x'];
-    me.transformOriginY = transformOrigin['y'];
+    me.transformOriginX = newX + mannequin.width() / 2;
+    me.transformOriginY = newY + mannequin.height() / 2;
     updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
