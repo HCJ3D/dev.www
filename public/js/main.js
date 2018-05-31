@@ -22,7 +22,7 @@ $(document).ready(function () {
       $('#y').html(Math.round(me.translateY * 100) / 100);
 
       setPerspectiveDataAroundMe(perspective, me);
-      updateMannequinCss();
+      updateMannequinCss(me);
       updatePerspectiveCss();
     }
   );
@@ -290,7 +290,7 @@ $(document).ready(function () {
         step: function (now, fx) {
           me.translateZ = (-Math.pow((now - 50), 2) + 2500) / 100;
           transform.translateZ = me.translateZ;
-          updateMannequinCss();
+          updateMannequinCss(me);
           $('#z').html(Math.round(transform.translateZ * 100) / 100);
         },
         duration: duration,
@@ -317,7 +317,7 @@ $(document).ready(function () {
   function lookLeft() {
     me.rotateZ -= 1;
     mannequin.data('css').transform.rotateZ = me.rotateZ;
-    updateMannequinCss();
+    updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
@@ -326,7 +326,7 @@ $(document).ready(function () {
   function lookRight() {
     me.rotateZ += 1;
     mannequin.data('css').transform.rotateZ = me.rotateZ
-    updateMannequinCss();
+    updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
@@ -380,7 +380,7 @@ $(document).ready(function () {
     me.translateY = newY;
     me.transformOriginX = transformOrigin['x'];
     me.transformOriginY = transformOrigin['y'];
-    updateMannequinCss();
+    updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
@@ -434,7 +434,7 @@ $(document).ready(function () {
     me.translateY = newY;
     me.transformOriginX = transformOrigin['x'];
     me.transformOriginY = transformOrigin['y'];
-    updateMannequinCss();
+    updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
@@ -488,7 +488,7 @@ $(document).ready(function () {
     me.translateY = newY;
     me.transformOriginX = transformOrigin['x'];
     me.transformOriginY = transformOrigin['y'];
-    updateMannequinCss();
+    updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
@@ -542,22 +542,21 @@ $(document).ready(function () {
     me.translateY = newY;
     me.transformOriginX = transformOrigin['x'];
     me.transformOriginY = transformOrigin['y'];
-    updateMannequinCss();
+    updateMannequinCss(me);
 
     setPerspectiveDataAroundMe(perspective, me);
     updatePerspectiveCss();
   }
 
-  function updateMannequinCss() {
-    mannequin.css(
+  function updateMannequinCss(mannequinEntity) {
+    mannequinEntity.jQuery.css(
       'transform',
-      'rotateX(' + me.rotateX + 'deg) rotateY(' + me.rotateY + 'deg) rotateZ(' + me.rotateZ + 'deg) translateX(' + me.translateX + 'px) translateY(' + me.translateY + 'px) translateZ(' + me.translateZ + 'px)'
+      'rotateX(' + mannequinEntity.rotateX + 'deg) rotateY(' + mannequinEntity.rotateY + 'deg) rotateZ(' + mannequinEntity.rotateZ + 'deg) translateX(' + mannequinEntity.translateX + 'px) translateY(' + mannequinEntity.translateY + 'px) translateZ(' + mannequinEntity.translateZ + 'px)'
     );
 
-    var transformOrigin = mannequin.data('css')['transform-origin'];
-    mannequin.css(
+    mannequinEntity.jQuery.css(
       'transform-origin',
-      me.transformOriginX + 'px ' + me.transformOriginY + 'px ' + me.transformOriginZ + 'px'
+      mannequinEntity.transformOriginX + 'px ' + mannequinEntity.transformOriginY + 'px ' + mannequinEntity.transformOriginZ + 'px'
     );
   }
 
