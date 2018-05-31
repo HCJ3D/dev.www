@@ -24,7 +24,16 @@ class Mannequin extends AbstractActionController
 
     public function buildFromUserIdAction()
     {
+        $userEntity      = $this->buildFromCookiesFactory->buildFromCookies();
+        $mannequinEntity = $this->mannequinFactory->buildFromUserId(
+            $userEntity->getUserId()
+        );
 
+        $this->getResponse()->getHeaders()->addHeaderLine('Content-type', 'application/json');
+
+        return [
+            'jsonString' => json_encode($mannequinEntity),
+        ];
     }
 
     public function updateWhereUserIdAction()
