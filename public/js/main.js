@@ -30,7 +30,7 @@ $(document).ready(function() {
   perspective.data('css', {});
   setPerspectiveDataAroundMannequin(perspective, mannequin);
 
-  updateMannequin();
+  updateMannequinCss();
   updatePerspectiveCss();
   updateView();
 
@@ -291,7 +291,7 @@ $(document).ready(function() {
       {
         step: function (now, fx) {
           transform.translateZ = (-Math.pow((now - 50), 2) + 2500) / 100;
-          updateMannequin();
+          updateMannequinCss();
 
           z = transform.translateZ;
           $('#z').html(Math.round(z * 100) / 100);
@@ -319,7 +319,7 @@ $(document).ready(function() {
 
   function lookLeft() {
       mannequin.data('css').transform.rotateZ -= 1;
-      updateMannequin();
+      updateMannequinCss();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
       updatePerspectiveCss();
@@ -327,7 +327,7 @@ $(document).ready(function() {
 
   function lookRight() {
       mannequin.data('css').transform.rotateZ += 1;
-      updateMannequin();
+      updateMannequinCss();
 
       setPerspectiveDataAroundMannequin(perspective, mannequin);
       updatePerspectiveCss();
@@ -383,7 +383,7 @@ $(document).ready(function() {
     me.translateY = newY;
     me.transformOriginX = transformOrigin['x'];
     me.transformOriginY = transformOrigin['y'];
-    updateMannequin();
+    updateMannequinCss();
 
     setPerspectiveDataAroundMannequin(perspective, mannequin);
     updatePerspectiveCss();
@@ -439,7 +439,7 @@ $(document).ready(function() {
     me.translateY = newY;
     me.transformOriginX = transformOrigin['x'];
     me.transformOriginY = transformOrigin['y'];
-    updateMannequin();
+    updateMannequinCss();
 
     setPerspectiveDataAroundMannequin(perspective, mannequin);
     updatePerspectiveCss();
@@ -495,7 +495,7 @@ $(document).ready(function() {
     me.translateY = newY;
     me.transformOriginX = transformOrigin['x'];
     me.transformOriginY = transformOrigin['y'];
-    updateMannequin();
+    updateMannequinCss();
 
     setPerspectiveDataAroundMannequin(perspective, mannequin);
     updatePerspectiveCss();
@@ -551,13 +551,13 @@ $(document).ready(function() {
     me.translateY = newY;
     me.transformOriginX = transformOrigin['x'];
     me.transformOriginY = transformOrigin['y'];
-    updateMannequin();
+    updateMannequinCss();
 
     setPerspectiveDataAroundMannequin(perspective, mannequin);
     updatePerspectiveCss();
   }
 
-  function updateMannequin() {
+  function updateMannequinCss() {
     var transform = mannequin.data('css').transform;
     mannequin.css(
       'transform',
