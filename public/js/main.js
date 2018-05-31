@@ -203,8 +203,7 @@ $(document).ready(function () {
       },
     );
 
-    var mannequin = $('hcj3d-mannequin');
-    return mannequin;
+    return me.jQuery;
   }
 
   function setPerspectiveDataAroundMe(perspective, me) {
