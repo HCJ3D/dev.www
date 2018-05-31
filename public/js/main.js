@@ -179,15 +179,15 @@ $(document).ready(function () {
     $.get(
       'mannequin/buildFromUserId',
       function (mannequinJson) {
-        me.rotateX = 0;
-        me.rotateY = 0;
-        me.rotateZ = Math.floor(Math.random() * 360);
-        me.translateX = Math.floor(Math.random() * 6995);
-        me.translateY = Math.floor(Math.random() * 6995);
-        me.translateZ = 0;
-        me.transformOriginX = me.translateX + 10;
-        me.transformOriginY = me.translateY + 5;
-        me.transformOriginZ = 0;
+        me.rotateX = mannequinJson.rotateX;
+        me.rotateY = mannequinJson.rotateY;
+        me.rotateZ = mannequinJson.rotateZ;
+        me.translateX = mannequinJson.translateX;
+        me.translateY = mannequinJson.translateY;
+        me.translateZ = mannequinJson.translateZ;
+        me.transformOriginX = mannequinJson.transformOriginX;
+        me.transformOriginY = mannequinJson.transformOriginY;
+        me.transformOriginZ = mannequinJson.transformOriginZ;
         callbackFunction(me)
       },
       'json'
