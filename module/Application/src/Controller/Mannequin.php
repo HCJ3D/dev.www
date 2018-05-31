@@ -32,7 +32,24 @@ class Mannequin extends AbstractActionController
                 $userEntity->getUserId()
             );
         } catch (TypeError $typeError) {
+            $this->mannequinTable->insert(
+                $userEntity->getUserId()
+            );
             $mannequinEntity = new ThreeDimensionsEntity\Mannequin();
+
+            $translateX = rand(0, 6995);
+            $translateY = rand(0, 6995);
+            $mannequinEntity
+                            ->setRotateX(0)
+                            ->setRotateY(0)
+                            ->setRotateZ(rand(0, 359))
+                            ->setTransformOriginX($translateX + 10)
+                            ->setTransformOriginY($translateY + 5)
+                            ->setTransformOriginZ(0)
+                            ->setTranslateX($translateX)
+                            ->setTranslateY($translateY)
+                            ->setTranslateZ(0)
+                            ->setUserId($userEntity->getUserId());
         }
 
         $this->getResponse()->getHeaders()->addHeaderLine('Content-type', 'application/json');
