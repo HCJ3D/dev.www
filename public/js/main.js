@@ -179,21 +179,20 @@ $(document).ready(function () {
     $.get(
       'mannequin/buildFromUserId',
       function (mannequinJson) {
-        console.log(mannequinJson);
+        me.rotateX = 0;
+        me.rotateY = 0;
+        me.rotateZ = Math.floor(Math.random() * 360);
+        me.translateX = Math.floor(Math.random() * 6995);
+        me.translateY = Math.floor(Math.random() * 6995);
+        me.translateZ = 0;
+        me.transformOriginX = me.translateX + 10;
+        me.transformOriginY = me.translateY + 5;
+        me.transformOriginZ = 0;
         callbackFunction(me)
       },
       'json'
     );
 
-    me.rotateX = 0;
-    me.rotateY = 0;
-    me.rotateZ = Math.floor(Math.random() * 360);
-    me.translateX = Math.floor(Math.random() * 6995);
-    me.translateY = Math.floor(Math.random() * 6995);
-    me.translateZ = 0;
-    me.transformOriginX = me.translateX + 10;
-    me.transformOriginY = me.translateY + 5;
-    me.transformOriginZ = 0;
     me.jQuery = $('hcj3d-mannequin#me');
 
     $.get(
