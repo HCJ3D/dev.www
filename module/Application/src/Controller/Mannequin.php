@@ -1,6 +1,8 @@
 <?php
 namespace Application\Controller;
 
+use TypeError;
+use LeoGalleguillos\ThreeDimensions\Model\Entity as ThreeDimensionsEntity;
 use LeoGalleguillos\ThreeDimensions\Model\Factory as ThreeDimensionsFactory;
 use LeoGalleguillos\ThreeDimensions\Model\Service as ThreeDimensionsService;
 use LeoGalleguillos\ThreeDimensions\Model\Table as ThreeDimensionsTable;
@@ -25,9 +27,13 @@ class Mannequin extends AbstractActionController
     public function buildFromUserIdAction()
     {
         $userEntity      = $this->buildFromCookiesFactory->buildFromCookies();
-        $mannequinEntity = $this->mannequinFactory->buildFromUserId(
-            $userEntity->getUserId()
-        );
+        try {
+            $mannequinEntity = $this->mannequinFactory->buildFromUserId(
+                $userEntity->getUserId()
+            );
+        } catch (TypeError $typeError) {
+            $mannequinEntity = new ThreeDimensionsEntity\Mannequin();
+        }
 
         $this->getResponse()->getHeaders()->addHeaderLine('Content-type', 'application/json');
 
