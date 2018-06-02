@@ -33,6 +33,16 @@ return [
                     ],
                 ],
             ],
+            'tmp' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route'    => '/tmp[/:action]',
+                    'defaults' => [
+                        'controller' => Controller\Tmp::class,
+                        'action' => 'index',
+                    ],
+                ],
+            ],
             'user' => [
                 'type' => Segment::class,
                 'options' => [
@@ -58,6 +68,9 @@ return [
                     $serviceManager->get(ThreeDimensionsTable\Mannequin::class),
                     $serviceManager->get(UserFactory\User\BuildFromCookies::class)
                 );
+            },
+            ApplicationController\Tmp::class => function ($serviceManager) {
+                return new ApplicationController\Tmp();
             },
             ApplicationController\User::class => function ($serviceManager) {
                 return new ApplicationController\User(
