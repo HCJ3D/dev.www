@@ -67,8 +67,7 @@ return [
         'factories' => [
             ApplicationController\Ground::class => function ($serviceManager) {
                 return new ApplicationController\Ground(
-                    $serviceManager->get(ThreeDimensionsFactory\Ground::class),
-                    $serviceManager->get(ThreeDimensionsTable\Ground::class)
+                    $serviceManager->get(ThreeDimensionsService\Ground\Grounds::class)
                 );
             },
             ApplicationController\Index::class => function ($serviceManager) {

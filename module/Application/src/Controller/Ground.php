@@ -13,15 +13,25 @@ use Zend\View\Model\ViewModel;
 class Ground extends AbstractActionController
 {
     public function __construct(
-        ThreeDimensionsFactory\Ground $groundFactory,
-        ThreeDimensionsTable\Ground $groundTable
+        ThreeDimensionsService\Ground\Grounds $groundsService
     ) {
-        $this->groundFactory = $groundFactory;
-        $this->groundTable   = $groundTable;
+        $this->groundsService = $groundsService;
     }
 
     public function getRelevantGroundAction()
     {
-        // For now, select all ground. In the future, select relevant ground.
+        $groundEntities = [];
+        $generator = $this->groundsService->getGrounds();
+        foreach ($generator as $groundEntity) {
+            $groundEntities[] = $groundEntity;
+        }
+
+        $this->getResponse()
+             ->getHeaders()
+             ->addHeaderLine('Content-type', 'application/json');
+
+        return [
+            'groundEntities' => $groundEntities,
+        ];
     }
 }
