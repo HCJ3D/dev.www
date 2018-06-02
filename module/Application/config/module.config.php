@@ -70,7 +70,9 @@ return [
                 );
             },
             ApplicationController\Tmp::class => function ($serviceManager) {
-                return new ApplicationController\Tmp();
+                return new ApplicationController\Tmp(
+                    $serviceManager->get(ThreeDimensionsTable\Ground::class)
+                );
             },
             ApplicationController\User::class => function ($serviceManager) {
                 return new ApplicationController\User(
