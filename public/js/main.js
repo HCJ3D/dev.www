@@ -610,23 +610,29 @@ $(document).ready(function () {
     speechSynthesis.speak(utterance);
   });
 
-  for (var x = 0; x <= 6000; x += 1000) {
-    for (var y = 0; y <= 6000; y += 1000) {
-      var groundEntity = new Model.Entity.Ground();
-      groundEntity.rotateX    = 0;
-      groundEntity.rotateY    = 0;
-      groundEntity.rotateZ    = 0;
-      groundEntity.translateX = x;
-      groundEntity.translateY = y;
-      groundEntity.translateZ = 0;
-      groundEntity.backgroundColor = {
-        'rgb': {
-          'r': Math.floor(Math.random() * 256),
-          'g': Math.floor(Math.random() * 256),
-          'b': Math.floor(Math.random() * 256),
-        },
-      };
-      groundDrawService.draw(groundEntity);
-    }
-  }
+  $.get(
+    'ground/getRelevantGround',
+    function (groundsJson) {
+      var groundsJsonLength = groundsJson.length;
+      for (var i = 0; i < groundsJsonLength; i++) {
+        groundJson = groundsJson[i];
+        var groundEntity = new Model.Entity.Ground();
+        groundEntity.rotateX    = groundJson.rotateX;
+        groundEntity.rotateY    = groundJson.rotateY;
+        groundEntity.rotateZ    = groundJson.rotateZ;
+        groundEntity.translateX = groundJson.translateX;
+        groundEntity.translateY = groundJson.translateY;
+        groundEntity.translateZ = groundJson.translateZ;
+        groundEntity.backgroundColor = {
+          'rgb': {
+            'r': groundJson.backgroundColorRgbR,
+            'g': groundJson.backgroundColorRgbG,
+            'b': groundJson.backgroundColorRgbB,
+          },
+        };
+        groundDrawService.draw(groundEntity);
+      }
+    },
+    'json'
+  );
 });
