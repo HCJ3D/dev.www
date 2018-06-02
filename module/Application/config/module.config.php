@@ -24,6 +24,15 @@ return [
                     ],
                 ],
             ],
+            'ground' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route'    => '/ground/:action',
+                    'defaults' => [
+                        'controller' => Controller\Ground::class,
+                    ],
+                ],
+            ],
             'mannequin' => [
                 'type' => Segment::class,
                 'options' => [
@@ -56,6 +65,12 @@ return [
     ],
     'controllers' => [
         'factories' => [
+            ApplicationController\Ground::class => function ($serviceManager) {
+                return new ApplicationController\Ground(
+                    $serviceManager->get(ThreeDimensionsFactory\Ground::class),
+                    $serviceManager->get(ThreeDimensionsTable\Ground::class)
+                );
+            },
             ApplicationController\Index::class => function ($serviceManager) {
                 return new ApplicationController\Index(
                     $serviceManager->get(UserFactory\User\BuildFromCookies::class)
