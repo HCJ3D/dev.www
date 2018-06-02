@@ -11,7 +11,6 @@ var pointsService        = new Model.Service.Points();
 
 $(document).ready(function () {
   var cubeEntities      = [];
-  var distanceTraveled  = 0;
   var mannequinEntities = [];
   var me                = new Model.Entity.Mannequin();
   var perspective       = initPerspective();
@@ -110,6 +109,7 @@ $(document).ready(function () {
         'transformOriginX': me.transformOriginX,
         'transformOriginY': me.transformOriginY,
         'transformOriginZ': me.transformOriginZ,
+        'distanceTraveled': me.distanceTraveled,
       }
     );
   }
@@ -188,6 +188,7 @@ $(document).ready(function () {
         me.transformOriginX = mannequinJson.transformOriginX;
         me.transformOriginY = mannequinJson.transformOriginY;
         me.transformOriginZ = mannequinJson.transformOriginZ;
+        me.distanceTraveled = 0;
         callbackFunction(me)
       },
       'json'
@@ -334,11 +335,11 @@ $(document).ready(function () {
       newY = me.translateY;
     }
 
-    distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
+    me.distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(me.translateX, me.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
     );
-    $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
+    $('#distance-traveled').html(Math.round(me.distanceTraveled * 100) / 100);
     $('#x').html(Math.round(newX * 100) / 100);
     $('#y').html(Math.round(newY * 100) / 100);
 
@@ -381,11 +382,11 @@ $(document).ready(function () {
       newY = me.translateY;
     }
 
-    distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
+    me.distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(me.translateX, me.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
     );
-    $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
+    $('#distance-traveled').html(Math.round(me.distanceTraveled * 100) / 100);
     $('#x').html(Math.round(newX * 100) / 100);
     $('#y').html(Math.round(newY * 100) / 100);
 
@@ -428,11 +429,11 @@ $(document).ready(function () {
       newY = me.translateY;
     }
 
-    distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
+    me.distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(me.translateX, me.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
     );
-    $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
+    $('#distance-traveled').html(Math.round(me.distanceTraveled * 100) / 100);
     $('#x').html(Math.round(newX * 100) / 100);
     $('#y').html(Math.round(newY * 100) / 100);
 
@@ -475,11 +476,11 @@ $(document).ready(function () {
       newY = me.translateY;
     }
 
-    distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
+    me.distanceTraveled += pointsService.getDistanceBetweenTwoPoints(
       new Model.Entity.Point(me.translateX, me.translateY, 0),
       new Model.Entity.Point(newX, newY, 0)
     );
-    $('#distance-traveled').html(Math.round(distanceTraveled * 100) / 100);
+    $('#distance-traveled').html(Math.round(me.distanceTraveled * 100) / 100);
     $('#x').html(Math.round(newX * 100) / 100);
     $('#y').html(Math.round(newY * 100) / 100);
 
