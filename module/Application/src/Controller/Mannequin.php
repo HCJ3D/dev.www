@@ -49,10 +49,13 @@ class Mannequin extends AbstractActionController
                             ->setTranslateX($translateX)
                             ->setTranslateY($translateY)
                             ->setTranslateZ(0)
+                            ->setDistanceTraveled(0)
                             ->setUserId($userEntity->getUserId());
         }
 
-        $this->getResponse()->getHeaders()->addHeaderLine('Content-type', 'application/json');
+        $this->getResponse()
+             ->getHeaders()
+             ->addHeaderLine('Content-type', 'application/json');
 
         return [
             'jsonString' => json_encode($mannequinEntity),

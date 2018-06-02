@@ -19,6 +19,7 @@ $(document).ready(function () {
     function (me) {
       $('#x').html(Math.round(me.translateX * 100) / 100);
       $('#y').html(Math.round(me.translateY * 100) / 100);
+      $('#distance-traveled').html(Math.round(me.distanceTraveled * 100) / 100);
 
       setPerspectiveDataAroundMe(perspective, me);
       updateMannequinCss(me);
@@ -188,7 +189,7 @@ $(document).ready(function () {
         me.transformOriginX = mannequinJson.transformOriginX;
         me.transformOriginY = mannequinJson.transformOriginY;
         me.transformOriginZ = mannequinJson.transformOriginZ;
-        me.distanceTraveled = 0;
+        me.distanceTraveled = mannequinJson.distanceTraveled;
         callbackFunction(me)
       },
       'json'
