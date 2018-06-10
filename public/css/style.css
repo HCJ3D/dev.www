@@ -33,6 +33,7 @@ footer {
     bottom: 0;
     width: 100%;
     z-index: 1;
+    will-change: transform;
 }
     footer > div {
         background-color: rgba(255, 255, 255, 0.9);
@@ -90,6 +91,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1;
+    will-change: transform;
 }
     header div.left {
         position: absolute;
@@ -173,6 +175,7 @@ main {
     display: block;
     position: fixed;
     background: linear-gradient(SkyBlue, White);
+    will-change: transform;
 }
 ol {
     list-style-type: none;
