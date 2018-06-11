@@ -176,6 +176,8 @@ main {
     position: fixed;
     background: linear-gradient(SkyBlue, White);
     will-change: transform;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+    transform-style: preserve-3d;
 }
 ol {
     list-style-type: none;
