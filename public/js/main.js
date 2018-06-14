@@ -9,6 +9,9 @@ var mannequinDrawService = new Model.Service.Mannequin.Draw();
 var mannequinMoveService = new Model.Service.Mannequin.Move();
 var pointsService        = new Model.Service.Points();
 
+var speechSynthesis = window.speechSynthesis;
+var utterance;
+
   var myAudio = new Audio('/music/bensound-tenderness.mp3');
   myAudio.volume = 0.5;
   myAudio.loop = true;
@@ -595,6 +598,8 @@ $(document).ready(function () {
       '/user/updateDisplayName',
       $('div.dialog.body form').serialize()
     );
+
+    speak('Hello ' + displayName + ', welcome to HCJ3D. I am your avatar.');
   });
 
   $('div.dialog.text-to-speech form').submit(function(event) {
@@ -605,11 +610,15 @@ $(document).ready(function () {
       $('div.dialog.text-to-speech form input[name=speech]').val('');
     });
 
-    if (!speech.length) {
+    speak(speech);
+  });
+
+  function speak(text) {
+    if (!text.length) {
       return;
     }
 
-    $('hcj3d-mannequin#me hcj3d-mannequin-bubble-text').html(speech);
+    $('hcj3d-mannequin#me hcj3d-mannequin-bubble-text').html(text);
 
     $('hcj3d-mannequin#me hcj3d-mannequin-bubble').fadeIn('fast');
 
@@ -618,14 +627,12 @@ $(document).ready(function () {
     var left = (50 - outerWidth) / 2;
     $('hcj3d-mannequin#me hcj3d-mannequin-bubble-text').css('left', left + 'px');
 
-
-    var speechSynthesis = window.speechSynthesis;
-    var utterance = new SpeechSynthesisUtterance(speech);
+    utterance = new SpeechSynthesisUtterance(text);
     utterance.onend = function (event) {
       $('hcj3d-mannequin#me hcj3d-mannequin-bubble').fadeOut('fast');
     };
     speechSynthesis.speak(utterance);
-  });
+  }
 
   $.get(
     'ground/getRelevantGround',
