@@ -9,6 +9,10 @@ var mannequinDrawService = new Model.Service.Mannequin.Draw();
 var mannequinMoveService = new Model.Service.Mannequin.Move();
 var pointsService        = new Model.Service.Points();
 
+  var myAudio = new Audio('/music/bensound-tenderness.mp3');
+  myAudio.volume = 0.5;
+  myAudio.loop = true;
+
 $(document).ready(function () {
   var cubeEntities      = [];
   var mannequinEntities = [];
@@ -30,6 +34,17 @@ $(document).ready(function () {
   updateView();
 
   function oneCentisecondLoop() {
+		var promise = myAudio.play();
+
+		if (promise !== undefined) {
+			promise.then(_ => {
+				// Autoplay started!
+			}).catch(error => {
+				// Autoplay was prevented.
+				// Show a "Play" button so that user can start playback.
+			});
+		}
+
     if ($('div.dialog').is(':visible')) {
       return;
     }
