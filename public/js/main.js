@@ -45,6 +45,7 @@ $(document).ready(function () {
   updateView();
 
   function oneCentisecondLoop() {
+    /*
 		var promise = myAudio.play();
 
 		if (promise !== undefined) {
@@ -55,6 +56,7 @@ $(document).ready(function () {
 				// Show a "Play" button so that user can start playback.
 			});
 		}
+    */
 
     if ($('div.dialog').is(':visible')) {
       return;
