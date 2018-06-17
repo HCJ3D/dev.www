@@ -17,6 +17,7 @@ var utterance;
   myAudio.loop = true;
 
 $(document).ready(function () {
+  /*
   var divRight = $('header div.right');
   if (!!window.chrome && !!window.chrome.webstore) {
     divRight.html('Use arrow keys to look and WASD keys to move');
@@ -24,6 +25,7 @@ $(document).ready(function () {
     divRight.addClass('c-r');
     divRight.html('Please use Chrome for optimal experience');
   }
+  */
 
   var cubeEntities      = [];
   var mannequinEntities = [];

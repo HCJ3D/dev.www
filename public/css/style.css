@@ -149,9 +149,20 @@ header {
         position: absolute;
         top: 0;
         right: 0;
-        border-radius: 0 0 0 10px;
-        padding: 10px;
+    }
+    header div.right ol {
+        font-size: 0;
+    }
+    header div.right ol li {
+        display: inline-block;
         background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+    header div.right ol li:last-child {
+        border-radius: 0 0 0 10px;
     }
 html {
     font-family: sans-serif;
