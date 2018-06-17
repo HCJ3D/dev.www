@@ -83,4 +83,9 @@ class Mannequin extends AbstractActionController
         $viewModel->setTerminal(true);
         return $viewModel;
     }
+
+    public function getRelevantMannequinsAction()
+    {
+
+    }
 }
