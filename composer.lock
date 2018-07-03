@@ -250,12 +250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/ThreeDimensions.git",
-                "reference": "9121d9d8a9411489a86b53c6f1640e21b2f5121d"
+                "reference": "4b0eb31a92f480a797ca5d56915f7d6dffedab35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/ThreeDimensions/zipball/9121d9d8a9411489a86b53c6f1640e21b2f5121d",
-                "reference": "9121d9d8a9411489a86b53c6f1640e21b2f5121d",
+                "url": "https://api.github.com/repos/LeoGalleguillos/ThreeDimensions/zipball/4b0eb31a92f480a797ca5d56915f7d6dffedab35",
+                "reference": "4b0eb31a92f480a797ca5d56915f7d6dffedab35",
                 "shasum": ""
             },
             "require": {
@@ -273,7 +273,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-06-02 07:13:45"
+            "time": "2018-06-17 09:45:23"
         },
         {
             "name": "leo-galleguillos/user",
@@ -281,12 +281,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "9b043dc88cee9a63cb4cc8f2477dc2d071aa64fd"
+                "reference": "12406d67133025ef3e5ae36418a82576f9414a9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/9b043dc88cee9a63cb4cc8f2477dc2d071aa64fd",
-                "reference": "9b043dc88cee9a63cb4cc8f2477dc2d071aa64fd",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/12406d67133025ef3e5ae36418a82576f9414a9b",
+                "reference": "12406d67133025ef3e5ae36418a82576f9414a9b",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-05-29 06:29:37"
+            "time": "2018-06-17 09:56:35"
         },
         {
             "name": "myclabs/deep-copy",
@@ -923,16 +923,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.5.8",
+            "version": "6.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "4f21a3c6b97c42952fd5c2837bb354ec0199b97b"
+                "reference": "093ca5508174cd8ab8efe44fd1dde447adfdec8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4f21a3c6b97c42952fd5c2837bb354ec0199b97b",
-                "reference": "4f21a3c6b97c42952fd5c2837bb354ec0199b97b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/093ca5508174cd8ab8efe44fd1dde447adfdec8f",
+                "reference": "093ca5508174cd8ab8efe44fd1dde447adfdec8f",
                 "shasum": ""
             },
             "require": {
@@ -1003,7 +1003,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-04-10 11:38:34"
+            "time": "2018-07-03 06:40:40"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2363,42 +2363,41 @@
         },
         {
             "name": "zendframework/zend-router",
-            "version": "3.0.2",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-router.git",
-                "reference": "03763610632a9022aff22a0e8f340852e68392a1"
+                "reference": "f5dbec5398ca98b35170716ec5146029197fe249"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-router/zipball/03763610632a9022aff22a0e8f340852e68392a1",
-                "reference": "03763610632a9022aff22a0e8f340852e68392a1",
+                "url": "https://api.github.com/repos/zendframework/zend-router/zipball/f5dbec5398ca98b35170716ec5146029197fe249",
+                "reference": "f5dbec5398ca98b35170716ec5146029197fe249",
                 "shasum": ""
             },
             "require": {
-                "container-interop/container-interop": "^1.1",
-                "php": "^5.5 || ^7.0",
-                "zendframework/zend-http": "^2.5",
-                "zendframework/zend-servicemanager": "^2.7.5 || ^3.0.3",
-                "zendframework/zend-stdlib": "^2.7.5 || ^3.0"
+                "container-interop/container-interop": "^1.2",
+                "php": "^5.6 || ^7.0",
+                "zendframework/zend-http": "^2.6",
+                "zendframework/zend-servicemanager": "^2.7.8 || ^3.3",
+                "zendframework/zend-stdlib": "^2.7.7 || ^3.1"
             },
             "conflict": {
                 "zendframework/zend-mvc": "<3.0.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5",
-                "sebastian/version": "^1.0.4",
-                "squizlabs/php_codesniffer": "^2.3",
-                "zendframework/zend-i18n": "^2.6"
+                "phpunit/phpunit": "^5.7.22 || ^6.4.1",
+                "zendframework/zend-coding-standard": "~1.0.0",
+                "zendframework/zend-i18n": "^2.7.4"
             },
             "suggest": {
-                "zendframework/zend-i18n": "^2.6, if defining translatable HTTP path segments"
+                "zendframework/zend-i18n": "^2.7.4, if defining translatable HTTP path segments"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev",
-                    "dev-develop": "3.1-dev"
+                    "dev-master": "3.1.x-dev",
+                    "dev-develop": "3.2.x-dev"
                 },
                 "zf": {
                     "component": "Zend\\Router",
@@ -2414,13 +2413,15 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "homepage": "https://github.com/zendframework/zend-router",
+            "description": "Flexible routing system for HTTP and console applications",
             "keywords": [
+                "ZendFramework",
                 "mvc",
                 "routing",
-                "zf2"
+                "zend",
+                "zf"
             ],
-            "time": "2016-05-31 20:47:48"
+            "time": "2018-06-18 21:10:59"
         },
         {
             "name": "zendframework/zend-servicemanager",
